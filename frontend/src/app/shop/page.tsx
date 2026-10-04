@@ -56,9 +56,16 @@ export default function ShopPage() {
       {/* Navbar */}
       <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(12,10,9,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid #2a2420' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
-          <Link href="/" style={{ fontFamily: "'Fraunces', serif", fontSize: 22, fontWeight: 600, color: '#f5ede6', textDecoration: 'none' }}>Sokha Skin</Link>
-          <div style={{ display: 'flex', gap: 24 }}>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #c9a882, #b8936e)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700, color: '#0c0a09' }}>W</div>
+            <span style={{ fontFamily: "'Fraunces', serif", fontSize: 22, fontWeight: 600, color: '#f5ede6', letterSpacing: '-0.5px' }}>WeYoung</span>
+          </Link>
+          <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+            <Link href="/" style={{ color: '#a89080', fontSize: 14, textDecoration: 'none' }}>Home</Link>
             <Link href="/shop" style={{ color: '#f5ede6', fontSize: 14, textDecoration: 'none', fontWeight: 600 }}>Shop</Link>
+            <Link href="/profile" style={{ color: '#a89080', fontSize: 14, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
+              <span>👤</span> <span>Profile</span>
+            </Link>
           </div>
           <button onClick={() => setCartOpen(true)} style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', color: '#f5ede6', fontSize: 20 }}>
             🛒
