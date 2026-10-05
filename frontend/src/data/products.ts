@@ -1,4 +1,4 @@
-// Product data extracted from original site
+﻿// Product data extracted from original site
 // Images stored in /public/images/
 
 export type SkinType = 'dry' | 'oily' | 'combination' | 'sensitive' | 'normal';
@@ -48,11 +48,11 @@ export const products: Product[] = [
   {
     id: 'p01',
     slug: 'rice-water-cleanser',
-    name: { km: 'សាប៊ូលាងមុខទឹកអង្ករ', en: 'Rice Water Gentle Cleanser' },
-    tagline: { km: 'ស្អាតដោយស្លូតបូត មិនខូចស្បែក', en: 'Soft enough for every day, thorough enough to matter.' },
+    name: { km: 'ážŸáž¶áž”áŸŠáž¼áž›áž¶áž„áž˜áž»ážáž‘áž¹áž€áž¢áž„áŸ’áž€ážš', en: 'Rice Water Gentle Cleanser' },
+    tagline: { km: 'ážŸáŸ’áž¢áž¶ážážŠáŸ„áž™ážŸáŸ’áž›áž¼ážáž”áž¼áž áž˜áž·áž“ážáž¼áž…ážŸáŸ’áž”áŸ‚áž€', en: 'Soft enough for every day, thorough enough to matter.' },
     description: {
-      km: 'ក្រែមលាងមុខស្រាលស្រាល ផ្អែកលើទឹកអង្ករ និង Ceramide ជួយសម្អាតកំទេចក្រអូបដោយ មិនខូចស្រទាប់ Natural Barrier របស់ស្បែក។',
-      en: 'A creamy, low-pH cleanser built on rice water and ceramides. It removes the day without stripping your skin barrier — Cambodia-tested through heat and humidity.'
+      km: 'áž€áŸ’ážšáŸ‚áž˜áž›áž¶áž„áž˜áž»ážážŸáŸ’ážšáž¶áž›ážŸáŸ’ážšáž¶áž› áž•áŸ’áž¢áŸ‚áž€áž›áž¾áž‘áž¹áž€áž¢áž„áŸ’áž€ážš áž“áž·áž„ Ceramide áž‡áž½áž™ážŸáž˜áŸ’áž¢áž¶ážáž€áŸ†áž‘áŸáž…áž€áŸ’ážšáž¢áž¼áž”ážŠáŸ„áž™ áž˜áž·áž“ážáž¼áž…ážŸáŸ’ážšáž‘áž¶áž”áŸ‹ Natural Barrier ážšáž”ážŸáŸ‹ážŸáŸ’áž”áŸ‚áž€áŸ”',
+      en: 'A creamy, low-pH cleanser built on rice water and ceramides. It removes the day without stripping your skin barrier â€” Cambodia-tested through heat and humidity.'
     },
     brand: 'Bopha Botanics',
     category: 'cleanser',
@@ -65,16 +65,16 @@ export const products: Product[] = [
     skinTypes: ['dry', 'sensitive', 'combination'],
     concerns: ['dryness', 'sensitivity'],
     benefits: [
-      { km: 'ថែរក្សា Natural Barrier', en: 'Preserves natural skin barrier' },
-      { km: 'pH ទាប សម្រាប់ស្បែករំខាន', en: 'Low pH, gentle for sensitive skin' },
-      { km: 'លាងស្អាតដោយមិនខូចសំណើម', en: 'Cleanses without stripping moisture' },
+      { km: 'ážáŸ‚ážšáž€áŸ’ážŸáž¶ Natural Barrier', en: 'Preserves natural skin barrier' },
+      { km: 'pH áž‘áž¶áž” ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáŸ’áž”áŸ‚áž€ážšáŸ†ážáž¶áž“', en: 'Low pH, gentle for sensitive skin' },
+      { km: 'áž›áž¶áž„ážŸáŸ’áž¢áž¶ážážŠáŸ„áž™áž˜áž·áž“ážáž¼áž…ážŸáŸ†ážŽáž¾áž˜', en: 'Cleanses without stripping moisture' },
     ],
     ingredients: {
       km: 'Rice Water (Oryza Sativa), Ceramide NP, Panthenol, Glycerin, Centella Asiatica Extract.',
       en: 'Rice Water (Oryza Sativa), Ceramide NP, Panthenol, Glycerin, Centella Asiatica Extract.',
     },
     howToUse: {
-      km: 'ប្រើព្រឹក និងពេលយប់ ជ្រីលើទឹក រួចដុសថ្នមៗ រួចលាងជម្រះ',
+      km: 'áž”áŸ’ážšáž¾áž–áŸ’ážšáž¹áž€ áž“áž·áž„áž–áŸáž›áž™áž”áŸ‹ áž‡áŸ’ážšáž¸áž›áž¾áž‘áž¹áž€ ážšáž½áž…ážŠáž»ážŸážáŸ’áž“áž˜áŸ— ážšáž½áž…áž›áž¶áž„áž‡áž˜áŸ’ážšáŸ‡',
       en: 'Morning and evening. Dampen face, massage gently, rinse.',
     },
     sizes: ['100ml', '150ml'],
@@ -84,11 +84,11 @@ export const products: Product[] = [
   {
     id: 'p02',
     slug: 'niacinamide-toner',
-    name: { km: 'ទឹកកក់ Niacinamide 10%', en: 'Niacinamide 10% Clarifying Toner' },
-    tagline: { km: 'រន្ធញើសតូច ស្បែកស្រស់ ស្មើ', en: 'Pores minimised. Tone evened. Shine gone.' },
+    name: { km: 'áž‘áž¹áž€áž€áž€áŸ‹ Niacinamide 10%', en: 'Niacinamide 10% Clarifying Toner' },
+    tagline: { km: 'ážšáž“áŸ’áž’áž‰áž¾ážŸážáž¼áž… ážŸáŸ’áž”áŸ‚áž€ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’áž˜áž¾', en: 'Pores minimised. Tone evened. Shine gone.' },
     description: {
-      km: 'ទឹកកក់ Niacinamide 10% ជ្រៀតចូលស្ទើរ Instantly ជួយបំបាត់រន្ធញើស ស្បែកខ្ញើ និងស្នាមខ្មៅ ល្អសម្រាប់អាកាសធាតុក្ដៅ',
-      en: 'A water-light 10% niacinamide toner that targets pores, shine, and uneven tone. Works fast in Cambodia\'s heat — no stickiness, just results.',
+      km: 'áž‘áž¹áž€áž€áž€áŸ‹ Niacinamide 10% áž‡áŸ’ážšáŸ€ážáž…áž¼áž›ážŸáŸ’áž‘áž¾ážš Instantly áž‡áž½áž™áž”áŸ†áž”áž¶ážáŸ‹ážšáž“áŸ’áž’áž‰áž¾ážŸ ážŸáŸ’áž”áŸ‚áž€ážáŸ’áž‰áž¾ áž“áž·áž„ážŸáŸ’áž“áž¶áž˜ážáŸ’áž˜áŸ… áž›áŸ’áž¢ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»áž€áŸ’ážŠáŸ…',
+      en: 'A water-light 10% niacinamide toner that targets pores, shine, and uneven tone. Works fast in Cambodia\'s heat â€” no stickiness, just results.',
     },
     brand: 'Srah',
     category: 'toner',
@@ -100,16 +100,16 @@ export const products: Product[] = [
     skinTypes: ['oily', 'combination', 'normal'],
     concerns: ['oiliness', 'pores', 'dark-spots', 'dullness'],
     benefits: [
-      { km: 'បំបាត់រន្ធញើស 30 ថ្ងៃ', en: 'Visibly minimises pores in 30 days' },
-      { km: 'ស្បែករលួច មិនខ្ញើ', en: 'Matte, non-greasy finish' },
-      { km: 'ស្នាមខ្មៅស្រអាប់ក្នុង 4 សប្តាហ៍', en: 'Fades dark spots in 4 weeks' },
+      { km: 'áž”áŸ†áž”áž¶ážáŸ‹ážšáž“áŸ’áž’áž‰áž¾ážŸ 30 ážáŸ’áž„áŸƒ', en: 'Visibly minimises pores in 30 days' },
+      { km: 'ážŸáŸ’áž”áŸ‚áž€ážšáž›áž½áž… áž˜áž·áž“ážáŸ’áž‰áž¾', en: 'Matte, non-greasy finish' },
+      { km: 'ážŸáŸ’áž“áž¶áž˜ážáŸ’áž˜áŸ…ážŸáŸ’ážšáž¢áž¶áž”áŸ‹áž€áŸ’áž“áž»áž„ 4 ážŸáž”áŸ’ážáž¶áž áŸ', en: 'Fades dark spots in 4 weeks' },
     ],
     ingredients: {
       km: 'Niacinamide 10%, Zinc PCA, Hyaluronic Acid, Panthenol, Witch Hazel.',
       en: 'Niacinamide 10%, Zinc PCA, Hyaluronic Acid, Panthenol, Witch Hazel.',
     },
     howToUse: {
-      km: 'ប្រើក្រោយពេលលាងមុខ ដំណក់លើ Cotton Pad ចាក់លើមុខ ព្រឹក និងយប់',
+      km: 'áž”áŸ’ážšáž¾áž€áŸ’ážšáŸ„áž™áž–áŸáž›áž›áž¶áž„áž˜áž»áž ážŠáŸ†ážŽáž€áŸ‹áž›áž¾ Cotton Pad áž…áž¶áž€áŸ‹áž›áž¾áž˜áž»áž áž–áŸ’ážšáž¹áž€ áž“áž·áž„áž™áž”áŸ‹',
       en: 'After cleansing, apply with a cotton pad or pat directly. Morning and night.',
     },
     sizes: ['150ml'],
@@ -118,10 +118,10 @@ export const products: Product[] = [
   {
     id: 'p03',
     slug: 'vitamin-c-brightening-serum',
-    name: { km: 'Serum Vitamin C ភ្លឺ', en: 'Vitamin C Brightening Serum' },
-    tagline: { km: 'ភ្លឺ ស្រស់ ស្ពឹករបស់ Vitamin C', en: 'Your Monday-morning glow, every day.' },
+    name: { km: 'Serum Vitamin C áž—áŸ’áž›ážº', en: 'Vitamin C Brightening Serum' },
+    tagline: { km: 'áž—áŸ’áž›ážº ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’áž–áž¹áž€ážšáž”ážŸáŸ‹ Vitamin C', en: 'Your Monday-morning glow, every day.' },
     description: {
-      km: 'Serum Vitamin C 15% ជាមួយ Ferulic Acid ជួយភ្លឺ ស្ប៉ាង ស្បែកស្រស់ ក្នុងរយៈពេល 2-3 សប្តាហ៍',
+      km: 'Serum Vitamin C 15% áž‡áž¶áž˜áž½áž™ Ferulic Acid áž‡áž½áž™áž—áŸ’áž›ážº ážŸáŸ’áž”áŸ‰áž¶áž„ ážŸáŸ’áž”áŸ‚áž€ážŸáŸ’ážšážŸáŸ‹ áž€áŸ’áž“áž»áž„ážšáž™áŸˆáž–áŸáž› 2-3 ážŸáž”áŸ’ážáž¶áž áŸ',
       en: 'A stable 15% vitamin C serum with ferulic acid and vitamin E. Brightens, protects against oxidative stress, and gives that lit-from-within glow.',
     },
     brand: 'Angkor Herbals',
@@ -135,17 +135,17 @@ export const products: Product[] = [
     skinTypes: ['dry', 'normal', 'combination'],
     concerns: ['dullness', 'dark-spots', 'aging'],
     benefits: [
-      { km: 'ភ្លឺស្ប៉ាង ក្នុង 2-3 សប្តាហ៍', en: 'Visible brightening in 2–3 weeks' },
-      { km: 'ការពារ Free Radical', en: 'Shields against free radical damage' },
-      { km: 'ស្ប-ស្ពឹករ Vitamin C អស់ 24 ម៉ោង', en: 'Stable formula, active for 24 hours' },
+      { km: 'áž—áŸ’áž›ážºážŸáŸ’áž”áŸ‰áž¶áž„ áž€áŸ’áž“áž»áž„ 2-3 ážŸáž”áŸ’ážáž¶áž áŸ', en: 'Visible brightening in 2â€“3 weeks' },
+      { km: 'áž€áž¶ážšáž–áž¶ážš Free Radical', en: 'Shields against free radical damage' },
+      { km: 'ážŸáŸ’áž”-ážŸáŸ’áž–áž¹áž€ážš Vitamin C áž¢ážŸáŸ‹ 24 áž˜áŸ‰áŸ„áž„', en: 'Stable formula, active for 24 hours' },
     ],
     ingredients: {
       km: 'L-Ascorbic Acid 15%, Ferulic Acid, Vitamin E (Tocopherol), Hyaluronic Acid.',
       en: 'L-Ascorbic Acid 15%, Ferulic Acid, Vitamin E (Tocopherol), Hyaluronic Acid.',
     },
     howToUse: {
-      km: 'ប្រើព្រឹក 2-3 ដំណក់ ស្ទង់ ដំណក់ ហើយប្រើ SPF ជានាំជូន',
-      en: 'Apply 2–3 drops in the morning before SPF. Let absorb before moisturiser.',
+      km: 'áž”áŸ’ážšáž¾áž–áŸ’ážšáž¹áž€ 2-3 ážŠáŸ†ážŽáž€áŸ‹ ážŸáŸ’áž‘áž„áŸ‹ ážŠáŸ†ážŽáž€áŸ‹ áž áž¾áž™áž”áŸ’ážšáž¾ SPF áž‡áž¶áž“áž¶áŸ†áž‡áž¼áž“',
+      en: 'Apply 2â€“3 drops in the morning before SPF. Let absorb before moisturiser.',
     },
     sizes: ['30ml'],
     bestSeller: true,
@@ -154,11 +154,11 @@ export const products: Product[] = [
   {
     id: 'p04',
     slug: 'ceramide-barrier-cream',
-    name: { km: 'ក្រែមជួសជុល Barrier Ceramide', en: 'Ceramide Barrier Repair Cream' },
-    tagline: { km: 'ស្បែករឹងមាំ ជូររំអិល ហ្វតបត់', en: 'When your skin needs a reset.' },
+    name: { km: 'áž€áŸ’ážšáŸ‚áž˜áž‡áž½ážŸáž‡áž»áž› Barrier Ceramide', en: 'Ceramide Barrier Repair Cream' },
+    tagline: { km: 'ážŸáŸ’áž”áŸ‚áž€ážšáž¹áž„áž˜áž¶áŸ† áž‡áž¼ážšážšáŸ†áž¢áž·áž› áž áŸ’ážœážáž”ážáŸ‹', en: 'When your skin needs a reset.' },
     description: {
-      km: 'ក្រែម Ceramide ជួស Barrier ស្បែក ជូររំអិល ហ្វតបត់ ស្ដើងស្រស់ ល្អសម្រាប់ស្បែករំខាន',
-      en: 'A richer cream with ceramides, squalane, and peptides to rebuild a compromised barrier. Rich without heaviness — sinks in fast in the heat.',
+      km: 'áž€áŸ’ážšáŸ‚áž˜ Ceramide áž‡áž½ážŸ Barrier ážŸáŸ’áž”áŸ‚áž€ áž‡áž¼ážšážšáŸ†áž¢áž·áž› áž áŸ’ážœážáž”ážáŸ‹ ážŸáŸ’ážŠáž¾áž„ážŸáŸ’ážšážŸáŸ‹ áž›áŸ’áž¢ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáŸ’áž”áŸ‚áž€ážšáŸ†ážáž¶áž“',
+      en: 'A richer cream with ceramides, squalane, and peptides to rebuild a compromised barrier. Rich without heaviness â€” sinks in fast in the heat.',
     },
     brand: 'Bopha Botanics',
     category: 'moisturizer',
@@ -170,16 +170,16 @@ export const products: Product[] = [
     skinTypes: ['dry', 'sensitive', 'normal'],
     concerns: ['dryness', 'sensitivity', 'aging'],
     benefits: [
-      { km: 'ជួស Barrier ក្នុង 7 ថ្ងៃ', en: 'Measurably repairs barrier in 7 days' },
-      { km: 'ធូររំអិល 72 ម៉ោង', en: 'Long-lasting 72-hour hydration' },
-      { km: 'ស្ងប់ស្បែករំខាន ភ្លាមៗ', en: 'Calms reactive skin instantly' },
+      { km: 'áž‡áž½ážŸ Barrier áž€áŸ’áž“áž»áž„ 7 ážáŸ’áž„áŸƒ', en: 'Measurably repairs barrier in 7 days' },
+      { km: 'áž’áž¼ážšážšáŸ†áž¢áž·áž› 72 áž˜áŸ‰áŸ„áž„', en: 'Long-lasting 72-hour hydration' },
+      { km: 'ážŸáŸ’áž„áž”áŸ‹ážŸáŸ’áž”áŸ‚áž€ážšáŸ†ážáž¶áž“ áž—áŸ’áž›áž¶áž˜áŸ—', en: 'Calms reactive skin instantly' },
     ],
     ingredients: {
       km: 'Ceramide NP, Ceramide EOP, Squalane, Peptide Complex, Shea Butter, Panthenol.',
       en: 'Ceramide NP, Ceramide EOP, Squalane, Peptide Complex, Shea Butter, Panthenol.',
     },
     howToUse: {
-      km: 'ប្រើ 1-2 ដង ក្នុងមួយថ្ងៃ ព្រឹក និងយប់ ក្រោយ Serum',
+      km: 'áž”áŸ’ážšáž¾ 1-2 ážŠáž„ áž€áŸ’áž“áž»áž„áž˜áž½áž™ážáŸ’áž„áŸƒ áž–áŸ’ážšáž¹áž€ áž“áž·áž„áž™áž”áŸ‹ áž€áŸ’ážšáŸ„áž™ Serum',
       en: 'Apply morning and night after serum. Use a pea-size for face and neck.',
     },
     sizes: ['50ml'],
@@ -188,13 +188,13 @@ export const products: Product[] = [
   {
     id: 'p05',
     slug: 'centella-water-serum',
-    name: { km: 'Serum ស្រស់ Centella Asiatica', en: 'Centella Asiatica Water Serum' },
-    tagline: { km: 'ស្ងប់ ធូររំអិល ពេលអាកាសធាតុក្ដៅ', en: 'The calm-skin serum for Cambodia\'s heat.' },
+    name: { km: 'Serum ážŸáŸ’ážšážŸáŸ‹ Centella Asiatica', en: 'Centella Asiatica Water Serum' },
+    tagline: { km: 'ážŸáŸ’áž„áž”áŸ‹ áž’áž¼ážšážšáŸ†áž¢áž·áž› áž–áŸáž›áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»áž€áŸ’ážŠáŸ…', en: 'The calm-skin serum for Cambodia\'s heat.' },
     description: {
-      km: 'Serum ស្រាល ផ្អែកលើ Centella Asiatica និង Hyaluronic Acid ធូររំអិលរហ័ស ស្ងប់ស្បែក',
-      en: 'A featherlight water serum with Centella Asiatica extract and hyaluronic acid. It absorbs quickly, layers well under sunscreen, and leaves skin feeling calm — made for Cambodia\'s hot, humid days.',
+      km: 'Serum ážŸáŸ’ážšáž¶áž› áž•áŸ’áž¢áŸ‚áž€áž›áž¾ Centella Asiatica áž“áž·áž„ Hyaluronic Acid áž’áž¼ážšážšáŸ†áž¢áž·áž›ážšáž áŸážŸ ážŸáŸ’áž„áž”áŸ‹ážŸáŸ’áž”áŸ‚áž€',
+      en: 'A featherlight water serum with Centella Asiatica extract and hyaluronic acid. It absorbs quickly, layers well under sunscreen, and leaves skin feeling calm â€” made for Cambodia\'s hot, humid days.',
     },
-    brand: 'Sokha Skin',
+    brand: 'WeYoung',
     category: 'serum',
     price: 24,
     discountPrice: 19,
@@ -205,17 +205,17 @@ export const products: Product[] = [
     skinTypes: ['sensitive', 'combination', 'oily'],
     concerns: ['sensitivity', 'dryness', 'acne'],
     benefits: [
-      { km: 'ធូររំអិល 12 ម៉ោង ភ្លាមៗ', en: 'Immediate 12-hour hydration' },
-      { km: 'ស្ងប់ស្បែក', en: 'Skin feels calm and soothed' },
-      { km: 'ស្រស់ ស្រស់ស្អាតមិនស្អិត', en: 'Fast-absorbing, never sticky' },
+      { km: 'áž’áž¼ážšážšáŸ†áž¢áž·áž› 12 áž˜áŸ‰áŸ„áž„ áž—áŸ’áž›áž¶áž˜áŸ—', en: 'Immediate 12-hour hydration' },
+      { km: 'ážŸáŸ’áž„áž”áŸ‹ážŸáŸ’áž”áŸ‚áž€', en: 'Skin feels calm and soothed' },
+      { km: 'ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’ážšážŸáŸ‹ážŸáŸ’áž¢áž¶ážáž˜áž·áž“ážŸáŸ’áž¢áž·áž', en: 'Fast-absorbing, never sticky' },
     ],
     ingredients: {
       km: 'Centella Asiatica Extract, Sodium Hyaluronate, Panthenol, Madecassoside.',
       en: 'Centella Asiatica Extract, Sodium Hyaluronate, Panthenol, Madecassoside.',
     },
     howToUse: {
-      km: 'ចំណុចល័ក 2-3 ដំណក់ ដំណក់ ក្រោយ Toner ក្នុងព្រឹក/យប់',
-      en: 'Pat 2–3 drops after toner, before moisturiser, morning and night.',
+      km: 'áž…áŸ†ážŽáž»áž…áž›áŸáž€ 2-3 ážŠáŸ†ážŽáž€áŸ‹ ážŠáŸ†ážŽáž€áŸ‹ áž€áŸ’ážšáŸ„áž™ Toner áž€áŸ’áž“áž»áž„áž–áŸ’ážšáž¹áž€/áž™áž”áŸ‹',
+      en: 'Pat 2â€“3 drops after toner, before moisturiser, morning and night.',
     },
     sizes: ['30ml', '50ml'],
     bestSeller: true,
@@ -224,10 +224,10 @@ export const products: Product[] = [
   {
     id: 'p06',
     slug: 'spf50-daily-sunscreen',
-    name: { km: 'គ្រីម SPF50+ ប្រចាំថ្ងៃ', en: 'SPF50+ Daily Sunscreen' },
-    tagline: { km: 'ការពារថ្ងៃ ស្អាត មិន White Cast', en: 'Tropical-proof. No white cast. Works.' },
+    name: { km: 'áž‚áŸ’ážšáž¸áž˜ SPF50+ áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ', en: 'SPF50+ Daily Sunscreen' },
+    tagline: { km: 'áž€áž¶ážšáž–áž¶ážšážáŸ’áž„áŸƒ ážŸáŸ’áž¢áž¶áž áž˜áž·áž“ White Cast', en: 'Tropical-proof. No white cast. Works.' },
     description: {
-      km: 'ក្រែម SPF50+ PA++++ ស្រាល ស្ដើង ជ្រៀតចូលរហ័ស មិន White Cast ល្អ ជា Base Primer',
+      km: 'áž€áŸ’ážšáŸ‚áž˜ SPF50+ PA++++ ážŸáŸ’ážšáž¶áž› ážŸáŸ’ážŠáž¾áž„ áž‡áŸ’ážšáŸ€ážáž…áž¼áž›ážšáž áŸážŸ áž˜áž·áž“ White Cast áž›áŸ’áž¢ áž‡áž¶ Base Primer',
       en: 'A featherlight sunscreen with modern UV filters for intense tropical sun. It sinks in fast, leaves no white cast, and doubles as a smooth makeup base.',
     },
     brand: 'Srah',
@@ -241,16 +241,16 @@ export const products: Product[] = [
     concerns: ['dark-spots', 'aging', 'oiliness'],
     benefits: [
       { km: 'SPF50+ PA++++', en: 'SPF50+ PA++++ protection' },
-      { km: 'មិន White Cast', en: 'No white cast' },
-      { km: 'ធន់ញើស ក្ដៅ Humid', en: 'Sweat-resistant in humid weather' },
+      { km: 'áž˜áž·áž“ White Cast', en: 'No white cast' },
+      { km: 'áž’áž“áŸ‹áž‰áž¾ážŸ áž€áŸ’ážŠáŸ… Humid', en: 'Sweat-resistant in humid weather' },
     ],
     ingredients: {
       km: 'Uvinul A Plus, Tinosorb S, Niacinamide, Squalane, Panthenol.',
       en: 'Uvinul A Plus, Tinosorb S, Niacinamide, Squalane, Panthenol.',
     },
     howToUse: {
-      km: 'ប្រើ 2 ម្រាម ២០ នាទីមុនចេញ ឡើងសូរ 2-3 ម៉ោង',
-      en: 'Apply two finger-lengths 20 minutes before sun exposure; reapply every 2–3 hours outdoors.',
+      km: 'áž”áŸ’ážšáž¾ 2 áž˜áŸ’ážšáž¶áž˜ áŸ¢áŸ  áž“áž¶áž‘áž¸áž˜áž»áž“áž…áŸáž‰ áž¡áž¾áž„ážŸáž¼ážš 2-3 áž˜áŸ‰áŸ„áž„',
+      en: 'Apply two finger-lengths 20 minutes before sun exposure; reapply every 2â€“3 hours outdoors.',
     },
     sizes: ['50ml'],
     bestSeller: true,
@@ -259,11 +259,11 @@ export const products: Product[] = [
   {
     id: 'p07',
     slug: 'green-tea-sheet-mask',
-    name: { km: 'Mask ក្រដាស Green Tea (5 គ្រាប់)', en: 'Green Tea Sheet Mask (5 pack)' },
-    tagline: { km: '១៥ នាទី ស្ងប់ ធូររំអិល', en: 'Fifteen quiet minutes of hydration and calm.' },
+    name: { km: 'Mask áž€áŸ’ážšážŠáž¶ážŸ Green Tea (5 áž‚áŸ’ážšáž¶áž”áŸ‹)', en: 'Green Tea Sheet Mask (5 pack)' },
+    tagline: { km: 'áŸ¡áŸ¥ áž“áž¶áž‘áž¸ ážŸáŸ’áž„áž”áŸ‹ áž’áž¼ážšážšáŸ†áž¢áž·áž›', en: 'Fifteen quiet minutes of hydration and calm.' },
     description: {
-      km: 'Mask ក្រដាស Tencel ស្រូប Green Tea និង Rice Ferment ស្ងប់ ធូររំអិល ល្អពេលស្បែកអស់កម្លាំង',
-      en: 'Soft Tencel sheets soaked in green tea and rice ferment — for tired-skin days or the night before something important.',
+      km: 'Mask áž€áŸ’ážšážŠáž¶ážŸ Tencel ážŸáŸ’ážšáž¼áž” Green Tea áž“áž·áž„ Rice Ferment ážŸáŸ’áž„áž”áŸ‹ áž’áž¼ážšážšáŸ†áž¢áž·áž› áž›áŸ’áž¢áž–áŸáž›ážŸáŸ’áž”áŸ‚áž€áž¢ážŸáŸ‹áž€áž˜áŸ’áž›áž¶áŸ†áž„',
+      en: 'Soft Tencel sheets soaked in green tea and rice ferment â€” for tired-skin days or the night before something important.',
     },
     brand: 'Bopha Botanics',
     category: 'mask',
@@ -276,28 +276,28 @@ export const products: Product[] = [
     skinTypes: ['normal', 'sensitive', 'combination'],
     concerns: ['dryness', 'dullness', 'sensitivity'],
     benefits: [
-      { km: 'ធូររំអិលភ្លាមៗ', en: 'Instant hydration' },
-      { km: 'ស្ងប់ស្បែកយ៉ាក់ចិត្ត', en: 'Comforts stressed skin' },
-      { km: 'គ្មាន Fragrance', en: 'Fragrance-free' },
+      { km: 'áž’áž¼ážšážšáŸ†áž¢áž·áž›áž—áŸ’áž›áž¶áž˜áŸ—', en: 'Instant hydration' },
+      { km: 'ážŸáŸ’áž„áž”áŸ‹ážŸáŸ’áž”áŸ‚áž€áž™áŸ‰áž¶áž€áŸ‹áž…áž·ážáŸ’áž', en: 'Comforts stressed skin' },
+      { km: 'áž‚áŸ’áž˜áž¶áž“ Fragrance', en: 'Fragrance-free' },
     ],
     ingredients: {
       km: 'Camellia Sinensis Leaf Extract, Rice Ferment Filtrate, Panthenol, Sodium Hyaluronate.',
       en: 'Camellia Sinensis Leaf Extract, Rice Ferment Filtrate, Panthenol, Sodium Hyaluronate.',
     },
     howToUse: {
-      km: 'ប្រើបន្ទាប់លាងមុខ ១៥-២០ នាទី ដក ហើយ ស្ទង់ Essence ដែលនៅ',
-      en: 'Apply to clean skin for 15–20 minutes, remove, and pat in the remaining essence.',
+      km: 'áž”áŸ’ážšáž¾áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž›áž¶áž„áž˜áž»áž áŸ¡áŸ¥-áŸ¢áŸ  áž“áž¶áž‘áž¸ ážŠáž€ áž áž¾áž™ ážŸáŸ’áž‘áž„áŸ‹ Essence ážŠáŸ‚áž›áž“áŸ…',
+      en: 'Apply to clean skin for 15â€“20 minutes, remove, and pat in the remaining essence.',
     },
-    sizes: ['5 × 25ml'],
+    sizes: ['5 Ã— 25ml'],
     newArrival: true,
   },
   {
     id: 'p08',
     slug: 'snail-repair-essence',
-    name: { km: 'Essence ជួសជុល Snail', en: 'Snail Repair Essence' },
-    tagline: { km: 'ជំហានចាំបាច់ ធ្វើឲ Glass Skin', en: 'The bouncy, glossy-skin step your routine is missing.' },
+    name: { km: 'Essence áž‡áž½ážŸáž‡áž»áž› Snail', en: 'Snail Repair Essence' },
+    tagline: { km: 'áž‡áŸ†áž áž¶áž“áž…áž¶áŸ†áž”áž¶áž…áŸ‹ áž’áŸ’ážœáž¾áž² Glass Skin', en: 'The bouncy, glossy-skin step your routine is missing.' },
     description: {
-      km: 'Essence ជាមួយ Snail Mucin 74% និង Galactomyces ធ្វើឲ Glass Skin ក្នុងការប្រើប្រចាំថ្ងៃ',
+      km: 'Essence áž‡áž¶áž˜áž½áž™ Snail Mucin 74% áž“áž·áž„ Galactomyces áž’áŸ’ážœáž¾áž² Glass Skin áž€áŸ’áž“áž»áž„áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ',
       en: 'A slippery-thick essence with 74% snail mucin and galactomyces ferment for that bouncy, glass-skin bounce with daily use.',
     },
     brand: 'Angkor Herbals',
@@ -310,17 +310,17 @@ export const products: Product[] = [
     skinTypes: ['dry', 'normal', 'combination'],
     concerns: ['dryness', 'dullness', 'aging'],
     benefits: [
-      { km: 'ជ្រៅ Plumping ធូររំអិល', en: 'Deep plumping hydration' },
-      { km: 'ភ្លឺ Glass Skin', en: 'Glass-skin luminosity' },
-      { km: 'ជួយជួសជុលពេលដេក', en: 'Supports overnight recovery' },
+      { km: 'áž‡áŸ’ážšáŸ… Plumping áž’áž¼ážšážšáŸ†áž¢áž·áž›', en: 'Deep plumping hydration' },
+      { km: 'áž—áŸ’áž›ážº Glass Skin', en: 'Glass-skin luminosity' },
+      { km: 'áž‡áž½áž™áž‡áž½ážŸáž‡áž»áž›áž–áŸáž›ážŠáŸáž€', en: 'Supports overnight recovery' },
     ],
     ingredients: {
       km: 'Snail Secretion Filtrate (74%), Galactomyces Ferment Filtrate, Sodium Hyaluronate, Trehalose.',
       en: 'Snail Secretion Filtrate (74%), Galactomyces Ferment Filtrate, Sodium Hyaluronate, Trehalose.',
     },
     howToUse: {
-      km: 'ចំណុចល័ក 2-3 Pump ក្រោយ Toner មុន Serum',
-      en: 'Pat 2–3 pumps after toner, before serum.',
+      km: 'áž…áŸ†ážŽáž»áž…áž›áŸáž€ 2-3 Pump áž€áŸ’ážšáŸ„áž™ Toner áž˜áž»áž“ Serum',
+      en: 'Pat 2â€“3 pumps after toner, before serum.',
     },
     sizes: ['100ml'],
     newArrival: true,
@@ -328,10 +328,10 @@ export const products: Product[] = [
   {
     id: 'p09',
     slug: 'caffeine-eye-cream',
-    name: { km: 'ក្រែមមុខភ្នែក Caffeine', en: 'Caffeine Eye Cream' },
-    tagline: { km: 'ភ្នែករំភ្លឺ ព្រឹករំភ្លឺ', en: 'A bright morning for tired eyes.' },
+    name: { km: 'áž€áŸ’ážšáŸ‚áž˜áž˜áž»ážáž—áŸ’áž“áŸ‚áž€ Caffeine', en: 'Caffeine Eye Cream' },
+    tagline: { km: 'áž—áŸ’áž“áŸ‚áž€ážšáŸ†áž—áŸ’áž›ážº áž–áŸ’ážšáž¹áž€ážšáŸ†áž—áŸ’áž›ážº', en: 'A bright morning for tired eyes.' },
     description: {
-      km: 'ក្រែមមុខភ្នែក Caffeine និង Peptides ជួយបំបាត់រន្ទះ ធ្វើឲ Make-up ស្ពឹក',
+      km: 'áž€áŸ’ážšáŸ‚áž˜áž˜áž»ážáž—áŸ’áž“áŸ‚áž€ Caffeine áž“áž·áž„ Peptides áž‡áž½áž™áž”áŸ†áž”áž¶ážáŸ‹ážšáž“áŸ’áž‘áŸ‡ áž’áŸ’ážœáž¾áž² Make-up ážŸáŸ’áž–áž¹áž€',
       en: 'A cooling cream-gel with caffeine and peptides that wakes up the under-eye area and layers invisibly under concealer.',
     },
     brand: 'Srah',
@@ -344,16 +344,16 @@ export const products: Product[] = [
     skinTypes: ['normal', 'oily', 'combination'],
     concerns: ['aging', 'dullness'],
     benefits: [
-      { km: 'ព្រះស្ងប់ De-Puff', en: 'Cooling, de-puffing feel' },
-      { km: 'ស្ពឹក Make-up', en: 'Invisible under makeup' },
-      { km: 'ស្ងប់ ស្រស់ ភ្នែក', en: 'Gentle for the eye area' },
+      { km: 'áž–áŸ’ážšáŸ‡ážŸáŸ’áž„áž”áŸ‹ De-Puff', en: 'Cooling, de-puffing feel' },
+      { km: 'ážŸáŸ’áž–áž¹áž€ Make-up', en: 'Invisible under makeup' },
+      { km: 'ážŸáŸ’áž„áž”áŸ‹ ážŸáŸ’ážšážŸáŸ‹ áž—áŸ’áž“áŸ‚áž€', en: 'Gentle for the eye area' },
     ],
     ingredients: {
       km: 'Caffeine, Acetyl Tetrapeptide-5, Niacinamide, Squalane, Vitamin E.',
       en: 'Caffeine, Acetyl Tetrapeptide-5, Niacinamide, Squalane, Vitamin E.',
     },
     howToUse: {
-      km: 'ដំណក់ចូលជុំភ្នែក ព្រឹក និងយប់',
+      km: 'ážŠáŸ†ážŽáž€áŸ‹áž…áž¼áž›áž‡áž»áŸ†áž—áŸ’áž“áŸ‚áž€ áž–áŸ’ážšáž¹áž€ áž“áž·áž„áž™áž”áŸ‹',
       en: 'Tap a rice-grain amount around the eyes morning and night.',
     },
     sizes: ['15ml'],
@@ -361,10 +361,10 @@ export const products: Product[] = [
   {
     id: 'p10',
     slug: 'coconut-body-lotion',
-    name: { km: 'លាបខ្លួន Coconut ស្រស់', en: 'Coconut Body Lotion' },
-    tagline: { km: 'ធូររំអិល ស្រស់ ក្លិន Coconut', en: 'Lightweight moisture with a soft coconut scent.' },
+    name: { km: 'áž›áž¶áž”ážáŸ’áž›áž½áž“ Coconut ážŸáŸ’ážšážŸáŸ‹', en: 'Coconut Body Lotion' },
+    tagline: { km: 'áž’áž¼ážšážšáŸ†áž¢áž·áž› ážŸáŸ’ážšážŸáŸ‹ áž€áŸ’áž›áž·áž“ Coconut', en: 'Lightweight moisture with a soft coconut scent.' },
     description: {
-      km: 'Lotion ខ្លួន Coconut ស្រស់ ស្ទើរ Instant Absorb ធូររំអិល ស្ងប់ ក្ដៅ-Humid',
+      km: 'Lotion ážáŸ’áž›áž½áž“ Coconut ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’áž‘áž¾ážš Instant Absorb áž’áž¼ážšážšáŸ†áž¢áž·áž› ážŸáŸ’áž„áž”áŸ‹ áž€áŸ’ážŠáŸ…-Humid',
       en: 'A fast-absorbing body lotion with coconut extract and hyaluronic acid. Stays light in Cambodia\'s heat, never greasy.',
     },
     brand: 'Bopha Botanics',
@@ -377,16 +377,16 @@ export const products: Product[] = [
     skinTypes: ['normal', 'dry', 'combination'],
     concerns: ['dryness'],
     benefits: [
-      { km: 'ស្រូបចូលរហ័ស', en: 'Fast-absorbing' },
-      { km: 'ធូររំអិល ២៤ ម៉ោង', en: '24-hour moisture lock' },
-      { km: 'ក្លិន Coconut ស្ងប់', en: 'Soft coconut scent' },
+      { km: 'ážŸáŸ’ážšáž¼áž”áž…áž¼áž›ážšáž áŸážŸ', en: 'Fast-absorbing' },
+      { km: 'áž’áž¼ážšážšáŸ†áž¢áž·áž› áŸ¢áŸ¤ áž˜áŸ‰áŸ„áž„', en: '24-hour moisture lock' },
+      { km: 'áž€áŸ’áž›áž·áž“ Coconut ážŸáŸ’áž„áž”áŸ‹', en: 'Soft coconut scent' },
     ],
     ingredients: {
       km: 'Cocos Nucifera Oil, Sodium Hyaluronate, Shea Butter, Glycerin.',
       en: 'Cocos Nucifera Oil, Sodium Hyaluronate, Shea Butter, Glycerin.',
     },
     howToUse: {
-      km: 'ដំណក់ ២-៣ ដង ខ្លួន ក្រោយងូតទឹក',
+      km: 'ážŠáŸ†ážŽáž€áŸ‹ áŸ¢-áŸ£ ážŠáž„ ážáŸ’áž›áž½áž“ áž€áŸ’ážšáŸ„áž™áž„áž¼ážáž‘áž¹áž€',
       en: 'Apply generously to body after showering.',
     },
     sizes: ['200ml'],
@@ -395,11 +395,11 @@ export const products: Product[] = [
   {
     id: 'p11',
     slug: 'salicylic-acid-acne-cleanser',
-    name: { km: 'សាប៊ូ Salicylic Acid ប្រឆាំងមុន', en: 'Salicylic Acid Acne Cleanser' },
-    tagline: { km: 'ស្អាតស្ទះ ដោះស្រាយមុន', en: 'Unclog. Calm. Clear.' },
+    name: { km: 'ážŸáž¶áž”áŸŠáž¼ Salicylic Acid áž”áŸ’ážšáž†áž¶áŸ†áž„áž˜áž»áž“', en: 'Salicylic Acid Acne Cleanser' },
+    tagline: { km: 'ážŸáŸ’áž¢áž¶ážážŸáŸ’áž‘áŸ‡ ážŠáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž˜áž»áž“', en: 'Unclog. Calm. Clear.' },
     description: {
-      km: 'ជ្រូតលើ Salicylic Acid 2% ស្ងប់មុន ជ្រូតរំអិល Pores ស្ងប់ Cambodia Climate',
-      en: 'A medicated 2% salicylic acid wash that dissolves pore-clogging debris and cools inflammation — formulated for breakout-prone skin in humid climates.',
+      km: 'áž‡áŸ’ážšáž¼ážáž›áž¾ Salicylic Acid 2% ážŸáŸ’áž„áž”áŸ‹áž˜áž»áž“ áž‡áŸ’ážšáž¼ážážšáŸ†áž¢áž·áž› Pores ážŸáŸ’áž„áž”áŸ‹ Cambodia Climate',
+      en: 'A medicated 2% salicylic acid wash that dissolves pore-clogging debris and cools inflammation â€” formulated for breakout-prone skin in humid climates.',
     },
     brand: 'Srah',
     category: 'cleanser',
@@ -411,17 +411,17 @@ export const products: Product[] = [
     skinTypes: ['oily', 'combination'],
     concerns: ['acne', 'oiliness', 'pores'],
     benefits: [
-      { km: 'ដោះស្រាយ Blackhead', en: 'Dissolves blackheads and congestion' },
-      { km: 'ស្ងប់ Red Spot ភ្លាមៗ', en: 'Visibly calms active breakouts' },
-      { km: 'ការពារ Pores ស្រើប', en: 'Prevents new clogged pores' },
+      { km: 'ážŠáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ Blackhead', en: 'Dissolves blackheads and congestion' },
+      { km: 'ážŸáŸ’áž„áž”áŸ‹ Red Spot áž—áŸ’áž›áž¶áž˜áŸ—', en: 'Visibly calms active breakouts' },
+      { km: 'áž€áž¶ážšáž–áž¶ážš Pores ážŸáŸ’ážšáž¾áž”', en: 'Prevents new clogged pores' },
     ],
     ingredients: {
       km: 'Salicylic Acid 2%, Tea Tree Oil, Niacinamide, Centella Asiatica.',
       en: 'Salicylic Acid 2%, Tea Tree Oil, Niacinamide, Centella Asiatica.',
     },
     howToUse: {
-      km: 'ព្រឹក/យប់ ២-៣ ដង ក្នុងសប្តាហ៍ ក្រោយលាងស្អាត',
-      en: 'Use 2–3 times per week, morning or evening. Follow with moisturiser.',
+      km: 'áž–áŸ’ážšáž¹áž€/áž™áž”áŸ‹ áŸ¢-áŸ£ ážŠáž„ áž€áŸ’áž“áž»áž„ážŸáž”áŸ’ážáž¶áž áŸ áž€áŸ’ážšáŸ„áž™áž›áž¶áž„ážŸáŸ’áž¢áž¶áž',
+      en: 'Use 2â€“3 times per week, morning or evening. Follow with moisturiser.',
     },
     sizes: ['150ml'],
     bestSeller: true,
@@ -429,11 +429,11 @@ export const products: Product[] = [
   {
     id: 'p12',
     slug: 'retinol-night-cream',
-    name: { km: 'ក្រែមយប់ Retinol 0.3%', en: 'Retinol 0.3% Night Cream' },
-    tagline: { km: 'ជួសជុល Anti-Aging ពេលដេក', en: 'While you sleep, it works.' },
+    name: { km: 'áž€áŸ’ážšáŸ‚áž˜áž™áž”áŸ‹ Retinol 0.3%', en: 'Retinol 0.3% Night Cream' },
+    tagline: { km: 'áž‡áž½ážŸáž‡áž»áž› Anti-Aging áž–áŸáž›ážŠáŸáž€', en: 'While you sleep, it works.' },
     description: {
-      km: 'ក្រែមយប់ Retinol 0.3% ជួស Collagen ស្បែក Texture ល្អ ក្នុង 4-8 សប្តាហ៍',
-      en: 'An entry-level 0.3% retinol with squalane and peptides to ease skin into the routine. Designed for Cambodia beginners — effective, less irritation.',
+      km: 'áž€áŸ’ážšáŸ‚áž˜áž™áž”áŸ‹ Retinol 0.3% áž‡áž½ážŸ Collagen ážŸáŸ’áž”áŸ‚áž€ Texture áž›áŸ’áž¢ áž€áŸ’áž“áž»áž„ 4-8 ážŸáž”áŸ’ážáž¶áž áŸ',
+      en: 'An entry-level 0.3% retinol with squalane and peptides to ease skin into the routine. Designed for Cambodia beginners â€” effective, less irritation.',
     },
     brand: 'Angkor Herbals',
     category: 'moisturizer',
@@ -445,8 +445,8 @@ export const products: Product[] = [
     skinTypes: ['normal', 'combination', 'dry'],
     concerns: ['aging', 'dullness', 'dark-spots'],
     benefits: [
-      { km: 'Texture ល្អ ក្នុង 4-8 សប្តាហ៍', en: 'Refined texture in 4–8 weeks' },
-      { km: 'ជួស Collagen ផលិត', en: 'Boosts collagen production' },
+      { km: 'Texture áž›áŸ’áž¢ áž€áŸ’áž“áž»áž„ 4-8 ážŸáž”áŸ’ážáž¶áž áŸ', en: 'Refined texture in 4â€“8 weeks' },
+      { km: 'áž‡áž½ážŸ Collagen áž•áž›áž·áž', en: 'Boosts collagen production' },
       { km: 'Fade Fine Lines', en: 'Reduces fine lines gradually' },
     ],
     ingredients: {
@@ -454,21 +454,21 @@ export const products: Product[] = [
       en: 'Retinol 0.3%, Squalane, Peptide Complex, Ceramide NP, Vitamin E.',
     },
     howToUse: {
-      km: 'ប្រើ ២-៣ ដង ក្នុងសប្តាហ៍ (យប់) ហើយ Build Up ជាដំណើរ',
-      en: 'Start 2–3 nights per week and build up. Always follow with SPF the next morning.',
+      km: 'áž”áŸ’ážšáž¾ áŸ¢-áŸ£ ážŠáž„ áž€áŸ’áž“áž»áž„ážŸáž”áŸ’ážáž¶áž áŸ (áž™áž”áŸ‹) áž áž¾áž™ Build Up áž‡áž¶ážŠáŸ†ážŽáž¾ážš',
+      en: 'Start 2â€“3 nights per week and build up. Always follow with SPF the next morning.',
     },
     sizes: ['50ml'],
   },
   {
     id: 'p13',
     slug: 'hyaluronic-acid-gel-moisturizer',
-    name: { km: 'ក្រែម Gel Hyaluronic Acid', en: 'Hyaluronic Acid Gel Moisturiser' },
-    tagline: { km: 'ស្រស់ ស្ងប់ ស្ពឹកលើ Humid', en: 'Dewy skin, zero heaviness.' },
+    name: { km: 'áž€áŸ’ážšáŸ‚áž˜ Gel Hyaluronic Acid', en: 'Hyaluronic Acid Gel Moisturiser' },
+    tagline: { km: 'ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’áž„áž”áŸ‹ ážŸáŸ’áž–áž¹áž€áž›áž¾ Humid', en: 'Dewy skin, zero heaviness.' },
     description: {
-      km: 'Gel Moisturizer Hyaluronic Acid ស្រស់ ស្ទើររំអិល ស្ងប់ ល្អ Cambodia Humid',
-      en: 'A water-gel moisturiser with three molecular weights of hyaluronic acid. Soaks in fast, leaves skin plump and dewy — perfect for humid days.',
+      km: 'Gel Moisturizer Hyaluronic Acid ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’áž‘áž¾ážšážšáŸ†áž¢áž·áž› ážŸáŸ’áž„áž”áŸ‹ áž›áŸ’áž¢ Cambodia Humid',
+      en: 'A water-gel moisturiser with three molecular weights of hyaluronic acid. Soaks in fast, leaves skin plump and dewy â€” perfect for humid days.',
     },
-    brand: 'Sokha Skin',
+    brand: 'WeYoung',
     category: 'moisturizer',
     price: 17,
     image: '/images/d7d2d2ae-10dd-485a-b6d6-34776640c893.png',
@@ -478,16 +478,16 @@ export const products: Product[] = [
     skinTypes: ['oily', 'combination', 'normal'],
     concerns: ['dryness', 'dullness'],
     benefits: [
-      { km: 'ធូររំអិល Plump ភ្លាម', en: 'Plumps skin instantly' },
-      { km: 'ស្ទើរ Matte ស្ងប់', en: 'Lightweight, non-greasy' },
-      { km: 'ល្អ Layer ជាមួយ Serum', en: 'Layers beautifully over serums' },
+      { km: 'áž’áž¼ážšážšáŸ†áž¢áž·áž› Plump áž—áŸ’áž›áž¶áž˜', en: 'Plumps skin instantly' },
+      { km: 'ážŸáŸ’áž‘áž¾ážš Matte ážŸáŸ’áž„áž”áŸ‹', en: 'Lightweight, non-greasy' },
+      { km: 'áž›áŸ’áž¢ Layer áž‡áž¶áž˜áž½áž™ Serum', en: 'Layers beautifully over serums' },
     ],
     ingredients: {
       km: 'Sodium Hyaluronate (3 weights), Tremella Mushroom Extract, Panthenol, Glycerin.',
       en: 'Sodium Hyaluronate (3 weights), Tremella Mushroom Extract, Panthenol, Glycerin.',
     },
     howToUse: {
-      km: 'ប្រើព្រឹក/យប់ ក្រោយ Serum ២-៣ ដំណក់ ដំណក់',
+      km: 'áž”áŸ’ážšáž¾áž–áŸ’ážšáž¹áž€/áž™áž”áŸ‹ áž€áŸ’ážšáŸ„áž™ Serum áŸ¢-áŸ£ ážŠáŸ†ážŽáž€áŸ‹ ážŠáŸ†ážŽáž€áŸ‹',
       en: 'Apply after serum, morning and night. A little goes a long way.',
     },
     sizes: ['50ml', '100ml'],
@@ -497,10 +497,10 @@ export const products: Product[] = [
     id: 'p14',
     slug: 'aha-bha-exfoliating-toner',
     name: { km: 'Toner AHA+BHA Exfoliate', en: 'AHA+BHA Exfoliating Toner' },
-    tagline: { km: 'ជ្រូត Exfoliate ស្ងប់ ស្ពឹករ', en: 'Sunday-night skin, any night.' },
+    tagline: { km: 'áž‡áŸ’ážšáž¼áž Exfoliate ážŸáŸ’áž„áž”áŸ‹ ážŸáŸ’áž–áž¹áž€ážš', en: 'Sunday-night skin, any night.' },
     description: {
-      km: 'Toner AHA+BHA Exfoliate ស្ងប់ ជ្រូតក្រហ Texture ស្ប-ស្ព PH ល្អ',
-      en: 'A gentle chemical exfoliant with AHA (glycolic + lactic) and BHA (salicylic) to slough off dead skin, smooth texture, and clarify tone — without the burn.',
+      km: 'Toner AHA+BHA Exfoliate ážŸáŸ’áž„áž”áŸ‹ áž‡áŸ’ážšáž¼ážáž€áŸ’ážšáž  Texture ážŸáŸ’áž”-ážŸáŸ’áž– PH áž›áŸ’áž¢',
+      en: 'A gentle chemical exfoliant with AHA (glycolic + lactic) and BHA (salicylic) to slough off dead skin, smooth texture, and clarify tone â€” without the burn.',
     },
     brand: 'Angkor Herbals',
     category: 'toner',
@@ -512,17 +512,17 @@ export const products: Product[] = [
     skinTypes: ['oily', 'combination', 'normal'],
     concerns: ['dullness', 'acne', 'dark-spots', 'pores'],
     benefits: [
-      { km: 'ជ្រូត Exfoliate ស្ងប់', en: 'Gentle chemical exfoliation' },
-      { km: 'Texture ស្ប-ស្ពឹក ក្នុង 2 សប្តាហ៍', en: 'Smoother texture in 2 weeks' },
-      { km: 'ភ្លឺ ស្ប-ស្ពឹករ', en: 'Brighter, more even tone' },
+      { km: 'áž‡áŸ’ážšáž¼áž Exfoliate ážŸáŸ’áž„áž”áŸ‹', en: 'Gentle chemical exfoliation' },
+      { km: 'Texture ážŸáŸ’áž”-ážŸáŸ’áž–áž¹áž€ áž€áŸ’áž“áž»áž„ 2 ážŸáž”áŸ’ážáž¶áž áŸ', en: 'Smoother texture in 2 weeks' },
+      { km: 'áž—áŸ’áž›ážº ážŸáŸ’áž”-ážŸáŸ’áž–áž¹áž€ážš', en: 'Brighter, more even tone' },
     ],
     ingredients: {
       km: 'Glycolic Acid 5%, Lactic Acid 3%, Salicylic Acid 0.5%, Aloe Vera, Panthenol.',
       en: 'Glycolic Acid 5%, Lactic Acid 3%, Salicylic Acid 0.5%, Aloe Vera, Panthenol.',
     },
     howToUse: {
-      km: 'ប្រើ ២-៣ ដង ក្នុងសប្តាហ៍ (យប់) ហើយ SPF ព្រឹក',
-      en: 'Use 2–3 evenings per week. Always follow with SPF the next morning.',
+      km: 'áž”áŸ’ážšáž¾ áŸ¢-áŸ£ ážŠáž„ áž€áŸ’áž“áž»áž„ážŸáž”áŸ’ážáž¶áž áŸ (áž™áž”áŸ‹) áž áž¾áž™ SPF áž–áŸ’ážšáž¹áž€',
+      en: 'Use 2â€“3 evenings per week. Always follow with SPF the next morning.',
     },
     sizes: ['150ml'],
     newArrival: true,
@@ -530,13 +530,13 @@ export const products: Product[] = [
   {
     id: 'p15',
     slug: 'aloe-soothing-gel',
-    name: { km: 'Gel ស្ងប់ Aloe Vera 99%', en: 'Aloe Vera 99% Soothing Gel' },
-    tagline: { km: 'ស្ងប់ ចល់ ទន់ ត្រជាក់', en: 'Cool. Calm. Instant relief.' },
+    name: { km: 'Gel ážŸáŸ’áž„áž”áŸ‹ Aloe Vera 99%', en: 'Aloe Vera 99% Soothing Gel' },
+    tagline: { km: 'ážŸáŸ’áž„áž”áŸ‹ áž…áž›áŸ‹ áž‘áž“áŸ‹ ážáŸ’ážšáž‡áž¶áž€áŸ‹', en: 'Cool. Calm. Instant relief.' },
     description: {
-      km: 'Gel Aloe Vera 99% ស្ងប់ ត្រជាក់ ស្ព-ស្ព-ស្ព ល្អ ក្រោយ Sun ឬ Skin Burn',
-      en: 'A pure 99% aloe vera gel for instant soothing — post-sun, post-wax, or any angry skin. Multi-use: face, body, hair.',
+      km: 'Gel Aloe Vera 99% ážŸáŸ’áž„áž”áŸ‹ ážáŸ’ážšáž‡áž¶áž€áŸ‹ ážŸáŸ’áž–-ážŸáŸ’áž–-ážŸáŸ’áž– áž›áŸ’áž¢ áž€áŸ’ážšáŸ„áž™ Sun áž¬ Skin Burn',
+      en: 'A pure 99% aloe vera gel for instant soothing â€” post-sun, post-wax, or any angry skin. Multi-use: face, body, hair.',
     },
-    brand: 'Sokha Skin',
+    brand: 'WeYoung',
     category: 'moisturizer',
     price: 10,
     image: '/images/9c011e81-95ce-4d5f-be76-f3594692baad.png',
@@ -546,16 +546,16 @@ export const products: Product[] = [
     skinTypes: ['sensitive', 'oily', 'combination', 'normal', 'dry'],
     concerns: ['sensitivity', 'acne', 'dullness'],
     benefits: [
-      { km: 'ស្ងប់ ភ្លាមៗ', en: 'Immediate soothing relief' },
-      { km: 'ត្រជាក់ ស្ងប់ ក្ដៅ', en: 'Cooling effect for sunburn' },
-      { km: 'ប្រើបាន Face, Body, Hair', en: 'Multi-use: face, body, hair' },
+      { km: 'ážŸáŸ’áž„áž”áŸ‹ áž—áŸ’áž›áž¶áž˜áŸ—', en: 'Immediate soothing relief' },
+      { km: 'ážáŸ’ážšáž‡áž¶áž€áŸ‹ ážŸáŸ’áž„áž”áŸ‹ áž€áŸ’ážŠáŸ…', en: 'Cooling effect for sunburn' },
+      { km: 'áž”áŸ’ážšáž¾áž”áž¶áž“ Face, Body, Hair', en: 'Multi-use: face, body, hair' },
     ],
     ingredients: {
       km: 'Aloe Barbadensis Leaf Juice (99%), Panthenol, Allantoin, Sodium Hyaluronate.',
       en: 'Aloe Barbadensis Leaf Juice (99%), Panthenol, Allantoin, Sodium Hyaluronate.',
     },
     howToUse: {
-      km: 'ដំណក់ ដំណក់ ព្រឹក/យប់ ឬ ក្រោយ Sun Exposure',
+      km: 'ážŠáŸ†ážŽáž€áŸ‹ ážŠáŸ†ážŽáž€áŸ‹ áž–áŸ’ážšáž¹áž€/áž™áž”áŸ‹ áž¬ áž€áŸ’ážšáŸ„áž™ Sun Exposure',
       en: 'Apply as needed to face, body, or hair. Refrigerate for extra cooling.',
     },
     sizes: ['100ml', '300ml'],
@@ -564,19 +564,20 @@ export const products: Product[] = [
 ];
 
 export const categories = [
-  { id: 'cleanser', name: { km: 'ម្សៅ/សាប៊ូ', en: 'Cleansers' }, image: '/images/268bcbd0-0186-449f-963e-51bf59d73065.png', count: 2 },
-  { id: 'toner', name: { km: 'ទឹកកក់', en: 'Toners' }, image: '/images/519afb53-d143-4187-be40-3ab10c24b9e4.png', count: 2 },
+  { id: 'cleanser', name: { km: 'áž˜áŸ’ážŸáŸ…/ážŸáž¶áž”áŸŠáž¼', en: 'Cleansers' }, image: '/images/268bcbd0-0186-449f-963e-51bf59d73065.png', count: 2 },
+  { id: 'toner', name: { km: 'áž‘áž¹áž€áž€áž€áŸ‹', en: 'Toners' }, image: '/images/519afb53-d143-4187-be40-3ab10c24b9e4.png', count: 2 },
   { id: 'serum', name: { km: 'Serum', en: 'Serums' }, image: '/images/6ac90e63-54f0-45b6-b5d3-1cf88e8e45e2.png', count: 3 },
-  { id: 'moisturizer', name: { km: 'ក្រែម', en: 'Moisturisers' }, image: '/images/7074420d-6c0e-47e3-978a-75bae22ff8d8.png', count: 5 },
-  { id: 'sunscreen', name: { km: 'ការពារ ថ្ងៃ', en: 'Sunscreen' }, image: '/images/93197771-a19c-4916-98db-316b75cf0682.png', count: 1 },
+  { id: 'moisturizer', name: { km: 'áž€áŸ’ážšáŸ‚áž˜', en: 'Moisturisers' }, image: '/images/7074420d-6c0e-47e3-978a-75bae22ff8d8.png', count: 5 },
+  { id: 'sunscreen', name: { km: 'áž€áž¶ážšáž–áž¶ážš ážáŸ’áž„áŸƒ', en: 'Sunscreen' }, image: '/images/93197771-a19c-4916-98db-316b75cf0682.png', count: 1 },
   { id: 'mask', name: { km: 'Mask', en: 'Masks' }, image: '/images/9c011e81-95ce-4d5f-be76-f3594692baad.png', count: 1 },
 ];
 
 export const skinConcerns = [
-  { id: 'dryness', name: { km: 'ស្រស់ ស្ព-ស្ព', en: 'Dryness & Dehydration' }, icon: '💧' },
-  { id: 'acne', name: { km: 'មុន / ស-ស-ស', en: 'Acne & Breakouts' }, icon: '🌿' },
-  { id: 'aging', name: { km: 'Anti-Aging', en: 'Signs of Aging' }, icon: '✨' },
-  { id: 'dullness', name: { km: 'ភ្លឺ / ស្រស់', en: 'Dullness & Dark Spots' }, icon: '☀️' },
-  { id: 'sensitivity', name: { km: 'ស្បែករំខាន', en: 'Sensitivity & Redness' }, icon: '🌸' },
-  { id: 'oiliness', name: { km: 'ស្បែកខ្ញើ', en: 'Oiliness & Pores' }, icon: '🍃' },
+  { id: 'dryness', name: { km: 'ážŸáŸ’ážšážŸáŸ‹ ážŸáŸ’áž–-ážŸáŸ’áž–', en: 'Dryness & Dehydration' }, icon: 'ðŸ’§' },
+  { id: 'acne', name: { km: 'áž˜áž»áž“ / ážŸ-ážŸ-ážŸ', en: 'Acne & Breakouts' }, icon: 'ðŸŒ¿' },
+  { id: 'aging', name: { km: 'Anti-Aging', en: 'Signs of Aging' }, icon: 'âœ¨' },
+  { id: 'dullness', name: { km: 'áž—áŸ’áž›ážº / ážŸáŸ’ážšážŸáŸ‹', en: 'Dullness & Dark Spots' }, icon: 'â˜€ï¸' },
+  { id: 'sensitivity', name: { km: 'ážŸáŸ’áž”áŸ‚áž€ážšáŸ†ážáž¶áž“', en: 'Sensitivity & Redness' }, icon: 'ðŸŒ¸' },
+  { id: 'oiliness', name: { km: 'ážŸáŸ’áž”áŸ‚áž€ážáŸ’áž‰áž¾', en: 'Oiliness & Pores' }, icon: 'ðŸƒ' },
 ];
+

@@ -1,224 +1,285 @@
 'use client';
-import { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { products } from '@/data/products';
 import { use } from 'react';
+import { useShop, Product } from '@/context/ShopContext';
+import ProductCard from '@/components/ProductCard';
+import { StarIcon, PlusIcon, MinusIcon, HeartIcon, CheckIcon } from '@/components/Icons';
 
-export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const product = products.find(p => p.slug === slug);
+  const { products, addToCart, toggleWishlist, isWishlisted, formatPrice, lang } = useShop();
+
+  const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
 
   const [qty, setQty] = useState(1);
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-  const [activeTab, setActiveTab] = useState<'description' | 'benefits' | 'ingredients' | 'howToUse'>('description');
-  const [cart, setCart] = useState<{ product: typeof products[0]; qty: number }[]>([]);
-  const [cartOpen, setCartOpen] = useState(false);
-  const [added, setAdded] = useState(false);
+  const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[0] : '');
+  const [activeTab, setActiveTab] = useState<'desc' | 'benefits' | 'ingredients' | 'howTo'>('desc');
 
-  const related = products.filter(p => p.id !== product.id && (p.category === product.category || p.brand === product.brand)).slice(0, 4);
-  const cartCount = cart.reduce((s, i) => s + i.qty, 0);
-
-  const addToCart = () => {
-    setCart(prev => {
-      const existing = prev.find(i => i.product.id === product.id);
-      if (existing) return prev.map(i => i.product.id === product.id ? { ...i, qty: i.qty + qty } : i);
-      return [...prev, { product, qty }];
-    });
-    setAdded(true);
-    setCartOpen(true);
-    setTimeout(() => setAdded(false), 2000);
-  };
-
+  const wishlisted = isWishlisted(product.id);
   const price = product.discountPrice ?? product.price;
-  const discount = product.discountPrice ? Math.round((1 - product.discountPrice / product.price) * 100) : null;
+  const discountPercent = product.discountPrice
+    ? Math.round(((product.price - product.discountPrice) / product.price) * 100)
+    : 0;
 
-  const tabs = [
-    { id: 'description', label: 'Description / ការពិពណ៌នា' },
-    { id: 'benefits', label: 'Benefits / អត្ថប្រយោជន៍' },
-    { id: 'ingredients', label: 'Ingredients / គ្រឿងផ្សំ' },
-    { id: 'howToUse', label: 'How to Use / របៀបប្រើ' },
-  ] as const;
+  const related = products
+    .filter((p) => p.id !== product.id && p.category === product.category)
+    .slice(0, 4);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0c0a09' }}>
-      {/* Nav */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(12,10,9,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid #2a2420' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #c9a882, #b8936e)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700, color: '#0c0a09' }}>W</div>
-            <span style={{ fontFamily: "'Fraunces', serif", fontSize: 22, fontWeight: 600, color: '#f5ede6', letterSpacing: '-0.5px' }}>WeYoung</span>
-          </Link>
-          <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-            <Link href="/shop" style={{ color: '#a89080', fontSize: 14, textDecoration: 'none' }}>← Back to Shop</Link>
-            <Link href="/profile" style={{ color: '#a89080', fontSize: 14, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
-              <span>👤</span> <span>Profile</span>
-            </Link>
-            <button onClick={() => setCartOpen(true)} style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', color: '#f5ede6', fontSize: 20 }}>
-              🛒 {cartCount > 0 && <span style={{ position: 'absolute', top: -4, right: -4, background: '#c9a882', color: '#0c0a09', borderRadius: '50%', width: 18, height: 18, fontSize: 11, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{cartCount}</span>}
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Cart Drawer */}
-      {cartOpen && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 100 }}>
-          <div onClick={() => setCartOpen(false)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.6)' }} />
-          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '100%', maxWidth: 380, background: '#1a1714', borderLeft: '1px solid #2a2420', padding: 24, overflowY: 'auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-              <h2 style={{ fontFamily: "'Fraunces', serif", color: '#f5ede6', fontSize: 20 }}>Cart ({cartCount})</h2>
-              <button onClick={() => setCartOpen(false)} style={{ background: 'none', border: 'none', color: '#a89080', fontSize: 20, cursor: 'pointer' }}>✕</button>
-            </div>
-            {cart.map(({ product: p, qty: q }) => (
-              <div key={p.id} style={{ display: 'flex', gap: 12, marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #2a2420' }}>
-                <div style={{ position: 'relative', width: 56, height: 56, borderRadius: 8, overflow: 'hidden', flexShrink: 0 }}>
-                  <Image src={p.image} alt={p.name.en} fill style={{ objectFit: 'cover' }} />
-                </div>
-                <div style={{ flex: 1 }}>
-                  <p style={{ color: '#f5ede6', fontSize: 13 }}>{p.name.en}</p>
-                  <p style={{ color: '#c9a882', fontSize: 14, fontWeight: 700 }}>${(p.discountPrice ?? p.price) * q}</p>
-                </div>
-              </div>
-            ))}
-            {cart.length > 0 && <button style={{ width: '100%', background: '#c9a882', color: '#0c0a09', border: 'none', borderRadius: 10, padding: '14px 0', fontSize: 15, fontWeight: 700, cursor: 'pointer', marginTop: 16 }}>Checkout</button>}
-          </div>
-        </div>
-      )}
-
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '40px 20px' }}>
+    <div className="bg-[#FAF5EE] min-h-screen pb-24 md:pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+        
         {/* Breadcrumb */}
-        <p style={{ color: '#6b5a50', fontSize: 13, marginBottom: 32 }}>
-          <Link href="/" style={{ color: '#6b5a50', textDecoration: 'none' }}>Home</Link> / <Link href="/shop" style={{ color: '#6b5a50', textDecoration: 'none' }}>Shop</Link> / <span style={{ color: '#a89080' }}>{product.name.en}</span>
-        </p>
+        <nav className="flex items-center gap-2 text-[12.5px] text-[#8A8077] mb-8 font-khmer">
+          <Link href="/" className="hover:text-[#2E2620]">ទំព័រដើម</Link>
+          <span>/</span>
+          <Link href="/shop" className="hover:text-[#2E2620]">ផលិតផល</Link>
+          <span>/</span>
+          <span className="text-[#2E2620] truncate">{product.name[lang] || product.name.km}</span>
+        </nav>
 
-        {/* Product Main */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 48, marginBottom: 64 }} className="product-main">
-          {/* Image */}
-          <div>
-            <div style={{ position: 'relative', paddingTop: '100%', borderRadius: 20, overflow: 'hidden', background: '#1a1714', border: '1px solid #2a2420' }}>
-              <Image src={product.image} alt={product.name.en} fill style={{ objectFit: 'cover' }} priority />
-              {discount && <div style={{ position: 'absolute', top: 16, left: 16, background: '#4a2d2d', color: '#f08080', fontSize: 13, fontWeight: 700, padding: '4px 10px', borderRadius: 6 }}>-{discount}%</div>}
+        {/* Product Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+          
+          {/* Left Column: Image */}
+          <div className="lg:col-span-6">
+            <div className="relative aspect-square sm:aspect-[4/5] bg-[#F1E9DC] rounded-[4px] border border-[#E7DDD0] overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.name[lang] || product.name.en}
+                className="w-full h-full object-cover"
+              />
+
+              {discountPercent > 0 && (
+                <div className="absolute top-4 left-4 bg-[#A9573B] text-white text-[12px] font-bold px-2.5 py-1 rounded-[2px] shadow-sm">
+                  -{discountPercent}%
+                </div>
+              )}
+
+              <button
+                onClick={() => toggleWishlist(product.id)}
+                className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center transition-transform active:scale-90 ${
+                  wishlisted ? 'text-[#A9573B]' : 'text-[#7A7067] hover:text-[#2E2620]'
+                }`}
+                aria-label="Wishlist"
+              >
+                <HeartIcon size={20} filled={wishlisted} />
+              </button>
             </div>
           </div>
 
-          {/* Info */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            {/* Brand + badges */}
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-              <span style={{ color: '#a89080', fontSize: 13 }}>{product.brand}</span>
-              {product.bestSeller && <span style={{ background: '#c9a882', color: '#0c0a09', fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 4 }}>BEST SELLER</span>}
-              {product.newArrival && <span style={{ background: '#2d4a2d', color: '#7bc47b', fontSize: 10, fontWeight: 700, padding: '3px 8px', borderRadius: 4 }}>NEW</span>}
-            </div>
-
-            {/* Name */}
+          {/* Right Column: Information & Actions */}
+          <div className="lg:col-span-6 space-y-6">
+            
+            {/* Brand & Title */}
             <div>
-              <h1 style={{ fontFamily: "'Kantumruy Pro', sans-serif", fontSize: 'clamp(20px, 3vw, 28px)', color: '#f5ede6', lineHeight: 1.4, marginBottom: 6 }}>{product.name.km}</h1>
-              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(18px, 2.5vw, 24px)', color: '#a89080', fontStyle: 'italic', fontWeight: 400 }}>{product.name.en}</h2>
-              <p style={{ color: '#c9a882', fontSize: 14, marginTop: 8 }}>{product.tagline.en}</p>
+              <span className="text-[11.5px] uppercase tracking-wider text-[#8A8077] font-semibold block mb-1">
+                {product.brand}
+              </span>
+
+              <h1 className="font-display text-[26px] sm:text-[34px] font-semibold text-[#2E2620] leading-snug tracking-tight font-khmer">
+                {product.name[lang] || product.name.km}
+              </h1>
+
+              {product.name.en && (
+                <p className="text-[15px] text-[#7A7067] italic font-serif mt-1">
+                  {product.name.en}
+                </p>
+              )}
+
+              {product.tagline && (
+                <p className="text-[14px] text-[#A9573B] mt-2 font-khmer">
+                  {product.tagline[lang] || product.tagline.km}
+                </p>
+              )}
             </div>
 
-            {/* Rating */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span style={{ color: '#c9a882', fontSize: 16 }}>{'★'.repeat(Math.round(product.rating))}</span>
-              <span style={{ color: '#f5ede6', fontSize: 14, fontWeight: 600 }}>{product.rating}</span>
-              <span style={{ color: '#6b5a50', fontSize: 13 }}>({product.reviewCount} reviews)</span>
+            {/* Ratings */}
+            <div className="flex items-center gap-2">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} size={15} filled={i < Math.floor(product.rating)} />
+                ))}
+              </div>
+              <span className="text-[13.5px] font-semibold text-[#2E2620] ml-1">
+                {product.rating}
+              </span>
+              <span className="text-[13px] text-[#8A8077]">
+                ({product.reviewCount} reviews)
+              </span>
             </div>
 
             {/* Price */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
-              <span style={{ fontFamily: "'Fraunces', serif", fontSize: 36, color: '#f5ede6', fontWeight: 400 }}>${price}</span>
-              {product.discountPrice && <span style={{ fontSize: 20, color: '#6b5a50', textDecoration: 'line-through' }}>${product.price}</span>}
-              {discount && <span style={{ background: '#4a2d2d', color: '#f08080', fontSize: 12, fontWeight: 700, padding: '2px 8px', borderRadius: 4 }}>Save {discount}%</span>}
+            <div className="flex items-baseline gap-3 pt-2">
+              <span className="font-display text-[28px] sm:text-[34px] font-bold text-[#2E2620]">
+                {formatPrice(price)}
+              </span>
+              {product.discountPrice && (
+                <span className="text-[18px] text-[#9CA3AF] line-through">
+                  {formatPrice(product.price)}
+                </span>
+              )}
             </div>
 
-            {/* Stock */}
-            <p style={{ color: product.stock > 20 ? '#7bc47b' : product.stock > 0 ? '#c9a882' : '#f08080', fontSize: 13 }}>
-              {product.stock > 20 ? '✓ In Stock' : product.stock > 0 ? `⚠ Only ${product.stock} left` : '✕ Out of Stock'}
-            </p>
-
-            {/* Size */}
-            {product.sizes.length > 1 && (
-              <div>
-                <p style={{ color: '#a89080', fontSize: 13, marginBottom: 10 }}>Size: <strong style={{ color: '#f5ede6' }}>{selectedSize}</strong></p>
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  {product.sizes.map(size => (
-                    <button key={size} onClick={() => setSelectedSize(size)}
-                      style={{ padding: '8px 16px', borderRadius: 8, border: `1px solid ${selectedSize === size ? '#c9a882' : '#2a2420'}`, background: selectedSize === size ? '#c9a882' : 'transparent', color: selectedSize === size ? '#0c0a09' : '#f5ede6', cursor: 'pointer', fontSize: 13, fontWeight: selectedSize === size ? 700 : 400 }}>
-                      {size}
+            {/* Size options */}
+            {product.sizes && product.sizes.length > 0 && (
+              <div className="space-y-2 pt-2">
+                <label className="text-[13px] font-bold text-[#8A8077] uppercase tracking-wider block font-khmer">
+                  ទំហំ (Size): <span className="text-[#2E2620]">{selectedSize}</span>
+                </label>
+                <div className="flex flex-wrap gap-2.5">
+                  {product.sizes.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => setSelectedSize(s)}
+                      className={`px-4 py-2 rounded-sm text-[13px] font-medium transition-colors border ${
+                        selectedSize === s
+                          ? 'border-[#2E2620] bg-[#2E2620] text-[#FAF5EE]'
+                          : 'border-[#E7DDD0] bg-[#FFFDF9] text-[#2E2620] hover:border-[#2E2620]'
+                      }`}
+                    >
+                      {s}
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Qty + CTA */}
-            <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', border: '1px solid #2a2420', borderRadius: 10, overflow: 'hidden' }}>
-                <button onClick={() => setQty(Math.max(1, qty - 1))} style={{ background: '#1a1714', border: 'none', color: '#f5ede6', width: 44, height: 52, cursor: 'pointer', fontSize: 18 }}>−</button>
-                <span style={{ color: '#f5ede6', width: 48, textAlign: 'center', fontSize: 16, lineHeight: '52px', background: '#1a1714' }}>{qty}</span>
-                <button onClick={() => setQty(qty + 1)} style={{ background: '#1a1714', border: 'none', color: '#f5ede6', width: 44, height: 52, cursor: 'pointer', fontSize: 18 }}>+</button>
+            {/* Quantity and Add to Cart */}
+            <div className="flex items-center gap-4 pt-4">
+              {/* Qty pill */}
+              <div className="flex items-center border border-[#E7DDD0] rounded-sm bg-[#FFFDF9] h-12">
+                <button
+                  onClick={() => setQty((q) => Math.max(1, q - 1))}
+                  className="px-3.5 h-full text-[#7A7067] hover:bg-[#F1E9DC] transition-colors"
+                >
+                  <MinusIcon size={16} />
+                </button>
+                <span className="px-4 text-[15px] font-semibold text-[#2E2620]">
+                  {qty}
+                </span>
+                <button
+                  onClick={() => setQty((q) => q + 1)}
+                  className="px-3.5 h-full text-[#7A7067] hover:bg-[#F1E9DC] transition-colors"
+                >
+                  <PlusIcon size={16} />
+                </button>
               </div>
-              <button onClick={addToCart} disabled={product.stock === 0}
-                style={{ flex: 1, minWidth: 160, background: added ? '#2d4a2d' : '#c9a882', color: added ? '#7bc47b' : '#0c0a09', border: 'none', borderRadius: 10, padding: '14px 24px', fontSize: 15, fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}>
-                {added ? '✓ Added to Cart!' : `Add to Cart — $${(price * qty).toFixed(2)}`}
+
+              {/* Add to Cart button */}
+              <button
+                onClick={() => addToCart(product, qty, selectedSize)}
+                className="flex-1 h-12 bg-[#2E2620] text-[#FAF5EE] rounded-full font-semibold text-[14px] hover:bg-[#3D332B] transition-transform active:scale-[0.99] font-khmer shadow-sm"
+              >
+                + បន្ថែមទៅកន្ត្រក · {formatPrice(price * qty)}
               </button>
             </div>
-            <button style={{ width: '100%', background: '#f5ede6', color: '#0c0a09', border: 'none', borderRadius: 10, padding: '14px 0', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>
-              Buy Now
-            </button>
 
-            {/* Trust */}
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', paddingTop: 8, borderTop: '1px solid #2a2420' }}>
-              {['✓ Authentic', '✓ Nationwide delivery 🇰🇭', '✓ Cash on delivery'].map(t => (
-                <span key={t} style={{ color: '#6b5a50', fontSize: 12 }}>{t}</span>
-              ))}
+            {/* Trust highlights */}
+            <div className="pt-4 border-t border-[#E7DDD0] grid grid-cols-2 gap-3 text-[12.5px] text-[#7A7067] font-khmer">
+              <span className="flex items-center gap-1.5">
+                <CheckIcon size={14} className="text-[#2E4B37]" />
+                ផលិតផលសុទ្ធ ១០០%
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckIcon size={14} className="text-[#2E4B37]" />
+                ដឹកជញ្ជូន ២៤-៤៨ ម៉ោង
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckIcon size={14} className="text-[#2E4B37]" />
+                ទូទាត់តាម KHQR / ABA
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckIcon size={14} className="text-[#2E4B37]" />
+                បង់ប្រាក់ពេលទទួលទំនិញ
+              </span>
             </div>
+
           </div>
+
         </div>
 
-        {/* Tabs */}
-        <div style={{ marginBottom: 64 }}>
-          <div style={{ display: 'flex', borderBottom: '1px solid #2a2420', gap: 0, overflowX: 'auto' }} className="no-scrollbar">
-            {tabs.map(tab => (
-              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                style={{ padding: '12px 20px', background: 'none', border: 'none', borderBottom: `2px solid ${activeTab === tab.id ? '#c9a882' : 'transparent'}`, color: activeTab === tab.id ? '#c9a882' : '#a89080', fontSize: 14, cursor: 'pointer', whiteSpace: 'nowrap', fontWeight: activeTab === tab.id ? 600 : 400, transition: 'all 0.2s' }}>
-                {tab.label}
-              </button>
-            ))}
+        {/* Tabs Section matching website */}
+        <div className="mt-16 sm:mt-24">
+          <div className="flex border-b border-[#E7DDD0] gap-8 font-khmer text-[14.5px] overflow-x-auto">
+            <button
+              onClick={() => setActiveTab('desc')}
+              className={`pb-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
+                activeTab === 'desc'
+                  ? 'border-[#A9573B] text-[#2E2620]'
+                  : 'border-transparent text-[#8A8077] hover:text-[#2E2620]'
+              }`}
+            >
+              ការពិពណ៌នា
+            </button>
+            <button
+              onClick={() => setActiveTab('benefits')}
+              className={`pb-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
+                activeTab === 'benefits'
+                  ? 'border-[#A9573B] text-[#2E2620]'
+                  : 'border-transparent text-[#8A8077] hover:text-[#2E2620]'
+              }`}
+            >
+              អត្ថប្រយោជន៍
+            </button>
+            <button
+              onClick={() => setActiveTab('ingredients')}
+              className={`pb-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
+                activeTab === 'ingredients'
+                  ? 'border-[#A9573B] text-[#2E2620]'
+                  : 'border-transparent text-[#8A8077] hover:text-[#2E2620]'
+              }`}
+            >
+              គ្រឿងផ្សំ
+            </button>
+            <button
+              onClick={() => setActiveTab('howTo')}
+              className={`pb-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
+                activeTab === 'howTo'
+                  ? 'border-[#A9573B] text-[#2E2620]'
+                  : 'border-transparent text-[#8A8077] hover:text-[#2E2620]'
+              }`}
+            >
+              របៀបប្រើ
+            </button>
           </div>
-          <div style={{ background: '#1a1714', borderRadius: '0 0 16px 16px', padding: '28px 24px', border: '1px solid #2a2420', borderTop: 'none' }}>
-            {activeTab === 'description' && (
-              <div>
-                <p style={{ fontFamily: "'Kantumruy Pro', sans-serif", color: '#a89080', fontSize: 15, lineHeight: 1.8, marginBottom: 16 }}>{product.description.km}</p>
-                <p style={{ color: '#a89080', fontSize: 15, lineHeight: 1.8 }}>{product.description.en}</p>
+
+          <div className="py-8 max-w-3xl font-khmer leading-relaxed text-[15px] text-[#2E2620]">
+            {activeTab === 'desc' && (
+              <div className="space-y-4">
+                <p>{product.description[lang] || product.description.km}</p>
+                {product.description.en && (
+                  <p className="text-[#7A7067] italic font-sans text-[14px]">
+                    {product.description.en}
+                  </p>
+                )}
               </div>
             )}
+
             {activeTab === 'benefits' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                {product.benefits.map((b, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', padding: '14px 16px', background: '#211d19', borderRadius: 10 }}>
-                    <span style={{ color: '#c9a882', fontSize: 18, flexShrink: 0 }}>✓</span>
-                    <div>
-                      <p style={{ fontFamily: "'Kantumruy Pro', sans-serif", color: '#f5ede6', fontSize: 14 }}>{b.km}</p>
-                      <p style={{ color: '#a89080', fontSize: 13, marginTop: 2 }}>{b.en}</p>
-                    </div>
-                  </div>
+              <ul className="space-y-3">
+                {product.benefits && product.benefits.map((b, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="text-[#A9573B] font-bold">✓</span>
+                    <span>{b[lang] || b.km}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
+
             {activeTab === 'ingredients' && (
-              <div>
-                <p style={{ fontFamily: "'Kantumruy Pro', sans-serif", color: '#a89080', fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>{product.ingredients.km}</p>
-                <p style={{ color: '#a89080', fontSize: 15, lineHeight: 1.8 }}>{product.ingredients.en}</p>
+              <div className="space-y-2">
+                <p className="font-semibold text-[#8A8077] text-[13px] uppercase">Key Ingredients</p>
+                <p>{product.ingredients[lang] || product.ingredients.km}</p>
               </div>
             )}
-            {activeTab === 'howToUse' && (
-              <div>
-                <p style={{ fontFamily: "'Kantumruy Pro', sans-serif", color: '#a89080', fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>{product.howToUse.km}</p>
-                <p style={{ color: '#a89080', fontSize: 15, lineHeight: 1.8 }}>{product.howToUse.en}</p>
+
+            {activeTab === 'howTo' && (
+              <div className="space-y-2">
+                <p>{product.howToUse[lang] || product.howToUse.km}</p>
               </div>
             )}
           </div>
@@ -226,32 +287,19 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
         {/* Related Products */}
         {related.length > 0 && (
-          <div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 28, color: '#f5ede6', marginBottom: 24, fontStyle: 'italic', fontWeight: 400 }}>You May Also Like</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 18 }}>
-              {related.map(p => (
-                <Link key={p.id} href={`/shop/${p.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ background: '#1a1714', borderRadius: 14, border: '1px solid #2a2420', overflow: 'hidden' }}>
-                    <div style={{ position: 'relative', paddingTop: '100%', background: '#211d19' }}>
-                      <Image src={p.image} alt={p.name.en} fill style={{ objectFit: 'cover' }} />
-                    </div>
-                    <div style={{ padding: '12px 14px' }}>
-                      <p style={{ color: '#6b5a50', fontSize: 10, textTransform: 'uppercase' }}>{p.brand}</p>
-                      <p style={{ color: '#f5ede6', fontSize: 13, marginTop: 4 }}>{p.name.en}</p>
-                      <p style={{ color: '#c9a882', fontSize: 15, fontWeight: 700, marginTop: 6 }}>${p.discountPrice ?? p.price}</p>
-                    </div>
-                  </div>
-                </Link>
+          <div className="mt-16 pt-16 border-t border-[#E7DDD0]">
+            <h2 className="font-display text-[24px] sm:text-[30px] font-semibold text-[#2E2620] mb-8 font-khmer">
+              ផលិតផលស្រដៀងគ្នា
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-6">
+              {related.map((p) => (
+                <ProductCard key={p.id} product={p} />
               ))}
             </div>
           </div>
         )}
-      </div>
 
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
+      </div>
     </div>
   );
 }

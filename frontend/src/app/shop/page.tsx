@@ -1,257 +1,307 @@
 'use client';
-import { useState, useMemo } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { products } from '@/data/products';
-
-type SortOption = 'featured' | 'price_asc' | 'price_desc' | 'rating' | 'newest';
+import React, { useState, useMemo } from 'react';
+import { useShop, Product } from '@/context/ShopContext';
+import ProductCard from '@/components/ProductCard';
+import { SlidersIcon, ChevronDownIcon, XIcon, SearchIcon } from '@/components/Icons';
 
 export default function ShopPage() {
-  const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedConcern, setSelectedConcern] = useState('');
-  const [selectedSkinType, setSelectedSkinType] = useState('');
-  const [sort, setSort] = useState<SortOption>('featured');
-  const [cart, setCart] = useState<{ product: typeof products[0]; qty: number }[]>([]);
-  const [cartOpen, setCartOpen] = useState(false);
-  const [addedId, setAddedId] = useState<string | null>(null);
+  const { products, lang, t } = useShop();
 
-  const addToCart = (product: typeof products[0]) => {
-    setCart(prev => {
-      const existing = prev.find(i => i.product.id === product.id);
-      if (existing) return prev.map(i => i.product.id === product.id ? { ...i, qty: i.qty + 1 } : i);
-      return [...prev, { product, qty: 1 }];
-    });
-    setAddedId(product.id);
-    setTimeout(() => setAddedId(null), 1500);
+  const [search, setSearch] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedConcern, setSelectedConcern] = useState<string>('all');
+  const [selectedSkinType, setSelectedSkinType] = useState<string>('all');
+  const [sortOption, setSortOption] = useState<string>('featured');
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+
+  const categories = [
+    { id: 'all', label: lang === 'km' ? 'ទាំងអស់' : 'All' },
+    { id: 'cleanser', label: lang === 'km' ? 'សាប៊ូលាងមុខ' : 'Cleanser' },
+    { id: 'toner', label: lang === 'km' ? 'ទឹកជូតមុខ' : 'Toner' },
+    { id: 'serum', label: lang === 'km' ? 'សេរ៉ូម' : 'Serum' },
+    { id: 'moisturizer', label: lang === 'km' ? 'ក្រែមផ្តល់សំណើម' : 'Moisturizer' },
+    { id: 'sunscreen', label: lang === 'km' ? 'ឡេការពារកម្តៅថ្ងៃ' : 'Sunscreen' },
+    { id: 'mask', label: lang === 'km' ? 'ម៉ាស' : 'Mask' },
+    { id: 'essence', label: lang === 'km' ? 'អេសេន' : 'Essence' },
+    { id: 'bodycare', label: lang === 'km' ? 'ថែរក្សាស្បែកខ្លួន' : 'Body Care' },
+  ];
+
+  const concerns = [
+    { id: 'all', label: lang === 'km' ? 'ទាំងអស់' : 'All' },
+    { id: 'acne', label: lang === 'km' ? 'ស្បែកមុន' : 'Acne' },
+    { id: 'dryness', label: lang === 'km' ? 'ស្បែកស្ងួត' : 'Dryness' },
+    { id: 'oiliness', label: lang === 'km' ? 'ស្បែកខ្លាញ់' : 'Oiliness' },
+    { id: 'sensitivity', label: lang === 'km' ? 'ស្បែកងាយរលាក' : 'Sensitivity' },
+    { id: 'dullness', label: lang === 'km' ? 'ស្បែកស្រអាប់' : 'Dullness' },
+  ];
+
+  const skinTypes = [
+    { id: 'all', label: lang === 'km' ? 'ទាំងអស់' : 'All' },
+    { id: 'normal', label: lang === 'km' ? 'ធម្មតា' : 'Normal' },
+    { id: 'dry', label: lang === 'km' ? 'ស្ងួត' : 'Dry' },
+    { id: 'oily', label: lang === 'km' ? 'ខ្លាញ់' : 'Oily' },
+    { id: 'combination', label: lang === 'km' ? 'ចម្រុះ' : 'Combination' },
+    { id: 'sensitive', label: lang === 'km' ? 'ងាយរលាក' : 'Sensitive' },
+  ];
+
+  const filteredProducts = useMemo(() => {
+    let list = [...products];
+
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      list = list.filter(
+        (p) =>
+          p.name.en.toLowerCase().includes(q) ||
+          p.name.km.includes(q) ||
+          p.brand.toLowerCase().includes(q)
+      );
+    }
+
+    if (selectedCategory !== 'all') {
+      list = list.filter((p) => p.category === selectedCategory);
+    }
+
+    if (selectedConcern !== 'all') {
+      list = list.filter((p) => p.concerns && p.concerns.includes(selectedConcern));
+    }
+
+    if (selectedSkinType !== 'all') {
+      list = list.filter((p) => p.skinTypes && p.skinTypes.includes(selectedSkinType));
+    }
+
+    switch (sortOption) {
+      case 'priceAsc':
+        list.sort((a, b) => (a.discountPrice ?? a.price) - (b.discountPrice ?? b.price));
+        break;
+      case 'priceDesc':
+        list.sort((a, b) => (b.discountPrice ?? b.price) - (a.discountPrice ?? a.price));
+        break;
+      case 'new':
+        list.sort((a, b) => (b.newArrival ? 1 : 0) - (a.newArrival ? 1 : 0));
+        break;
+      case 'best':
+        list.sort((a, b) => (b.bestSeller ? 1 : 0) - (a.bestSeller ? 1 : 0));
+        break;
+      case 'rating':
+        list.sort((a, b) => b.rating - a.rating);
+        break;
+      default:
+        // featured default
+        break;
+    }
+
+    return list;
+  }, [products, search, selectedCategory, selectedConcern, selectedSkinType, sortOption]);
+
+  const clearFilters = () => {
+    setSelectedCategory('all');
+    setSelectedConcern('all');
+    setSelectedSkinType('all');
+    setSearch('');
   };
 
-  const cartCount = cart.reduce((s, i) => s + i.qty, 0);
-
-  const categories = ['cleanser', 'toner', 'serum', 'moisturizer', 'sunscreen', 'mask', 'essence', 'body'];
-  const concerns = ['dryness', 'oiliness', 'acne', 'sensitivity', 'aging', 'dullness', 'dark-spots', 'pores'];
-  const skinTypes = ['dry', 'oily', 'combination', 'sensitive', 'normal'];
-
-  const filtered = useMemo(() => {
-    let list = [...products];
-    if (search) list = list.filter(p => p.name.en.toLowerCase().includes(search.toLowerCase()) || p.brand.toLowerCase().includes(search.toLowerCase()) || p.name.km.includes(search));
-    if (selectedCategory) list = list.filter(p => p.category === selectedCategory);
-    if (selectedConcern) list = list.filter(p => p.concerns.includes(selectedConcern as any));
-    if (selectedSkinType) list = list.filter(p => p.skinTypes.includes(selectedSkinType as any));
-    switch (sort) {
-      case 'price_asc': list.sort((a, b) => (a.discountPrice ?? a.price) - (b.discountPrice ?? b.price)); break;
-      case 'price_desc': list.sort((a, b) => (b.discountPrice ?? b.price) - (a.discountPrice ?? a.price)); break;
-      case 'rating': list.sort((a, b) => b.rating - a.rating); break;
-      case 'newest': list.sort((a, b) => (b.newArrival ? 1 : 0) - (a.newArrival ? 1 : 0)); break;
-      default: list.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-    }
-    return list;
-  }, [search, selectedCategory, selectedConcern, selectedSkinType, sort]);
-
-  const clearFilters = () => { setSelectedCategory(''); setSelectedConcern(''); setSelectedSkinType(''); setSearch(''); };
-  const hasFilters = selectedCategory || selectedConcern || selectedSkinType || search;
+  const hasActiveFilters =
+    selectedCategory !== 'all' ||
+    selectedConcern !== 'all' ||
+    selectedSkinType !== 'all' ||
+    search.trim() !== '';
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0c0a09' }}>
-      {/* Navbar */}
-      <nav style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(12,10,9,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid #2a2420' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg, #c9a882, #b8936e)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, fontWeight: 700, color: '#0c0a09' }}>W</div>
-            <span style={{ fontFamily: "'Fraunces', serif", fontSize: 22, fontWeight: 600, color: '#f5ede6', letterSpacing: '-0.5px' }}>WeYoung</span>
-          </Link>
-          <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
-            <Link href="/" style={{ color: '#a89080', fontSize: 14, textDecoration: 'none' }}>Home</Link>
-            <Link href="/shop" style={{ color: '#f5ede6', fontSize: 14, textDecoration: 'none', fontWeight: 600 }}>Shop</Link>
-            <Link href="/profile" style={{ color: '#a89080', fontSize: 14, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
-              <span>👤</span> <span>Profile</span>
-            </Link>
-          </div>
-          <button onClick={() => setCartOpen(true)} style={{ position: 'relative', background: 'none', border: 'none', cursor: 'pointer', color: '#f5ede6', fontSize: 20 }}>
-            🛒
-            {cartCount > 0 && <span style={{ position: 'absolute', top: -4, right: -4, background: '#c9a882', color: '#0c0a09', borderRadius: '50%', width: 18, height: 18, fontSize: 11, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{cartCount}</span>}
+    <div className="bg-[#FAF5EE] min-h-screen pb-24 md:pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        
+        {/* Top Controls matching Screenshot 21 */}
+        <div className="flex items-center justify-between gap-3 mb-8">
+          
+          {/* Filters Button */}
+          <button
+            onClick={() => setIsFilterModalOpen(true)}
+            className="flex items-center gap-2 border border-[#E7DDD0] bg-[#FFFDF9] px-4 py-2.5 rounded-full text-[13.5px] font-medium text-[#2E2620] hover:border-[#A9573B] transition-colors shadow-sm font-khmer"
+          >
+            <SlidersIcon size={16} />
+            <span>Filters</span>
+            {hasActiveFilters && (
+              <span className="w-2 h-2 rounded-full bg-[#A9573B]" />
+            )}
           </button>
-        </div>
-      </nav>
 
-      {/* Cart Drawer */}
-      {cartOpen && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 100 }}>
-          <div onClick={() => setCartOpen(false)} style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.6)' }} />
-          <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '100%', maxWidth: 380, background: '#1a1714', borderLeft: '1px solid #2a2420', padding: 24, overflowY: 'auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-              <h2 style={{ fontFamily: "'Fraunces', serif", color: '#f5ede6', fontSize: 20 }}>Cart ({cartCount})</h2>
-              <button onClick={() => setCartOpen(false)} style={{ background: 'none', border: 'none', color: '#a89080', fontSize: 20, cursor: 'pointer' }}>✕</button>
+          {/* Sort Dropdown */}
+          <div className="relative">
+            <select
+              value={sortOption}
+              onChange={(e) => setSortOption(e.target.value)}
+              className="appearance-none border border-[#E7DDD0] bg-[#FFFDF9] pl-4 pr-9 py-2.5 rounded-full text-[13.5px] font-medium text-[#2E2620] cursor-pointer hover:border-[#A9573B] transition-colors shadow-sm outline-none font-khmer"
+            >
+              <option value="featured">Featured</option>
+              <option value="new">Newest</option>
+              <option value="best">Best Sellers</option>
+              <option value="priceAsc">Price: Low to High</option>
+              <option value="priceDesc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+            <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-[#7A7067]">
+              <ChevronDownIcon size={14} />
             </div>
-            {cart.length === 0 ? <p style={{ color: '#a89080', textAlign: 'center', marginTop: 40 }}>Your cart is empty</p>
-              : cart.map(({ product: p, qty }) => (
-                <div key={p.id} style={{ display: 'flex', gap: 12, marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #2a2420' }}>
-                  <div style={{ position: 'relative', width: 56, height: 56, borderRadius: 8, overflow: 'hidden', flexShrink: 0 }}>
-                    <Image src={p.image} alt={p.name.en} fill style={{ objectFit: 'cover' }} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <p style={{ color: '#f5ede6', fontSize: 13 }}>{p.name.en}</p>
-                    <p style={{ color: '#c9a882', fontSize: 14, fontWeight: 700 }}>${(p.discountPrice ?? p.price) * qty}</p>
-                  </div>
-                  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                    <button onClick={() => setCart(c => c.map(i => i.product.id === p.id ? { ...i, qty: Math.max(1, i.qty - 1) } : i))} style={{ background: '#2a2420', border: 'none', color: '#f5ede6', width: 24, height: 24, borderRadius: 4, cursor: 'pointer' }}>-</button>
-                    <span style={{ color: '#f5ede6', fontSize: 13 }}>{qty}</span>
-                    <button onClick={() => setCart(c => c.map(i => i.product.id === p.id ? { ...i, qty: i.qty + 1 } : i))} style={{ background: '#2a2420', border: 'none', color: '#f5ede6', width: 24, height: 24, borderRadius: 4, cursor: 'pointer' }}>+</button>
-                    <button onClick={() => setCart(c => c.filter(i => i.product.id !== p.id))} style={{ background: 'none', border: 'none', color: '#6b5a50', cursor: 'pointer', fontSize: 14 }}>✕</button>
+          </div>
+        </div>
+
+        {/* Product Grid matching Screenshot 21 (2 columns on mobile) */}
+        {filteredProducts.length === 0 ? (
+          <div className="py-24 text-center">
+            <p className="text-[18px] font-semibold text-[#2E2620] mb-2 font-khmer">
+              រកមិនឃើញផលិតផល
+            </p>
+            <p className="text-[13.5px] text-[#7A7067] mb-6 font-khmer">
+              សូមព្យាយាមជ្រើសរើសតម្រងផ្សេងទៀត
+            </p>
+            <button
+              onClick={clearFilters}
+              className="bg-[#2E2620] text-[#FAF5EE] text-[13.5px] px-6 py-2.5 rounded-full font-medium font-khmer"
+            >
+              សម្អាតតម្រង
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-6">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+
+      </div>
+
+      {/* Filter Modal / Drawer */}
+      {isFilterModalOpen && (
+        <div className="fixed inset-0 z-50 flex justify-end">
+          <div
+            className="fixed inset-0 bg-black/45 backdrop-blur-[2px]"
+            onClick={() => setIsFilterModalOpen(false)}
+          />
+
+          <div className="relative w-full max-w-sm bg-[#FAF5EE] h-full shadow-2xl flex flex-col z-10">
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 border-b border-[#E7DDD0] flex items-center justify-between">
+              <h3 className="font-display text-[18px] font-semibold text-[#2E2620] font-khmer">
+                តម្រងផលិតផល (Filters)
+              </h3>
+              <button
+                onClick={() => setIsFilterModalOpen(false)}
+                className="p-1 text-[#7A7067] hover:text-[#2E2620]"
+              >
+                <XIcon size={20} />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="flex-1 overflow-y-auto p-5 space-y-6">
+              
+              {/* Search input */}
+              <div>
+                <label className="text-[12.5px] font-bold text-[#8A8077] uppercase tracking-wider block mb-2 font-khmer">
+                  ស្វែងរក (Search)
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="ឈ្មោះផលិតផល..."
+                    className="w-full bg-[#FFFDF9] border border-[#E7DDD0] rounded-[4px] py-2.5 pl-9 pr-3 text-[13.5px] text-[#2E2620] focus:border-[#A9573B] outline-none font-khmer"
+                  />
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8A8077]">
+                    <SearchIcon size={16} />
                   </div>
                 </div>
-              ))}
-            {cart.length > 0 && (
-              <button style={{ width: '100%', background: '#c9a882', color: '#0c0a09', border: 'none', borderRadius: 10, padding: '14px 0', fontSize: 15, fontWeight: 700, cursor: 'pointer', marginTop: 16 }}>
-                Checkout — ${cart.reduce((s, i) => s + (i.product.discountPrice ?? i.product.price) * i.qty, 0).toFixed(2)}
+              </div>
+
+              {/* Categories */}
+              <div>
+                <label className="text-[12.5px] font-bold text-[#8A8077] uppercase tracking-wider block mb-2 font-khmer">
+                  ប្រភេទផលិតផល (Category)
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((c) => (
+                    <button
+                      key={c.id}
+                      onClick={() => setSelectedCategory(c.id)}
+                      className={`px-3 py-1.5 rounded-full text-[12.5px] font-medium font-khmer transition-colors ${
+                        selectedCategory === c.id
+                          ? 'bg-[#2E2620] text-[#FAF5EE]'
+                          : 'bg-[#FFFDF9] border border-[#E7DDD0] text-[#7A7067] hover:border-[#2E2620]'
+                      }`}
+                    >
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Skin Concerns */}
+              <div>
+                <label className="text-[12.5px] font-bold text-[#8A8077] uppercase tracking-wider block mb-2 font-khmer">
+                  បញ្ហាស្បែក (Skin Concern)
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {concerns.map((c) => (
+                    <button
+                      key={c.id}
+                      onClick={() => setSelectedConcern(c.id)}
+                      className={`px-3 py-1.5 rounded-full text-[12.5px] font-medium font-khmer transition-colors ${
+                        selectedConcern === c.id
+                          ? 'bg-[#2E2620] text-[#FAF5EE]'
+                          : 'bg-[#FFFDF9] border border-[#E7DDD0] text-[#7A7067] hover:border-[#2E2620]'
+                      }`}
+                    >
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Skin Type */}
+              <div>
+                <label className="text-[12.5px] font-bold text-[#8A8077] uppercase tracking-wider block mb-2 font-khmer">
+                  ប្រភេទស្បែក (Skin Type)
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {skinTypes.map((s) => (
+                    <button
+                      key={s.id}
+                      onClick={() => setSelectedSkinType(s.id)}
+                      className={`px-3 py-1.5 rounded-full text-[12.5px] font-medium font-khmer transition-colors ${
+                        selectedSkinType === s.id
+                          ? 'bg-[#2E2620] text-[#FAF5EE]'
+                          : 'bg-[#FFFDF9] border border-[#E7DDD0] text-[#7A7067] hover:border-[#2E2620]'
+                      }`}
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 sm:p-5 border-t border-[#E7DDD0] flex items-center gap-3">
+              <button
+                onClick={clearFilters}
+                className="flex-1 py-3 border border-[#E7DDD0] rounded-full text-[13.5px] font-medium text-[#7A7067] hover:text-[#2E2620] font-khmer"
+              >
+                សម្អាតទាំងអស់
               </button>
-            )}
+              <button
+                onClick={() => setIsFilterModalOpen(false)}
+                className="flex-1 py-3 bg-[#2E2620] text-[#FAF5EE] rounded-full text-[13.5px] font-semibold hover:bg-[#3D332B] font-khmer"
+              >
+                អនុវត្ត
+              </button>
+            </div>
           </div>
         </div>
       )}
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '40px 20px' }}>
-        {/* Header */}
-        <div style={{ marginBottom: 32 }}>
-          <p style={{ fontFamily: "'Kantumruy Pro', sans-serif", color: '#c9a882', fontSize: 13, marginBottom: 6 }}>ហាងទំនិញ</p>
-          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(28px, 5vw, 48px)', color: '#f5ede6', fontStyle: 'italic', fontWeight: 400 }}>All Products</h1>
-          <p style={{ color: '#a89080', fontSize: 14, marginTop: 8 }}>{filtered.length} products found</p>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '240px 1fr', gap: 32 }} className="shop-layout">
-          {/* Sidebar Filters */}
-          <aside style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            {/* Search */}
-            <div>
-              <label style={{ color: '#a89080', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>Search</label>
-              <input
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                placeholder="Search products..."
-                style={{ width: '100%', marginTop: 8, padding: '10px 14px', background: '#1a1714', border: '1px solid #2a2420', borderRadius: 8, color: '#f5ede6', fontSize: 14, outline: 'none', boxSizing: 'border-box' }}
-              />
-            </div>
-
-            {/* Sort */}
-            <div>
-              <label style={{ color: '#a89080', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>Sort By</label>
-              <select value={sort} onChange={e => setSort(e.target.value as SortOption)}
-                style={{ width: '100%', marginTop: 8, padding: '10px 14px', background: '#1a1714', border: '1px solid #2a2420', borderRadius: 8, color: '#f5ede6', fontSize: 14, outline: 'none', cursor: 'pointer' }}>
-                <option value="featured">Featured</option>
-                <option value="price_asc">Price: Low → High</option>
-                <option value="price_desc">Price: High → Low</option>
-                <option value="rating">Top Rated</option>
-                <option value="newest">Newest</option>
-              </select>
-            </div>
-
-            {/* Category */}
-            <div>
-              <label style={{ color: '#a89080', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>Category</label>
-              <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {categories.map(cat => (
-                  <button key={cat} onClick={() => setSelectedCategory(selectedCategory === cat ? '' : cat)}
-                    style={{ textAlign: 'left', background: selectedCategory === cat ? '#c9a882' : 'none', border: `1px solid ${selectedCategory === cat ? '#c9a882' : '#2a2420'}`, borderRadius: 6, padding: '7px 12px', color: selectedCategory === cat ? '#0c0a09' : '#a89080', fontSize: 13, cursor: 'pointer', fontWeight: selectedCategory === cat ? 600 : 400, textTransform: 'capitalize' }}>
-                    {cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Skin Type */}
-            <div>
-              <label style={{ color: '#a89080', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>Skin Type</label>
-              <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {skinTypes.map(st => (
-                  <button key={st} onClick={() => setSelectedSkinType(selectedSkinType === st ? '' : st)}
-                    style={{ textAlign: 'left', background: selectedSkinType === st ? '#c9a882' : 'none', border: `1px solid ${selectedSkinType === st ? '#c9a882' : '#2a2420'}`, borderRadius: 6, padding: '7px 12px', color: selectedSkinType === st ? '#0c0a09' : '#a89080', fontSize: 13, cursor: 'pointer', fontWeight: selectedSkinType === st ? 600 : 400, textTransform: 'capitalize' }}>
-                    {st}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Concern */}
-            <div>
-              <label style={{ color: '#a89080', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>Skin Concern</label>
-              <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {concerns.map(c => (
-                  <button key={c} onClick={() => setSelectedConcern(selectedConcern === c ? '' : c)}
-                    style={{ textAlign: 'left', background: selectedConcern === c ? '#c9a882' : 'none', border: `1px solid ${selectedConcern === c ? '#c9a882' : '#2a2420'}`, borderRadius: 6, padding: '7px 12px', color: selectedConcern === c ? '#0c0a09' : '#a89080', fontSize: 13, cursor: 'pointer', textTransform: 'capitalize', fontWeight: selectedConcern === c ? 600 : 400 }}>
-                    {c.replace('-', ' ')}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {hasFilters && (
-              <button onClick={clearFilters} style={{ background: '#2a2420', border: 'none', color: '#f5ede6', padding: '10px 0', borderRadius: 8, cursor: 'pointer', fontSize: 13 }}>
-                Clear All Filters
-              </button>
-            )}
-          </aside>
-
-          {/* Product Grid */}
-          <div>
-            {filtered.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '80px 20px', color: '#a89080' }}>
-                <p style={{ fontSize: 48 }}>🔍</p>
-                <p style={{ fontSize: 18, marginTop: 16, color: '#f5ede6' }}>No products found</p>
-                <p style={{ fontSize: 14, marginTop: 8 }}>Try adjusting your filters</p>
-                <button onClick={clearFilters} style={{ marginTop: 20, background: '#c9a882', color: '#0c0a09', border: 'none', padding: '12px 24px', borderRadius: 8, cursor: 'pointer', fontWeight: 700 }}>Clear Filters</button>
-              </div>
-            ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 18 }}>
-                {filtered.map(p => {
-                  const isAdded = addedId === p.id;
-                  return (
-                    <div key={p.id} style={{ background: '#1a1714', borderRadius: 14, border: '1px solid #2a2420', overflow: 'hidden', transition: 'all 0.2s' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 32px rgba(0,0,0,0.4)'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'none'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}>
-                      <Link href={`/shop/${p.slug}`} style={{ textDecoration: 'none' }}>
-                        <div style={{ position: 'relative', paddingTop: '100%', background: '#211d19' }}>
-                          <Image src={p.image} alt={p.name.en} fill style={{ objectFit: 'cover' }} />
-                          <div style={{ position: 'absolute', top: 8, left: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
-                            {p.bestSeller && <span style={{ background: '#c9a882', color: '#0c0a09', fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 3 }}>BEST SELLER</span>}
-                            {p.newArrival && <span style={{ background: '#2d4a2d', color: '#7bc47b', fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 3 }}>NEW</span>}
-                          </div>
-                        </div>
-                        <div style={{ padding: '12px 14px 8px' }}>
-                          <p style={{ color: '#6b5a50', fontSize: 10, textTransform: 'uppercase', letterSpacing: 0.5 }}>{p.brand}</p>
-                          <p style={{ fontFamily: "'Kantumruy Pro', sans-serif", color: '#f5ede6', fontSize: 13, marginTop: 4, lineHeight: 1.4 }}>{p.name.km}</p>
-                          <p style={{ color: '#a89080', fontSize: 12, marginTop: 2 }}>{p.name.en}</p>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginTop: 6 }}>
-                            <span style={{ color: '#c9a882', fontSize: 11 }}>{'★'.repeat(Math.round(p.rating))}</span>
-                            <span style={{ color: '#6b5a50', fontSize: 10 }}>({p.reviewCount})</span>
-                          </div>
-                          <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 6 }}>
-                            {p.discountPrice ? <>
-                              <span style={{ color: '#f5ede6', fontSize: 15, fontWeight: 700 }}>${p.discountPrice}</span>
-                              <span style={{ color: '#6b5a50', fontSize: 12, textDecoration: 'line-through' }}>${p.price}</span>
-                            </> : <span style={{ color: '#f5ede6', fontSize: 15, fontWeight: 700 }}>${p.price}</span>}
-                          </div>
-                        </div>
-                      </Link>
-                      <div style={{ padding: '0 14px 14px' }}>
-                        <button onClick={() => addToCart(p)}
-                          style={{ width: '100%', background: isAdded ? '#2d4a2d' : '#c9a882', color: isAdded ? '#7bc47b' : '#0c0a09', border: 'none', borderRadius: 8, padding: '9px 0', fontSize: 12, fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s' }}>
-                          {isAdded ? '✓ Added!' : '+ Add to Cart'}
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .shop-layout { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </div>
   );
 }

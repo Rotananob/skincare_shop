@@ -1,0 +1,898 @@
+{
+  "nav.shop": {
+    "km": "ផលិតផល",
+    "en": "Shop"
+  },
+  "nav.collections": {
+    "km": "កម្រងផលិតផល",
+    "en": "Collections"
+  },
+  "nav.concerns": {
+    "km": "បញ្ហាស្បែក",
+    "en": "Skin Concerns"
+  },
+  "nav.about": {
+    "km": "អំពីយើង",
+    "en": "About"
+  },
+  "nav.contact": {
+    "km": "ទំនាក់ទំនង",
+    "en": "Contact"
+  },
+  "nav.search": {
+    "km": "ស្វែងរក",
+    "en": "Search"
+  },
+  "nav.wishlist": {
+    "km": "បញ្ជីចូលចិត្ត",
+    "en": "Wishlist"
+  },
+  "nav.cart": {
+    "km": "កន្ត្រក",
+    "en": "Cart"
+  },
+  "nav.account": {
+    "km": "គណនី",
+    "en": "Account"
+  },
+  "nav.home": {
+    "km": "ទំព័រដើម",
+    "en": "Home"
+  },
+  "nav.menu": {
+    "km": "ម៉ឺនុយ",
+    "en": "Menu"
+  },
+  "announce": {
+    "km": "ដឹកជញ្ជូនឥតគិតថ្លៃ សម្រាប់ការទិញចាប់ពី $30 ឡើង",
+    "en": "Free delivery on orders over $30"
+  },
+  "hero.eyebrow": {
+    "km": "ផលិតផលពិតប្រាកដ · ដឹកជញ្ជូនទូទាំងប្រទេស",
+    "en": "Authentic skincare · Nationwide delivery"
+  },
+  "hero.title": {
+    "km": "ស្បែកស្អាត ចាប់ផ្តើមពីការថែទាំត្រឹមត្រូវ",
+    "en": "Beautiful skin begins with the right ritual."
+  },
+  "hero.sub": {
+    "km": "ផលិតផលថែស្បែកដែលបានជ្រើសរើសដោយយកចិត្តទុកដាក់ សម្រាប់ស្បែករស់នៅក្នុងអាកាសធាតុកម្ពុជា។",
+    "en": "A carefully curated edit of skincare, chosen for skin living in Cambodia's climate."
+  },
+  "hero.cta": {
+    "km": "មើលផលិតផល",
+    "en": "Shop Products"
+  },
+  "hero.cta2": {
+    "km": "ស្វែងរកតាមបញ្ហាស្បែក",
+    "en": "Shop by Skin Concern"
+  },
+  "home.categories": {
+    "km": "ជ្រើសរើសតាមប្រភេទ",
+    "en": "Shop by Category"
+  },
+  "home.categoriesSub": {
+    "km": "គ្រប់ជំហាននៃការថែស្បែក ចាប់ពីលាងមុខដល់ការពារកម្តៅថ្ងៃ។",
+    "en": "Every step of a routine, from cleansing to sun protection."
+  },
+  "home.best": {
+    "km": "លក់ដាច់បំផុត",
+    "en": "Best Sellers"
+  },
+  "home.bestSub": {
+    "km": "អ្វីដែលអតិថិជនរបស់យើងត្រឡប់មកទិញម្តងហើយម្តងទៀត។",
+    "en": "What our customers come back for, again and again."
+  },
+  "home.concerns": {
+    "km": "ថែទាំតាមបញ្ហាស្បែក",
+    "en": "Shop by Skin Concern"
+  },
+  "home.concernsSub": {
+    "km": "ចាប់ផ្តើមពីអ្វីដែលស្បែកអ្នកកំពុងត្រូវការ។",
+    "en": "Start from what your skin actually needs."
+  },
+  "home.new": {
+    "km": "ផលិតផលថ្មី",
+    "en": "New Arrivals"
+  },
+  "home.newSub": {
+    "km": "ទើបមកដល់ហាងរបស់យើង។",
+    "en": "Just landed on our shelves."
+  },
+  "home.reviews": {
+    "km": "អតិថិជននិយាយអ្វីអំពីយើង",
+    "en": "What our customers say"
+  },
+  "home.follow": {
+    "km": "អមដំណើរជាមួយយើង",
+    "en": "Follow our skincare journey"
+  },
+  "home.followHandle": {
+    "km": "@sokha.skin",
+    "en": "@sokha.skin"
+  },
+  "home.viewAll": {
+    "km": "មើលទាំងអស់",
+    "en": "View all"
+  },
+  "promo.eyebrow": {
+    "km": "កញ្ចប់ពិសេស",
+    "en": "Special offer"
+  },
+  "promo.title": {
+    "km": "ធ្វើឱ្យការថែស្បែករបស់អ្នក កាន់តែងាយស្រួល។",
+    "en": "Your skincare ritual, made simple."
+  },
+  "promo.body": {
+    "km": "ដឹកជញ្ជូនឥតគិតថ្លៃលើ $30 · ទិញ 2 មុខ ថែម 1 សម្រាប់ម៉ាស",
+    "en": "Free delivery over $30 · Buy 2 masks, get 1 free"
+  },
+  "promo.cta": {
+    "km": "ទិញឥឡូវនេះ",
+    "en": "Shop the offer"
+  },
+  "story.eyebrow": {
+    "km": "រឿងរបស់យើង",
+    "en": "Our story"
+  },
+  "story.title": {
+    "km": "យើងជឿថា skincare មិនមែនជារឿងស្មុគស្មាញទេ។",
+    "en": "We believe skincare should feel simple, honest, and personal."
+  },
+  "story.body": {
+    "km": "Sokha Skin ចាប់ផ្តើមពីបន្ទប់តូចមួយក្នុងភ្នំពេញ ជាមួយសំណួរសាមញ្ញ៖ ហេតុអ្វីការរកផលិតផលថែស្បែកពិតប្រាកដត្រូវពិបាកដូច្នេះ? សព្វថ្ងៃ យើងជ្រើសរើសផលិតផលតែមួយៗ សាកល្បងវាដោយខ្លួនឯង ហើយសរសេរពីរបៀបដែលវាដំណើរការសម្រាប់ស្បែកក្នុងអាកាសធាតុរបស់យើង។",
+    "en": "Sokha Skin started in a small room in Phnom Penh with a simple question: why is finding authentic skincare so hard? Today we choose every product one by one, test it ourselves, and write honestly about how it works on skin in our climate."
+  },
+  "story.cta": {
+    "km": "អានបន្ថែមអំពីយើង",
+    "en": "Read more about us"
+  },
+  "trust.authentic": {
+    "km": "ផលិតផលមានប្រភពច្បាស់លាស់",
+    "en": "Authentic products, sourced directly"
+  },
+  "trust.secure": {
+    "km": "ការទូទាត់មានសុវត្ថិភាព",
+    "en": "Secure payment"
+  },
+  "trust.delivery": {
+    "km": "ដឹកជញ្ជូនទូទាំងប្រទេស",
+    "en": "Delivery across Cambodia"
+  },
+  "trust.support": {
+    "km": "Support តាម Telegram / Messenger",
+    "en": "Support via Telegram & Messenger"
+  },
+  "product.addToCart": {
+    "km": "ដាក់ចូលកន្ត្រក",
+    "en": "Add to Cart"
+  },
+  "product.added": {
+    "km": "បានដាក់ហើយ",
+    "en": "Added ✓"
+  },
+  "product.buyNow": {
+    "km": "ទិញឥឡូវនេះ",
+    "en": "Buy Now"
+  },
+  "product.outOfStock": {
+    "km": "អស់ស្តុក",
+    "en": "Out of stock"
+  },
+  "product.inStock": {
+    "km": "មានស្តុក",
+    "en": "In stock"
+  },
+  "product.benefits": {
+    "km": "អត្ថប្រយោជន៍",
+    "en": "Benefits"
+  },
+  "product.description": {
+    "km": "ការពិពណ៌នា",
+    "en": "Description"
+  },
+  "product.ingredients": {
+    "km": "សមាសភាគ",
+    "en": "Ingredients"
+  },
+  "product.howToUse": {
+    "km": "វិធីប្រើប្រាស់",
+    "en": "How to use"
+  },
+  "product.shipping": {
+    "km": "ការដឹកជញ្ជូន",
+    "en": "Shipping"
+  },
+  "product.shippingBody": {
+    "km": "ភ្នំពេញ ១-២ ថ្ងៃ · ខេត្ត ២-៣ ថ្ងៃ · ឥតគិតថ្លៃលើ $30",
+    "en": "Phnom Penh 1–2 days · Provinces 2–3 days · Free over $30"
+  },
+  "product.reviewsTab": {
+    "km": "មតិយោបល់",
+    "en": "Reviews"
+  },
+  "product.faq": {
+    "km": "សំណួរញឹកញាប់",
+    "en": "FAQ"
+  },
+  "product.related": {
+    "km": "អ្នកក៏អាចចូលចិត្ត",
+    "en": "You may also like"
+  },
+  "product.size": {
+    "km": "ទំហំ",
+    "en": "Size"
+  },
+  "product.qty": {
+    "km": "បរិមាណ",
+    "en": "Quantity"
+  },
+  "product.faqQ1": {
+    "km": "ផលិតផលពិតប្រាកដដែរឬទេ?",
+    "en": "Are the products authentic?"
+  },
+  "product.faqA1": {
+    "km": "ពិតប្រាកដ។ យើងនាំចូលដោយផ្ទាល់ពីក្រុមហ៊ុនផលិត ឬភ្នាក់ងារផ្លូវការ ហើយអាចបញ្ជាក់ប្រភពបានរាល់ទំនិញ។",
+    "en": "Yes. We import directly from the makers or their official distributors, and every order can be traced to its source."
+  },
+  "product.faqQ2": {
+    "km": "ផលិតផលណាសម្រាប់ស្បែករបស់ខ្ញុំ?",
+    "en": "Which products suit my skin?"
+  },
+  "product.faqA2": {
+    "km": "ចាប់ផ្តើមពីបញ្ហាស្បែករបស់អ្នក ឬសួរយើងតាម Telegram — យើងនឹងជួយជ្រើសរើសឱ្យដោយឥតគិតថ្លៃ។",
+    "en": "Start from your skin concern, or message us on Telegram — we'll help you choose for free."
+  },
+  "cart.title": {
+    "km": "កន្ត្រកទំនិញ",
+    "en": "Your Cart"
+  },
+  "cart.empty": {
+    "km": "កន្ត្រកទំនិញរបស់អ្នកនៅទទេ",
+    "en": "Your cart is empty."
+  },
+  "cart.emptySub": {
+    "km": "ចាប់ផ្តើមពីផលិតផលលក់ដាច់បំផុតរបស់យើង។",
+    "en": "Start from one of our best sellers."
+  },
+  "cart.emptyCta": {
+    "km": "ចាប់ផ្តើមទិញទំនិញ",
+    "en": "Start Shopping"
+  },
+  "cart.subtotal": {
+    "km": "សរុបរង",
+    "en": "Subtotal"
+  },
+  "cart.delivery": {
+    "km": "ការដឹកជញ្ជូន",
+    "en": "Delivery"
+  },
+  "cart.total": {
+    "km": "សរុប",
+    "en": "Total"
+  },
+  "cart.checkout": {
+    "km": "បន្តទៅ Checkout",
+    "en": "Continue to Checkout"
+  },
+  "cart.free": {
+    "km": "ឥតគិតថ្លៃ",
+    "en": "Free"
+  },
+  "cart.remove": {
+    "km": "ដកចេញ",
+    "en": "Remove"
+  },
+  "cart.freeHint": {
+    "km": "បន្ថែម {amount} ទៀត ដើម្បីទទួលបានដឹកជញ្ជូនឥតគិតថ្លៃ",
+    "en": "Add {amount} more for free delivery"
+  },
+  "cart.freeDone": {
+    "km": "អ្នកទទួលបានដឹកជញ្ជូនឥតគិតថ្លៃ!",
+    "en": "You've unlocked free delivery!"
+  },
+  "cart.viewCart": {
+    "km": "មើលកន្ត្រក",
+    "en": "View cart"
+  },
+  "checkout.title": {
+    "km": "ការបញ្ជាទិញ",
+    "en": "Checkout"
+  },
+  "checkout.info": {
+    "km": "ព័ត៌មានអតិថិជន",
+    "en": "Customer information"
+  },
+  "checkout.name": {
+    "km": "ឈ្មោះពេញ",
+    "en": "Full name"
+  },
+  "checkout.phone": {
+    "km": "លេខទូរស័ព្ទ",
+    "en": "Phone number"
+  },
+  "checkout.phoneHint": {
+    "km": "ឧ. 012 345 678",
+    "en": "e.g. 012 345 678"
+  },
+  "checkout.province": {
+    "km": "ខេត្ត / ក្រុង",
+    "en": "Province / City"
+  },
+  "checkout.district": {
+    "km": "ស្រុក / ខណ្ឌ",
+    "en": "District / Khan"
+  },
+  "checkout.commune": {
+    "km": "ឃុំ / សង្កាត់",
+    "en": "Commune / Sangkat"
+  },
+  "checkout.address": {
+    "km": "អាសយដ្ឋានលម្អិត",
+    "en": "Street address"
+  },
+  "checkout.note": {
+    "km": "កំណត់សម្គាល់ការដឹកជញ្ជូន",
+    "en": "Delivery note"
+  },
+  "checkout.notePlaceholder": {
+    "km": "ឧ. ទំនាក់ទំនងពេលមកដល់",
+    "en": "e.g. Call when you arrive"
+  },
+  "checkout.payment": {
+    "km": "វិធីបង់ប្រាក់",
+    "en": "Payment method"
+  },
+  "checkout.khqr": {
+    "km": "KHQR",
+    "en": "KHQR"
+  },
+  "checkout.khqrDesc": {
+    "km": "ស្កេនបង់តាមធនាគារកម្ពុជាណាមួយ",
+    "en": "Scan with any Cambodian bank app"
+  },
+  "checkout.aba": {
+    "km": "ABA Pay",
+    "en": "ABA Pay"
+  },
+  "checkout.abaDesc": {
+    "km": "បង់តាមកម្មវិធី ABA Mobile",
+    "en": "Pay with the ABA Mobile app"
+  },
+  "checkout.cod": {
+    "km": "បង់ពេលទទួលទំនិញ",
+    "en": "Cash on Delivery"
+  },
+  "checkout.codDesc": {
+    "km": "បង់ប្រាក់ពេលអ្នកទទួលទំនិញ",
+    "en": "Pay in cash when your order arrives"
+  },
+  "checkout.placeOrder": {
+    "km": "បញ្ជាក់ការបញ្ជាទិញ",
+    "en": "Place Order"
+  },
+  "checkout.summary": {
+    "km": "សេចក្តីសង្ខេប",
+    "en": "Order summary"
+  },
+  "checkout.required": {
+    "km": "សូមបំពេញព័ត៌មាននេះ",
+    "en": "This field is required"
+  },
+  "checkout.phoneInvalid": {
+    "km": "សូមបញ្ចូលលេខទូរស័ព្ទកម្ពុជាត្រឹមត្រូវ",
+    "en": "Please enter a valid Cambodian phone number"
+  },
+  "checkout.backToCart": {
+    "km": "ត្រឡប់ទៅកន្ត្រក",
+    "en": "Back to cart"
+  },
+  "khqr.title": {
+    "km": "សូមស្កេន QR Code ដើម្បីបង់ប្រាក់",
+    "en": "Scan the QR code to complete payment"
+  },
+  "khqr.waiting": {
+    "km": "រង់ចាំការទូទាត់…",
+    "en": "Waiting for payment…"
+  },
+  "khqr.notice": {
+    "km": "នេះជាការបង់ប្រាក់សាកល្បង — ការតភ្ជាប់ KHQR ពិតនឹងត្រូវបន្ថែមនៅពេលក្រោយ។",
+    "en": "Demo checkout — real KHQR integration will be added later."
+  },
+  "khqr.paidNote": {
+    "km": "ក្នុងការបង់ប្រាក់ពិត ស្ថានភាពនឹងធ្វើបច្ចុប្បន្នភាពដោយស្វ័យប្រវត្តិ។",
+    "en": "In production, the status updates automatically via webhook."
+  },
+  "khqr.iPaid": {
+    "km": "ខ្ញុំបានបង់ប្រាក់ហើយ",
+    "en": "I've completed payment"
+  },
+  "success.title": {
+    "km": "ការបញ្ជាទិញរបស់អ្នកត្រូវបានទទួល!",
+    "en": "Your order has been received."
+  },
+  "success.sub": {
+    "km": "យើងនឹងទំនាក់ទំនងទៅអ្នកឆាប់ៗនេះ ដើម្បីបញ្ជាក់ការបញ្ជាទិញ។",
+    "en": "We'll contact you shortly to confirm your order."
+  },
+  "success.orderNo": {
+    "km": "លេខបញ្ជាទិញ",
+    "en": "Order number"
+  },
+  "success.estimated": {
+    "km": "ការប៉ាន់ស្មានដឹកជញ្ជូន",
+    "en": "Estimated delivery"
+  },
+  "success.track": {
+    "km": "តាមដានការបញ្ជាទិញ",
+    "en": "Track Order"
+  },
+  "success.days": {
+    "km": "{n} ថ្ងៃ",
+    "en": "{n} day(s)"
+  },
+  "orders.title": {
+    "km": "ការបញ្ជាទិញរបស់ខ្ញុំ",
+    "en": "My Orders"
+  },
+  "orders.empty": {
+    "km": "មិនទាន់មានការបញ្ជាទិញទេ",
+    "en": "No orders yet."
+  },
+  "orders.emptySub": {
+    "km": "ការបញ្ជាទិញរបស់អ្នកនឹងបង្ហាញនៅទីនេះ។",
+    "en": "Your orders will appear here."
+  },
+  "status.pending": {
+    "km": "រង់ចាំ",
+    "en": "Pending"
+  },
+  "status.confirmed": {
+    "km": "បានបញ្ជាក់",
+    "en": "Confirmed"
+  },
+  "status.preparing": {
+    "km": "កំពុងរៀបចំ",
+    "en": "Preparing"
+  },
+  "status.shipped": {
+    "km": "កំពុងដឹកជញ្ជូន",
+    "en": "Shipped"
+  },
+  "status.delivered": {
+    "km": "បានទទួល",
+    "en": "Delivered"
+  },
+  "status.cancelled": {
+    "km": "បានបោះបង់",
+    "en": "Cancelled"
+  },
+  "payment.pending": {
+    "km": "រង់ចាំបង់ប្រាក់",
+    "en": "Payment pending"
+  },
+  "payment.paid": {
+    "km": "បានបង់ប្រាក់",
+    "en": "Paid"
+  },
+  "payment.paidOnDelivery": {
+    "km": "បង់ពេលទទួល",
+    "en": "Pay on delivery"
+  },
+  "wishlist.title": {
+    "km": "ផលិតផលដែលចូលចិត្ត",
+    "en": "Wishlist"
+  },
+  "wishlist.empty": {
+    "km": "មិនទាន់មានផលិតផលដែលអ្នកចូលចិត្តទេ",
+    "en": "Nothing saved yet."
+  },
+  "wishlist.emptySub": {
+    "km": "ចុចបេះដូងនៅលើផលិតផលដើម្បីរក្សាទុកវា។",
+    "en": "Tap the heart on any product to save it."
+  },
+  "search.placeholder": {
+    "km": "ស្វែងរកផលិតផល ម៉ាក ឬបញ្ហាស្បែក…",
+    "en": "Search products, brands, concerns…"
+  },
+  "search.recent": {
+    "km": "ស្វែងរកថ្មីៗ",
+    "en": "Recent searches"
+  },
+  "search.popular": {
+    "km": "ស្វែងរកពេញនិយម",
+    "en": "Popular searches"
+  },
+  "search.noResults": {
+    "km": "រកមិនឃើញផលិតផលដែលអ្នកកំពុងស្វែងរកទេ",
+    "en": "We couldn't find anything for that."
+  },
+  "search.clear": {
+    "km": "សម្អាត",
+    "en": "Clear"
+  },
+  "account.title": {
+    "km": "គណនីរបស់ខ្ញុំ",
+    "en": "My Account"
+  },
+  "account.overview": {
+    "km": "ទំព័រសង្ខេប",
+    "en": "Overview"
+  },
+  "account.profile": {
+    "km": "ព័ត៌មានផ្ទាល់ខ្លួន",
+    "en": "Profile"
+  },
+  "account.addresses": {
+    "km": "អាសយដ្ឋាន",
+    "en": "Addresses"
+  },
+  "account.language": {
+    "km": "ភាសា",
+    "en": "Language"
+  },
+  "account.logout": {
+    "km": "ចាកចេញ",
+    "en": "Log out"
+  },
+  "account.login": {
+    "km": "ចូលគណនី",
+    "en": "Log in"
+  },
+  "account.register": {
+    "km": "បង្កើតគណនី",
+    "en": "Create account"
+  },
+  "account.email": {
+    "km": "អ៊ីមែល",
+    "en": "Email"
+  },
+  "account.password": {
+    "km": "ពាក្យសម្ងាត់",
+    "en": "Password"
+  },
+  "account.name": {
+    "km": "ឈ្មោះ",
+    "en": "Name"
+  },
+  "account.noAccount": {
+    "km": "មិនទាន់មានគណនី?",
+    "en": "No account yet?"
+  },
+  "account.haveAccount": {
+    "km": "មានគណនីរួចហើយ?",
+    "en": "Already have an account?"
+  },
+  "account.loginHint": {
+    "km": "ការចូលគណនីក្នុងកំណែនេះត្រូវបានរក្សាទុកក្នុងឧបករណ៍របស់អ្នក។ ប្រព័ន្ធគណនីពិតនឹងត្រូវបន្ថែមនៅពេលក្រោយ។",
+    "en": "Sign-in in this version is stored on your device. Full account integration comes later."
+  },
+  "account.orders": {
+    "km": "ការបញ្ជាទិញ",
+    "en": "Orders"
+  },
+  "account.wishlist": {
+    "km": "ចូលចិត្ត",
+    "en": "Wishlist"
+  },
+  "shop.title": {
+    "km": "ផលិតផលទាំងអស់",
+    "en": "All Products"
+  },
+  "shop.filters": {
+    "km": "តម្រង",
+    "en": "Filters"
+  },
+  "shop.sort": {
+    "km": "តម្រៀប",
+    "en": "Sort"
+  },
+  "shop.clear": {
+    "km": "សម្អាតតម្រង",
+    "en": "Clear filters"
+  },
+  "shop.category": {
+    "km": "ប្រភេទ",
+    "en": "Category"
+  },
+  "shop.brand": {
+    "km": "ម៉ាក",
+    "en": "Brand"
+  },
+  "shop.skinType": {
+    "km": "ប្រភេទស្បែក",
+    "en": "Skin type"
+  },
+  "shop.concern": {
+    "km": "បញ្ហាស្បែក",
+    "en": "Concern"
+  },
+  "shop.price": {
+    "km": "តម្លៃ",
+    "en": "Price"
+  },
+  "shop.results": {
+    "km": "ផលិតផល",
+    "en": "products"
+  },
+  "shop.empty": {
+    "km": "មិនមានផលិតផលត្រូវនឹងតម្រងរបស់អ្នកទេ",
+    "en": "No products match your filters."
+  },
+  "shop.emptyCta": {
+    "km": "សម្អាតតម្រង",
+    "en": "Clear filters"
+  },
+  "sort.featured": {
+    "km": "ផ្តល់អាទិភាព",
+    "en": "Featured"
+  },
+  "sort.new": {
+    "km": "ថ្មីបំផុត",
+    "en": "Newest"
+  },
+  "sort.priceAsc": {
+    "km": "តម្លៃ៖ ទាប → ខ្ពស់",
+    "en": "Price: Low → High"
+  },
+  "sort.priceDesc": {
+    "km": "តម្លៃ៖ ខ្ពស់ → ទាប",
+    "en": "Price: High → Low"
+  },
+  "sort.best": {
+    "km": "លក់ដាច់បំផុត",
+    "en": "Best Selling"
+  },
+  "category.back": {
+    "km": "ផលិតផលទាំងអស់",
+    "en": "All products"
+  },
+  "category.count": {
+    "km": "ផលិតផល",
+    "en": "products"
+  },
+  "footer.tagline": {
+    "km": "ស្បែករបស់អ្នក សមនឹងការថែទាំដែលយកចិត្តទុកដាក់។",
+    "en": "Your skin deserves thoughtful care."
+  },
+  "footer.shop": {
+    "km": "ហាង",
+    "en": "Shop"
+  },
+  "footer.help": {
+    "km": "ជំនួយអតិថិជន",
+    "en": "Customer Service"
+  },
+  "footer.shipping": {
+    "km": "ការដឹកជញ្ជូន",
+    "en": "Shipping"
+  },
+  "footer.returns": {
+    "km": "ការប្រគល់ទំនិញ",
+    "en": "Returns"
+  },
+  "footer.privacy": {
+    "km": "ភាពឯកជន",
+    "en": "Privacy"
+  },
+  "footer.terms": {
+    "km": "លក្ខខណ្ឌ",
+    "en": "Terms"
+  },
+  "footer.faq": {
+    "km": "សំណួរញឹកញាប់",
+    "en": "FAQ"
+  },
+  "footer.contact": {
+    "km": "ទំនាក់ទំនង",
+    "en": "Contact"
+  },
+  "footer.payments": {
+    "km": "វិធីបង់ប្រាក់",
+    "en": "We accept"
+  },
+  "footer.rights": {
+    "km": "រក្សាសិទ្ធិគ្រប់បែបយ៉ាង",
+    "en": "All rights reserved."
+  },
+  "footer.address": {
+    "km": "ផ្ទះលេខ ៤៥ ផ្លូវ ២៧១, ភ្នំពេញ",
+    "en": "No. 45, Street 271, Phnom Penh"
+  },
+  "about.title": {
+    "km": "អំពី Sokha Skin",
+    "en": "About Sokha Skin"
+  },
+  "about.p1": {
+    "km": "យើងចាប់ផ្តើមក្នុងឆ្នាំ ២០២៣ នៅភ្នំពេញ ជាមួយគំនិតសាមញ្ញមួយ៖ នាំផលិតផលថែស្បែកពិតប្រាកដ ដែលបានសាកល្បងរួច មកឱ្យអតិថិជនកម្ពុជា ក្នុងតម្លៃសមរម្យ។",
+    "en": "We started in 2023 in Phnom Penh with one simple idea: bring genuinely good, honestly tested skincare to Cambodia at fair prices."
+  },
+  "about.p2": {
+    "km": "រាល់ផលិតផលក្នុងហាងរបស់យើង ត្រូវបានក្រុមការងារសាកល្បងប្រើប្រាស់យ៉ាងតិច ៤ សប្តាហ៍ មុននឹងដាក់លក់។ យើងមិនលក់អ្វីដែលយើងមិនប្រើខ្លួនឯងទេ។",
+    "en": "Every product on our shelves is tested by our own team for at least four weeks first. We don't sell anything we wouldn't use ourselves."
+  },
+  "about.p3": {
+    "km": "សព្វថ្ងៃ យើងបានបម្រើអតិថិជនជាង ១២,០០០ នាក់ ពីភ្នំពេញដល់សៀមរាប បាត់ដំបង និងខេត្តឆ្ងាយៗទៀត។",
+    "en": "Today we've served over 12,000 customers from Phnom Penh to Siem Reap, Battambang, and beyond."
+  },
+  "about.valuesTitle": {
+    "km": "អ្វីដែលយើងជឿ",
+    "en": "What we believe"
+  },
+  "about.v1t": {
+    "km": "ពិតប្រាកដ គ្រប់វិបាក",
+    "en": "Authentic, every time"
+  },
+  "about.v1b": {
+    "km": "ប្រភពច្បាស់លាស់ អាចតាមដានបានរាល់ទំនិញ។",
+    "en": "Clear sourcing, traceable on every order."
+  },
+  "about.v2t": {
+    "km": "យកចិត្តទុកដាក់",
+    "en": "Thoughtfully chosen"
+  },
+  "about.v2b": {
+    "km": "ផលិតផលតិច ប៉ុន្តែជ្រើសរើសយ៉ាងប្រុងប្រយ័ត្ន។",
+    "en": "Fewer products, chosen with real care."
+  },
+  "about.v3t": {
+    "km": "ច្បាស់លាស់",
+    "en": "Honest"
+  },
+  "about.v3b": {
+    "km": "ការពិពណ៌នាពិតប្រាកដ គ្មានការអួតអើត។",
+    "en": "Straightforward descriptions, no exaggerated claims."
+  },
+  "contact.title": {
+    "km": "ទំនាក់ទំនង",
+    "en": "Contact"
+  },
+  "contact.sub": {
+    "km": "យើងចាំឆ្លើយតបក្នុងរយៈពេល ២៤ ម៉ោង។",
+    "en": "We usually reply within 24 hours."
+  },
+  "contact.telegram": {
+    "km": "Telegram",
+    "en": "Telegram"
+  },
+  "contact.messenger": {
+    "km": "Messenger",
+    "en": "Messenger"
+  },
+  "contact.phone": {
+    "km": "លេខទូរស័ព្ទ",
+    "en": "Phone"
+  },
+  "contact.hours": {
+    "km": "ម៉ោងធ្វើការ",
+    "en": "Hours"
+  },
+  "contact.hoursVal": {
+    "km": "ចន្ទ–សៅរ៍ ៩:០០–២០:០០",
+    "en": "Mon–Sat, 9:00–20:00"
+  },
+  "contact.message": {
+    "km": "សាររបស់អ្នក",
+    "en": "Your message"
+  },
+  "contact.send": {
+    "km": "ផ្ញើសារ",
+    "en": "Send message"
+  },
+  "contact.sent": {
+    "km": "អរគុណ! យើងនឹងឆ្លើយតបឱ្យឆាប់ៗ។",
+    "en": "Thank you! We'll get back to you soon."
+  },
+  "contact.name": {
+    "km": "ឈ្មោះ",
+    "en": "Name"
+  },
+  "marquee.1": {
+    "km": "ផលិតផលពិត ១០០%",
+    "en": "100% authentic"
+  },
+  "marquee.2": {
+    "km": "ដឹកជញ្ជូនឥតគិតថ្លៃលើ $30",
+    "en": "Free delivery over $30"
+  },
+  "marquee.3": {
+    "km": "ដល់គ្រប់ខេត្តទាំង ២៥",
+    "en": "To all 25 provinces"
+  },
+  "marquee.4": {
+    "km": "ទូទាត់តាម KHQR",
+    "en": "KHQR accepted"
+  },
+  "marquee.5": {
+    "km": "ផលិតផលថ្មីរាល់សប្តាហ៍",
+    "en": "New arrivals weekly"
+  },
+  "cinema.eyebrow": {
+    "km": "ផ្សំពីសារធាតុពិត",
+    "en": "Made of real things"
+  },
+  "cinema.title": {
+    "km": "ពីដី ទៅដល់ស្បែកអ្នក",
+    "en": "From the earth to your skin"
+  },
+  "cinema.k1t": {
+    "km": "សារធាតុពីធម្មជាតិ",
+    "en": "Botanicals, first"
+  },
+  "cinema.k1b": {
+    "km": "ប៉ែកឆូយ ខ្ញី និងទឹកស្រូវ — ជ្រើសរើសដោយផ្ទាល់ពីកសិដ្ឋានក្នុងស្រុក។",
+    "en": "Centella, turmeric and rice water — sourced directly from local farms."
+  },
+  "cinema.k2t": {
+    "km": "រុក្ខជាតិ ទៅជាក្រែម",
+    "en": "From plant to cream"
+  },
+  "cinema.k2b": {
+    "km": "រាល់រូបមន្តត្រូវសាកល្បងលើស្បែកពិត ក្នុងអាកាសធាតុក្តៅសើមរបស់កម្ពុជា។",
+    "en": "Every formula is tested on real skin, in Cambodia's heat and humidity."
+  },
+  "cinema.k3t": {
+    "km": "ការពាររាល់ថ្ងៃ",
+    "en": "Protect, every day"
+  },
+  "cinema.k3b": {
+    "km": "ការការពារពីកម្តៅថ្ងៃ គឺជាជំហានដែលមានឥទ្ធិពលបំផុតនៃរបាំងថែស្បែក។",
+    "en": "Sun protection is the single most powerful step in any ritual."
+  },
+  "band.eyebrow": {
+    "km": "ក្នុងចលនា",
+    "en": "In motion"
+  },
+  "band.quote": {
+    "km": "ភាពប្រណីត គឺរបាំងមួយដែលធ្វើបានត្រឹមត្រូវ។",
+    "en": "Luxury is a ritual done right."
+  },
+  "stat.customers": {
+    "km": "អតិថិជនរីករាយ",
+    "en": "Happy customers"
+  },
+  "stat.rating": {
+    "km": "ពិន្ទុវាយតម្លៃ",
+    "en": "Average rating"
+  },
+  "stat.provinces": {
+    "km": "ខេត្ត/ក្រុង បម្រើសេវា",
+    "en": "Provinces served"
+  },
+  "stat.delivery": {
+    "km": "ដឹកជញ្ជូនលឿនបំផុត",
+    "en": "Fastest delivery"
+  },
+  "story.film": {
+    "km": "វីដេអូ · របាំងថែស្បែក",
+    "en": "Film · The ritual"
+  },
+  "misc.freeDeliveryBadge": {
+    "km": "ដឹកជញ្ជូនឥតគិតថ្លៃលើ $30",
+    "en": "Free delivery over $30"
+  },
+  "misc.notFound": {
+    "km": "រកមិនឃើញទំព័រ",
+    "en": "Page not found"
+  },
+  "misc.notFoundSub": {
+    "km": "ទំព័រដែលអ្នកកំពុងស្វែងរក អាចត្រូវបានលុប ឬផ្លាស់ទី។",
+    "en": "The page you're looking for may have moved."
+  },
+  "misc.backHome": {
+    "km": "ត្រឡប់ទៅទំព័រដើម",
+    "en": "Back to home"
+  },
+  "misc.currency": {
+    "km": "រូបិយប័ណ្ណ",
+    "en": "Currency"
+  },
+  "misc.soldOut": {
+    "km": "អស់ស្តុក",
+    "en": "Sold out"
+  },
+  "misc.save": {
+    "km": "បង្កើត",
+    "en": "Save"
+  }
+}

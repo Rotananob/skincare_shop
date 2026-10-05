@@ -1,0 +1,709 @@
+[
+  {
+    "id": "p01",
+    "slug": "centella-repair-serum",
+    "name": {
+      "km": "សេរ៉ូមថែស្បែក Centella",
+      "en": "Centella Repair Serum"
+    },
+    "tagline": {
+      "km": "សេរ៉ូមផ្តល់សំណើម និងជួយថែរក្សាស្បែកដែលងាយរងការរលាក។",
+      "en": "Hydrating serum designed to support calm, healthy-looking skin."
+    },
+    "description": {
+      "km": "សេរ៉ូមទឹកស្រាល ជាមួយសារធាតុចម្រាញ់ពីស្លឹកគូលីបាយ (Centella Asiatica) និង Hyaluronic Acid។ រួបរួមសំណើមភ្លាមៗ និងធ្វើឱ្យស្បែកមានអារម្មណ៍ស្ងប់ ដែលសាកសមសម្រាប់អាកាសធាតុក្តៅនិង humid ក្នុងប្រទេសកម្ពុជា។",
+      "en": "A lightweight water serum with Centella Asiatica extract and hyaluronic acid. It absorbs quickly, layers well under sunscreen, and leaves skin feeling calm — made for Cambodia's hot, humid days."
+    },
+    "brand": "Sokha Skin",
+    "category": "serum",
+    "price": 24,
+    "discountPrice": 19,
+    "image": "/images/7074420d-6c0e-47e3-978a-75bae22ff8d8.png",
+    "stock": 34,
+    "rating": 4.8,
+    "reviewCount": 124,
+    "skinTypes": [
+      "sensitive",
+      "combination",
+      "oily"
+    ],
+    "concerns": [
+      "sensitivity",
+      "dryness",
+      "acne"
+    ],
+    "benefits": [
+      {
+        "km": "ផ្តល់សំណើមភ្លាមៗ ១២ ម៉ោង",
+        "en": "Immediate 12-hour hydration"
+      },
+      {
+        "km": "ធ្វើឱ្យស្បែកមានអារម្មណ៍ស្ងប់",
+        "en": "Skin feels calm and soothed"
+      },
+      {
+        "km": "រួបរួមលឿន មិនឆាប់",
+        "en": "Fast-absorbing, never sticky"
+      }
+    ],
+    "ingredients": {
+      "km": "Centella Asiatica Extract, Sodium Hyaluronate, Panthenol, Glycerin, Allantoin, Madecassoside.",
+      "en": "Centella Asiatica Extract, Sodium Hyaluronate, Panthenol, Glycerin, Allantoin, Madecassoside."
+    },
+    "howToUse": {
+      "km": "បន្ទាប់ពីលាងមុខ និងទឹកជូតមុខ ចាក់ ៣-៤ តម្រូវការលើប្រអប់ ហើយលាបល្មមពេញមុខ ពេលព្រឹក និងល្ងាច។",
+      "en": "After cleansing and toning, press 3–4 drops over the face morning and evening, before moisturizer."
+    },
+    "sizes": [
+      "30ml",
+      "50ml"
+    ],
+    "featured": true,
+    "bestSeller": true
+  },
+  {
+    "id": "p02",
+    "slug": "rice-milk-gentle-cleanser",
+    "name": {
+      "km": "សាប៊ូលាងមុខទឹកដោះគោស្រូវ",
+      "en": "Rice Milk Gentle Cleanser"
+    },
+    "tagline": {
+      "km": "សាប៊ូលាងមុខទន់ភ្លន់ សម្រាប់ប្រើប្រាស់រាល់ថ្ងៃ។",
+      "en": "A soft daily cleanser that never leaves skin tight."
+    },
+    "description": {
+      "km": "អេម៉ัលស៊ីយ៉ុងទន់ភ្លន់ជាមួយសារធាតុចម្រាញ់ពីស្រូវ និងទឹកដោះគោ។ យកស្នាមប្រេង និងកខ្វក់ស្រាលៗ ដោយមិនរំលោភស្រទាប់ការពារស្បែក។",
+      "en": "A creamy emulsion with rice extract and milk proteins that lifts away sunscreen, oil, and daily grime without stripping the skin barrier."
+    },
+    "brand": "Srah",
+    "category": "cleanser",
+    "price": 14,
+    "image": "/images/92480f01-20c1-46d9-8dfd-3fef5c94a9d0.png",
+    "stock": 58,
+    "rating": 4.7,
+    "reviewCount": 98,
+    "skinTypes": [
+      "normal",
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "dryness",
+      "dullness"
+    ],
+    "benefits": [
+      {
+        "km": "សម្អាតដោយមិនធ្វើឱ្យស្បែកស្ងោក",
+        "en": "Cleans without tightness"
+      },
+      {
+        "km": "pH មានតុល្យភាព",
+        "en": "pH-balanced formula"
+      },
+      {
+        "km": "ក្លិនស្រាល",
+        "en": "Faint, comforting scent"
+      }
+    ],
+    "ingredients": {
+      "km": "Oryza Sativa (Rice) Extract, Milk Protein, Glycerin, Coco-Glucoside, Panthenol.",
+      "en": "Oryza Sativa (Rice) Extract, Milk Protein, Glycerin, Coco-Glucoside, Panthenol."
+    },
+    "howToUse": {
+      "km": "លាបលើមុខសើម មាត់ម៉ាសជុសជុល ៣០ វិនាទី រួចលាងទឹកស្អាត។",
+      "en": "Massage over damp skin for 30 seconds, then rinse with lukewarm water."
+    },
+    "sizes": [
+      "120ml"
+    ],
+    "bestSeller": true
+  },
+  {
+    "id": "p03",
+    "slug": "quinoa-hydrating-toner",
+    "name": {
+      "km": "ទឹកជូតមុខផ្តល់សំណើម Quinoa",
+      "en": "Quinoa Hydrating Toner"
+    },
+    "tagline": {
+      "km": "ទឹកជូតមុខស្រាល រៀបចំស្បែកមុនពេលប្រើសេរ៉ូម។",
+      "en": "A watery-light toner that preps skin for the next step."
+    },
+    "description": {
+      "km": "ទឹកជូតមុខស្រាលៗ ជាមួយគ្រាប់ធញ្ញជាតិ Quinoa និង Beta-Glucan ជួយបន្ថែមសំណើមភ្លាមៗ និងធ្វើឱ្យស្បែកទទួលសេរ៉ូមបានប្រសើរ។",
+      "en": "Watery-light with quinoa seed extract and beta-glucan for a first layer of moisture that helps everything after it absorb better."
+    },
+    "brand": "Sokha Skin",
+    "category": "toner",
+    "price": 16,
+    "image": "/images/b651362e-0879-4c6d-a918-3d61e0c2a1f9.png",
+    "stock": 41,
+    "rating": 4.6,
+    "reviewCount": 76,
+    "skinTypes": [
+      "normal",
+      "combination",
+      "dry"
+    ],
+    "concerns": [
+      "dryness",
+      "dullness"
+    ],
+    "benefits": [
+      {
+        "km": "ស្រាល មិនជាប់ដុំ",
+        "en": "No tacky finish"
+      },
+      {
+        "km": "គ្មានអាល់កុល",
+        "en": "Alcohol-free"
+      },
+      {
+        "km": "សាកសមស្បែកងាយរលាក",
+        "en": "Sensitive-skin friendly"
+      }
+    ],
+    "ingredients": {
+      "km": "Chenopodium Quinoa Seed Extract, Beta-Glucan, Glycerin, Panthenol, Allantoin.",
+      "en": "Chenopodium Quinoa Seed Extract, Beta-Glucan, Glycerin, Panthenol, Allantoin."
+    },
+    "howToUse": {
+      "km": "បញ្ចូលទៅលើសំណាញ់ក cotton ឬបាតដៃ ហើយច្របាច់លើមុខបន្ទាប់ពីលាងមុខ។",
+      "en": "Pat into skin with clean hands or a cotton pad after cleansing."
+    },
+    "sizes": [
+      "150ml",
+      "250ml"
+    ],
+    "featured": true
+  },
+  {
+    "id": "p04",
+    "slug": "vitamin-c-glow-serum",
+    "name": {
+      "km": "សេរ៉ូមវីតាមីនស៊ី ថ្លាភ្លឺ",
+      "en": "Vitamin C Glow Serum"
+    },
+    "tagline": {
+      "km": "ជួយឱ្យស្បែកមើលទៅថ្លាភ្លឺ និងរលោង។",
+      "en": "For skin that looks bright, even, and rested."
+    },
+    "description": {
+      "km": "សេរ៉ូមស្រាលជាមួយ Sodium Ascorbyl Phosphate (វីតាមីនស៊ីទន់ភ្លន់) និង Niacinamide ជួយធ្វើឱ្យពណ៌ស្បែកស្មើគ្នា និងរលោងជាមួយការប្រើប្រាស់ជាប្រចាំ។",
+      "en": "A silky serum with gentle vitamin C derivative and niacinamide to support an even, luminous complexion with consistent use."
+    },
+    "brand": "Bopha Botanics",
+    "category": "serum",
+    "price": 28,
+    "image": "/images/d7d2d2ae-10dd-485a-b6d6-34776640c893.png",
+    "stock": 22,
+    "rating": 4.5,
+    "reviewCount": 64,
+    "skinTypes": [
+      "normal",
+      "oily",
+      "combination"
+    ],
+    "concerns": [
+      "dark-spots",
+      "dullness"
+    ],
+    "benefits": [
+      {
+        "km": "ពណ៌ស្បែកស្មើគ្នាជាលំដាប់",
+        "en": "Gradually evens tone"
+      },
+      {
+        "km": "ស្រាល មិនឱ្យរមាស់",
+        "en": "Gentle, non-tingling formula"
+      },
+      {
+        "km": "ធ្វើឱ្យមុខរលោង",
+        "en": "Adds a healthy glow"
+      }
+    ],
+    "ingredients": {
+      "km": "Sodium Ascorbyl Phosphate, Niacinamide, Ferulic Acid, Sodium Hyaluronate.",
+      "en": "Sodium Ascorbyl Phosphate, Niacinamide, Ferulic Acid, Sodium Hyaluronate."
+    },
+    "howToUse": {
+      "km": "ប្រើពេលព្រឹកមុនឡេការពារកម្តៅថ្ងៃ។ ចាប់ផ្តើម ៣ ដង/សប្តាហ៍ សម្រាប់ស្បែកងាយរលាក។",
+      "en": "Use in the morning before sunscreen. Start 3×/week if your skin is sensitive."
+    },
+    "sizes": [
+      "20ml",
+      "30ml"
+    ],
+    "newArrival": true,
+    "featured": true
+  },
+  {
+    "id": "p05",
+    "slug": "oat-calm-moisturizer",
+    "name": {
+      "km": "ក្រែមសំណើម Oat & Calm",
+      "en": "Oat & Calm Moisturizer"
+    },
+    "tagline": {
+      "km": "ក្រែមទន់ភ្លន់ ដែលស្បែកងាយរលាកក៏សាកសម។",
+      "en": "A cushiony cream even reactive skin gets along with."
+    },
+    "description": {
+      "km": "ក្រែមមានជាតិ Collagen Colloidal ពីស្រូវស្លៀក និង Ceramides ជួយការពារសំណើមពេញមួយថ្ងៃ ដោយមិនធ្វើឱ្យស្បែកមានអារម្មណ៍ធ្ងន់។",
+      "en": "Colloidal oatmeal and three ceramides seal in moisture all day without heaviness — a comfortable base under sunscreen or makeup."
+    },
+    "brand": "Sokha Skin",
+    "category": "moisturizer",
+    "price": 22,
+    "image": "/images/bebe6db9-1d97-487e-beb7-3599f3af83ef.png",
+    "stock": 47,
+    "rating": 4.9,
+    "reviewCount": 152,
+    "skinTypes": [
+      "dry",
+      "sensitive",
+      "normal"
+    ],
+    "concerns": [
+      "dryness",
+      "sensitivity"
+    ],
+    "benefits": [
+      {
+        "km": "ចាប់សំណើម ២៤ ម៉ោង",
+        "en": "24-hour moisture lock"
+      },
+      {
+        "km": "គាំទ្រស្រទាប់ការពារស្បែក",
+        "en": "Supports the skin barrier"
+      },
+      {
+        "km": "មិនបណ្តាលមុន",
+        "en": "Non-comedogenic"
+      }
+    ],
+    "ingredients": {
+      "km": "Avena Sativa (Oat) Kernel Flour, Ceramide NP, Squalane, Glycerin, Shea Butter.",
+      "en": "Avena Sativa (Oat) Kernel Flour, Ceramide NP, Squalane, Glycerin, Shea Butter."
+    },
+    "howToUse": {
+      "km": "លាបជាជំហានចុងក្រោយនៃពេលថ្ងៃ និងពេលយប់។",
+      "en": "Apply as the last step of your morning and evening routine."
+    },
+    "sizes": [
+      "50ml"
+    ],
+    "bestSeller": true
+  },
+  {
+    "id": "p06",
+    "slug": "daily-mineral-sunscreen-spf50",
+    "name": {
+      "km": "ឡេការពារកម្តៅថ្ងៃ SPF50+",
+      "en": "Daily Mineral Sunscreen SPF50+"
+    },
+    "tagline": {
+      "km": "ការពារកម្តៅថ្ងៃរាល់ថ្ងៃ ដោយគ្មានស្នាមស មិនជាប់ស្រេច។",
+      "en": "Everyday SPF50+ with no white cast and no greasy finish."
+    },
+    "description": {
+      "km": "ឡេការពារកម្តៅថ្ងៃស្រាល មាន UV filters ថ្នាក់ខ្ពស់ សម្រាប់អាកាសធាតុក្តៅក្នុងកម្ពុជា។ រួបរួមលឿន មិនទុកស្នាមស និងដើរតួជា primer ស្រាល។",
+      "en": "A featherlight sunscreen with modern UV filters for intense tropical sun. It sinks in fast, leaves no white cast, and doubles as a smooth makeup base."
+    },
+    "brand": "Srah",
+    "category": "sunscreen",
+    "price": 18,
+    "image": "/images/abe00f01-b498-4ced-9d32-8405c0db4c17.png",
+    "stock": 73,
+    "rating": 4.8,
+    "reviewCount": 189,
+    "skinTypes": [
+      "oily",
+      "combination",
+      "normal"
+    ],
+    "concerns": [
+      "dark-spots",
+      "aging",
+      "oiliness"
+    ],
+    "benefits": [
+      {
+        "km": "SPF50+ PA++++",
+        "en": "SPF50+ PA++++ protection"
+      },
+      {
+        "km": "គ្មានស្នាមស",
+        "en": "No white cast"
+      },
+      {
+        "km": "មិនជាប់ស្រេចក្នុងអាកាសធាតុ humid",
+        "en": "Sweat-resistant in humid weather"
+      }
+    ],
+    "ingredients": {
+      "km": "Uvinul A Plus, Tinosorb S, Niacinamide, Squalane, Panthenol.",
+      "en": "Uvinul A Plus, Tinosorb S, Niacinamide, Squalane, Panthenol."
+    },
+    "howToUse": {
+      "km": "លាបចំនួន ២ តម្រូវការក្រាស់ ២០ នាទីមុនចេញអំពើរថ្ងៃ ហើយបន្ថែមរាល់ ២-៣ ម៉ោង។",
+      "en": "Apply two finger-lengths 20 minutes before sun exposure; reapply every 2–3 hours outdoors."
+    },
+    "sizes": [
+      "50ml"
+    ],
+    "bestSeller": true,
+    "featured": true
+  },
+  {
+    "id": "p07",
+    "slug": "green-tea-sheet-mask",
+    "name": {
+      "km": "ម៉ាសស្លឹកតែបៃតង (៥ សន្លឹក)",
+      "en": "Green Tea Sheet Mask (5 pack)"
+    },
+    "tagline": {
+      "km": "១៥ នាទីសម្រាប់ស្បែកស្ងប់ និងផ្តល់សំណើម។",
+      "en": "Fifteen quiet minutes of hydration and calm."
+    },
+    "description": {
+      "km": "ម៉ាសទន់ភ្លន់ជាមួយសារធាតុចម្រាញ់ស្លឹកតែបៃតង និងសូត្រ។ សម្រាប់ថ្ងៃដែលស្បែកអ្នកហត់ ឬមុនព្រឹត្តិការណ៍សំខាន់។",
+      "en": "Soft Tencel sheets soaked in green tea and rice ferment — for tired-skin days or the night before something important."
+    },
+    "brand": "Bopha Botanics",
+    "category": "mask",
+    "price": 8,
+    "discountPrice": 6,
+    "image": "/images/d96d5fef-65d2-4fed-875c-b918ab10962d.png",
+    "stock": 120,
+    "rating": 4.4,
+    "reviewCount": 87,
+    "skinTypes": [
+      "normal",
+      "sensitive",
+      "combination"
+    ],
+    "concerns": [
+      "dryness",
+      "dullness",
+      "sensitivity"
+    ],
+    "benefits": [
+      {
+        "km": "សំណើមភ្លាមៗ",
+        "en": "Instant hydration"
+      },
+      {
+        "km": "ធ្វើឱ្យស្បែកស្ងប់",
+        "en": "Comforts stressed skin"
+      },
+      {
+        "km": "គ្មានក្លិន",
+        "en": "Fragrance-free"
+      }
+    ],
+    "ingredients": {
+      "km": "Camellia Sinensis Leaf Extract, Rice Ferment Filtrate, Panthenol, Sodium Hyaluronate.",
+      "en": "Camellia Sinensis Leaf Extract, Rice Ferment Filtrate, Panthenol, Sodium Hyaluronate."
+    },
+    "howToUse": {
+      "km": "ដាក់លើមុខស្អាត ១៥-២០ នាទី រួចដកចេញ ហើយច្របាច់សាច់ម៉ាសដែលនៅសល់។",
+      "en": "Apply to clean skin for 15–20 minutes, remove, and pat in the remaining essence."
+    },
+    "sizes": [
+      "5 × 25ml"
+    ],
+    "newArrival": true
+  },
+  {
+    "id": "p08",
+    "slug": "snail-repair-essence",
+    "name": {
+      "km": "អេសេនស្តោក Snail",
+      "en": "Snail Repair Essence"
+    },
+    "tagline": {
+      "km": "ជំហានសំខាន់សម្រាប់ស្បែករលោង ជាប់ទឹក។",
+      "en": "The bouncy, glossy-skin step your routine is missing."
+    },
+    "description": {
+      "km": "អេសេនស្រាលៗ ជាមួយ Snail Mucin ៧៤% និង Galactomyces ជួយឱ្យស្បែកមានភាពរលោង និងផ្តល់សំណើមជ្រៅជ្រះ។",
+      "en": "A slippery-thick essence with 74% snail mucin and galactomyces ferment for that bouncy, glass-skin bounce with daily use."
+    },
+    "brand": "Angkor Herbals",
+    "category": "essence",
+    "price": 26,
+    "image": "/images/519afb53-d143-4187-be40-3ab10c24b9e4.png",
+    "stock": 29,
+    "rating": 4.6,
+    "reviewCount": 71,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "combination"
+    ],
+    "concerns": [
+      "dryness",
+      "dullness",
+      "aging"
+    ],
+    "benefits": [
+      {
+        "km": "សំណើមជ្រៅជ្រះ",
+        "en": "Deep plumping hydration"
+      },
+      {
+        "km": "ស្បែករលោងជាប់ទឹក",
+        "en": "Glass-skin luminosity"
+      },
+      {
+        "km": "គាំទ្រការស្តារស្បែក",
+        "en": "Supports overnight recovery"
+      }
+    ],
+    "ingredients": {
+      "km": "Snail Secretion Filtrate (74%), Galactomyces Ferment Filtrate, Sodium Hyaluronate, Trehalose.",
+      "en": "Snail Secretion Filtrate (74%), Galactomyces Ferment Filtrate, Sodium Hyaluronate, Trehalose."
+    },
+    "howToUse": {
+      "km": "ច្របាច់ ២-៣ បន្ទុកបន្ទាប់ពីទឹកជូតមុខ មុនសេរ៉ូម។",
+      "en": "Pat 2–3 pumps after toner, before serum."
+    },
+    "sizes": [
+      "100ml"
+    ],
+    "newArrival": true
+  },
+  {
+    "id": "p09",
+    "slug": "caffeine-eye-cream",
+    "name": {
+      "km": "ក្រែមភ្នែក Caffeine",
+      "en": "Caffeine Eye Cream"
+    },
+    "tagline": {
+      "km": "ដាស់តឿនជុំវិញភ្នែក សម្រាប់ពេលព្រឹក។",
+      "en": "A bright morning for tired eyes."
+    },
+    "description": {
+      "km": "ក្រែមស្រាលៗ ជាមួយ Caffeine និង Peptides ជួយឱ្យតំបន់ជុំវិញភ្នែកមើលទៅជ្រះថ្លា និងស្រស់ស្រាយ។",
+      "en": "A cooling cream-gel with caffeine and peptides that wakes up the under-eye area and layers invisibly under concealer."
+    },
+    "brand": "Srah",
+    "category": "moisturizer",
+    "price": 15,
+    "image": "/images/9c011e81-95ce-4d5f-be76-f3594692baad.png",
+    "stock": 38,
+    "rating": 4.3,
+    "reviewCount": 52,
+    "skinTypes": [
+      "normal",
+      "oily",
+      "combination"
+    ],
+    "concerns": [
+      "aging",
+      "dullness"
+    ],
+    "benefits": [
+      {
+        "km": "ត្រជាក់ បន្ធូរអារម្មណ៍",
+        "en": "Cooling, de-puffing feel"
+      },
+      {
+        "km": "ស្រាល មុនដាក់ make-up",
+        "en": "Invisible under makeup"
+      },
+      {
+        "km": "ទន់ភ្លន់ជុំវិញភ្នែក",
+        "en": "Gentle for the eye area"
+      }
+    ],
+    "ingredients": {
+      "km": "Caffeine, Acetyl Tetrapeptide-5, Niacinamide, Squalane, Vitamin E.",
+      "en": "Caffeine, Acetyl Tetrapeptide-5, Niacinamide, Squalane, Vitamin E."
+    },
+    "howToUse": {
+      "km": "ច្របាច់បន្តិចបន្តួចជុំវិញភ្នែក ពេលព្រឹក និងល្ងាច។",
+      "en": "Tap a rice-grain amount around the eyes morning and night."
+    },
+    "sizes": [
+      "15ml"
+    ]
+  },
+  {
+    "id": "p10",
+    "slug": "coconut-body-lotion",
+    "name": {
+      "km": "ឡេថែស្បែកខ្លួនទឹកដូង",
+      "en": "Coconut Body Lotion"
+    },
+    "tagline": {
+      "km": "សំណើមស្រាល ជាមួយក្លិនទឹកដូងក្រចក។",
+      "en": "Lightweight moisture with a soft coconut scent."
+    },
+    "description": {
+      "km": "ឡេខ្លួនស្រាលៗ ជាមួយប្រេងទឹកដូងក្រចកកម្ពុជា និង Squalane ផ្តល់សំណើម ដោយមិនជាប់ស្រេចក្នុងអាកាសធាតុក្តៅ។",
+      "en": "Made with cold-pressed Cambodian coconut oil and squalane — absorbs in seconds, so you can get dressed right away."
+    },
+    "brand": "Angkor Herbals",
+    "category": "bodycare",
+    "price": 15,
+    "image": "/images/a5d33cf8-2e86-445c-aa61-926be7aa8219.png",
+    "stock": 64,
+    "rating": 4.7,
+    "reviewCount": 93,
+    "skinTypes": [
+      "normal",
+      "dry"
+    ],
+    "concerns": [
+      "dryness",
+      "dullness"
+    ],
+    "benefits": [
+      {
+        "km": "ស្រូបលឿន",
+        "en": "Fast-absorbing"
+      },
+      {
+        "km": "ប្រើប្រព័ន្ធទឹកដូងក្រចកកម្ពុជា",
+        "en": "Cambodian coconut oil"
+      },
+      {
+        "km": "ក្លិនស្រាល មិនខ្លាំង",
+        "en": "Soft, subtle scent"
+      }
+    ],
+    "ingredients": {
+      "km": "Cocos Nucifera (Coconut) Oil, Squalane, Glycerin, Shea Butter, Vitamin E.",
+      "en": "Cocos Nucifera (Coconut) Oil, Squalane, Glycerin, Shea Butter, Vitamin E."
+    },
+    "howToUse": {
+      "km": "លាបលើស្បែកសើមភ្លាមៗ បន្ទាប់ពីងូតទឹក។",
+      "en": "Smooth over damp skin right after showering."
+    },
+    "sizes": [
+      "250ml"
+    ]
+  },
+  {
+    "id": "p11",
+    "slug": "rose-clay-purifying-mask",
+    "name": {
+      "km": "ម៉ាសដីឥដ្ឋពណ៌ផ្កាថ្មី",
+      "en": "Rose Clay Purifying Mask"
+    },
+    "tagline": {
+      "km": "សម្អាតជ្រៅជ្រះ ១០ នាទី សម្រាប់ស្បែកមានតុល្យភាព។",
+      "en": "Ten minutes to clearer, balanced skin."
+    },
+    "description": {
+      "km": "ម៉ាសដីឥដ្ឋទន់ភ្លន់ ជាមួយ Kaolin និង Rose Clay ជួយដកប្រេងលើសចេញពីសរសៃប្រហើរ ដោយមិនធ្វើឱ្យស្បែកស្ងោក។",
+      "en": "A creamy kaolin and rose clay mask that lifts excess oil from pores without the tight, squeaky aftermath."
+    },
+    "brand": "Bopha Botanics",
+    "category": "mask",
+    "price": 17,
+    "image": "/images/268bcbd0-0186-449f-963e-51bf59d73065.png",
+    "stock": 31,
+    "rating": 4.5,
+    "reviewCount": 58,
+    "skinTypes": [
+      "oily",
+      "combination",
+      "normal"
+    ],
+    "concerns": [
+      "oiliness",
+      "acne"
+    ],
+    "benefits": [
+      {
+        "km": "សម្អាតប្រេងលើស",
+        "en": "Decongests pores"
+      },
+      {
+        "km": "មិនធ្វើឱ្យស្បែកស្ងោក",
+        "en": "No tight, stripped feeling"
+      },
+      {
+        "km": "ប្រើ ១-២ ដង/សប្តាហ៍",
+        "en": "Use 1–2× per week"
+      }
+    ],
+    "ingredients": {
+      "km": "Kaolin, French Rose Clay, Niacinamide, Glycerin, Panthenol.",
+      "en": "Kaolin, French Rose Clay, Niacinamide, Glycerin, Panthenol."
+    },
+    "howToUse": {
+      "km": "លាបស្រេចក្រាស់ ១០ នាទី រួចលាងទឹកស្អាត មិនត្រូវឱ្យស្ងោកពេញទេ។",
+      "en": "Apply an even layer, leave 10 minutes, rinse before it fully dries."
+    },
+    "sizes": [
+      "75ml"
+    ],
+    "featured": true
+  },
+  {
+    "id": "p12",
+    "slug": "overnight-sleeping-mask",
+    "name": {
+      "km": "ម៉ាសប្រើពេលយប់",
+      "en": "Overnight Sleeping Mask"
+    },
+    "tagline": {
+      "km": "ដឹកនាំសំណើមពេញមួយយប់។",
+      "en": "Wake up with skin that kept its water overnight."
+    },
+    "description": {
+      "km": "ម៉ាសជែលស្រាល ជាមួយ Trehalose និង Hyaluronic Acid ស្រោបសំណើមពេញមួយយប់ ដូច្នេះពេលព្រឹកស្បែកអ្នកមើលទៅផ្អែមល្ហែម។",
+      "en": "A cushiony gel sleeping mask with trehalose and three weights of hyaluronic acid, so morning skin looks plump and rested."
+    },
+    "brand": "Sokha Skin",
+    "category": "mask",
+    "price": 20,
+    "discountPrice": 16,
+    "image": "/images/ae19e7f3-4756-4a98-b432-ca7d28e363f0.png",
+    "stock": 26,
+    "rating": 4.6,
+    "reviewCount": 67,
+    "skinTypes": [
+      "dry",
+      "normal",
+      "combination"
+    ],
+    "concerns": [
+      "dryness",
+      "dullness",
+      "aging"
+    ],
+    "benefits": [
+      {
+        "km": "សំណើមពេញយប់",
+        "en": "Overnight moisture seal"
+      },
+      {
+        "km": "មិនជាប់ខ្នើយ",
+        "en": "Non-sticky, pillow-friendly"
+      },
+      {
+        "km": "ប្រើ ២-៣ ដង/សប្តាហ៍",
+        "en": "Use 2–3× per week"
+      }
+    ],
+    "ingredients": {
+      "km": "Trehalose, Sodium Hyaluronate, Beta-Glucan, Squalane, Panthenol.",
+      "en": "Trehalose, Sodium Hyaluronate, Beta-Glucan, Squalane, Panthenol."
+    },
+    "howToUse": {
+      "km": "លាបជាជំហានចុងក្រោយពេលយប់ ១-២ ដង/សប្តាហ៍។",
+      "en": "Apply as the final evening step 2–3 nights a week."
+    },
+    "sizes": [
+      "60ml"
+    ],
+    "newArrival": true
+  }
+]
