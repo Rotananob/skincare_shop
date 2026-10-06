@@ -1,89 +1,102 @@
-# Skincare Shop — Sokha Skin 🌸
+# WeYoung Skin 🌸
 
-> Premium skincare e-commerce for Cambodia market, built with **Next.js** (frontend) + **NestJS** (backend)
+> Premium skincare e-commerce for the Cambodian market, built with **Next.js 15** (Frontend) + **NestJS** (Backend)
+
+WeYoung Skin is a modern, bilingual (Khmer + English) e-commerce platform designed for high-performance and a premium user experience.
+
+---
 
 ## 📁 Project Structure
 
 ```
 skincare_shop/
-├── frontend/          ← Next.js 15 + Tailwind CSS + TypeScript
+├── frontend/          ← Next.js 15 + Tailwind CSS v4 + TypeScript
 │   ├── src/
 │   │   ├── app/              ← App Router pages
 │   │   │   ├── page.tsx      ← Homepage
 │   │   │   ├── shop/         ← Shop listing page
-│   │   │   │   ├── page.tsx
-│   │   │   │   └── [slug]/   ← Product detail page
-│   │   │   │       └── page.tsx
-│   │   │   ├── layout.tsx
-│   │   │   └── globals.css
-│   │   ├── components/       ← Reusable components
+│   │   │   ├── about/        ← About page
+│   │   │   ├── contact/      ← Contact page
+│   │   │   ├── account/      ← User account page
+│   │   │   ├── checkout/     ← Checkout flow
+│   │   │   ├── layout.tsx    ← Root layout & font injection
+│   │   │   └── globals.css   ← Tailwind entry & global overrides
+│   │   ├── components/       ← Reusable React components
 │   │   │   ├── Navbar.tsx
 │   │   │   ├── Footer.tsx
 │   │   │   ├── ProductCard.tsx
-│   │   │   ├── Cart.tsx
+│   │   │   ├── MenuDrawer.tsx
 │   │   │   └── ...
-│   │   ├── context/          ← React contexts
-│   │   │   ├── CartContext.tsx
-│   │   │   └── LanguageContext.tsx
-│   │   ├── data/             ← Static data
-│   │   │   └── products.ts   ← All 15 products
-│   │   ├── hooks/            ← Custom hooks
-│   │   └── types/            ← TypeScript types
+│   │   ├── context/          ← React contexts (ShopContext)
+│   │   ├── data/             ← Static data (Products, Translations)
+│   │   └── types/            ← TypeScript type definitions
 │   └── public/
-│       └── images/           ← 15 product images
+│       └── images/           ← Optimized product and UI imagery
 │
-├── backend/           ← NestJS (placeholder — implement later)
+├── backend/           ← NestJS (Planned Architecture)
 │   └── src/
 │       ├── main.ts
 │       ├── app.module.ts
 │       └── modules/
-│           ├── products/     ← TODO
-│           ├── orders/       ← TODO
-│           ├── users/        ← TODO
-│           └── auth/         ← TODO
+│           ├── products/
+│           ├── orders/
+│           ├── users/
+│           └── auth/
 │
 └── README.md
 ```
 
 ## 🚀 Getting Started
 
-### Frontend
+### Frontend (Live)
 ```bash
 cd frontend
 npm install
 npm run dev
-# → http://localhost:3000
+# → Live at http://localhost:3000
 ```
 
-### Backend (coming soon)
+### Backend (Coming Soon)
 ```bash
 cd backend
 npm install
 npm run start:dev
-# → http://localhost:8000
+# → API at http://localhost:8000
 ```
 
 ## 🎨 Design System
 
+Our UI is built around a dark luxury aesthetic with warm earthy tones, optimized for the Cambodian climate and market.
+
 | Token | Value | Usage |
 |-------|-------|-------|
-| Background | `#0c0a09` | Main background |
-| Card | `#1a1714` | Product cards |
-| Primary text | `#f5ede6` | Headings |
-| Secondary text | `#a89080` | Labels |
-| Accent | `#c9a882` | Gold highlights |
+| Background | `#0c0a09` | Main dark background |
+| Card | `#1a1714` | Product and info cards |
+| Primary text | `#f5ede6` | Headings and primary copy |
+| Secondary text | `#a89080` | Labels and descriptions |
+| Accent | `#c9a882` | Gold highlights and branding |
+| Badge | `#2d4a2d` | Success states and trust badges |
 
-**Fonts:** Fraunces (headings) · Manrope (body) · Kantumruy Pro (Khmer)
+**Typography:** 
+- `Fraunces` (Headings)
+- `Manrope` (Body)
+- `Kantumruy Pro` (Khmer Script)
 
 ## 🌏 Bilingual Support
 
-All content is bilingual: **Khmer (km)** + **English (en)**
+All content is fully bilingual, easily toggled via the navbar:
+- **Khmer (km)** — Primary audience
+- **English (en)** — Secondary audience
 
 ## 📦 Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Next.js 15, React 19, TypeScript, Tailwind CSS |
-| Backend | NestJS, TypeORM, PostgreSQL (planned) |
-| Auth | JWT + Passport (planned) |
-| Deployment | Vercel (frontend), Railway (backend) |
+| Frontend | Next.js 15, React 19, TypeScript, Tailwind CSS v4 |
+| State Management | React Context API |
+| Backend | NestJS, TypeORM, PostgreSQL (Planned) |
+| Auth | JWT + Passport (Planned) |
+| Deployment | Vercel (Frontend), Railway (Backend) |
+
+---
+*Developed for WeYoung Cambodia.*
