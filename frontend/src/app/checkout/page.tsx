@@ -359,7 +359,7 @@ export default function CheckoutPage() {
                 <div className="inline-block bg-white text-[#E1251B] font-black text-xs px-2.5 py-0.5 rounded tracking-widest uppercase mb-1">
                   KHQR
                 </div>
-                <h3 className="font-bold text-[17px] tracking-tight">SOKHA SKIN CAMBODIA</h3>
+                <h3 className="font-bold text-[17px] tracking-tight">WEYOUNG SKIN CAMBODIA</h3>
                 <p className="text-white/80 text-[12px]">Bakong Payment Network</p>
               </div>
 

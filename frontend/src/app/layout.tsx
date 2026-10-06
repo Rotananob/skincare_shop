@@ -11,8 +11,8 @@ import Toast from '@/components/Toast';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Sokha Skin — សុខា | Premium Skincare Cambodia',
-  description: 'Sokha Skin — carefully curated authentic skincare, delivered across Cambodia. ផលិតផលថែស្បែកពិតប្រាកដ ដឹកជញ្ជូនទូទាំងប្រទេស។',
+  title: 'WeYoung Skin — សុខា | Premium Skincare Cambodia',
+  description: 'WeYoung Skin — carefully curated authentic skincare, delivered across Cambodia. ផលិតផលថែស្បែកពិតប្រាកដ ដឹកជញ្ជូនទូទាំងប្រទេស។',
   icons: { icon: '/favicon.png', apple: '/icon.png' },
 };
 

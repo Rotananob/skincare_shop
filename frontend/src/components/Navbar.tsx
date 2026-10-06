@@ -32,9 +32,9 @@ export default function Navbar() {
           {/* Brand Logo & Desktop Nav Links */}
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2.5">
-              <img src="/favicon.png" alt="Sokha Skin Logo" className="h-8 w-8 rounded-full object-cover" />
+              <img src="/favicon.png" alt="WeYoung Skin Logo" className="h-8 w-8 rounded-full object-cover" />
               <span className="font-display text-[21px] sm:text-[23px] font-semibold tracking-tight text-[#2E2620]">
-                Sokha <span className="text-[#A9573B]">Skin</span>
+                WeYoung <span className="text-[#A9573B]">Skin</span>
               </span>
             </Link>
 

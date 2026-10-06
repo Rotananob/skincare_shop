@@ -55,9 +55,9 @@ export default function MenuDrawer() {
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-2"
           >
-            <img src="/favicon.png" alt="Sokha Skin Logo" className="h-7 w-7 rounded-full object-cover" />
+            <img src="/favicon.png" alt="WeYoung Skin Logo" className="h-7 w-7 rounded-full object-cover" />
             <span className="font-display text-[20px] font-semibold text-[#2E2620]">
-              Sokha <span className="text-[#A9573B]">Skin</span>
+              WeYoung <span className="text-[#A9573B]">Skin</span>
             </span>
           </Link>
 
@@ -138,7 +138,7 @@ export default function MenuDrawer() {
 
         {/* Footer info inside menu */}
         <div className="p-6 border-t border-[#E7DDD0] text-[12.5px] text-[#8A8077] font-khmer">
-          <p>© {new Date().getFullYear()} Sokha Skin Cambodia</p>
+          <p>© {new Date().getFullYear()} WeYoung Skin Cambodia</p>
         </div>
       </div>
     </div>

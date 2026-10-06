@@ -89,13 +89,13 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
   // Load from localStorage on mount
   useEffect(() => {
     try {
-      const savedCart = localStorage.getItem('sokha_cart');
+      const savedCart = localStorage.getItem('weyoung_cart');
       if (savedCart) setCart(JSON.parse(savedCart));
-      const savedWishlist = localStorage.getItem('sokha_wishlist');
+      const savedWishlist = localStorage.getItem('weyoung_wishlist');
       if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
-      const savedLang = localStorage.getItem('sokha_lang');
+      const savedLang = localStorage.getItem('weyoung_lang');
       if (savedLang === 'km' || savedLang === 'en') setLang(savedLang);
-      const savedCurr = localStorage.getItem('sokha_currency');
+      const savedCurr = localStorage.getItem('weyoung_currency');
       if (savedCurr === 'USD' || savedCurr === 'KHR') setCurrency(savedCurr);
     } catch {}
   }, []);
@@ -103,26 +103,26 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
   // Save to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('sokha_cart', JSON.stringify(cart));
+      localStorage.setItem('weyoung_cart', JSON.stringify(cart));
     } catch {}
   }, [cart]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('sokha_wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('weyoung_wishlist', JSON.stringify(wishlist));
     } catch {}
   }, [wishlist]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('sokha_lang', lang);
+      localStorage.setItem('weyoung_lang', lang);
       document.documentElement.lang = lang;
     } catch {}
   }, [lang]);
 
   useEffect(() => {
     try {
-      localStorage.setItem('sokha_currency', currency);
+      localStorage.setItem('weyoung_currency', currency);
     } catch {}
   }, [currency]);
 

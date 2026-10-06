@@ -14,9 +14,9 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-6 space-y-4">
             <Link href="/" className="flex items-center gap-2.5">
-              <img src="/favicon.png" alt="Sokha Skin" className="h-9 w-9 rounded-full object-cover" />
+              <img src="/favicon.png" alt="WeYoung Skin" className="h-9 w-9 rounded-full object-cover" />
               <span className="font-display text-[24px] font-semibold tracking-tight text-[#2E2620]">
-                Sokha <span className="text-[#A9573B]">Skin</span>
+                WeYoung <span className="text-[#A9573B]">Skin</span>
               </span>
             </Link>
 
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom Bar with Currency Switcher & Copyright */}
         <div className="mt-14 pt-8 border-t border-[#E7DDD0] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#8A8077]">
           <p className="font-khmer">
-            © {new Date().getFullYear()} Sokha Skin. រក្សាសិទ្ធិគ្រប់បែបយ៉ាង។
+            © {new Date().getFullYear()} WeYoung Skin. រក្សាសិទ្ធិគ្រប់បែបយ៉ាង។
           </p>
 
           <div className="flex items-center gap-4">

@@ -480,7 +480,7 @@ export default function HomePage() {
               រួមដំណើរជាមួយយើង
             </h2>
             <p className="text-[14px] font-medium text-[#A9573B]">
-              @sokha.skin
+              @weyoung.skin
             </p>
           </div>
 

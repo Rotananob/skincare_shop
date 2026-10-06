@@ -30,7 +30,7 @@ export default function ContactPage() {
             <span className="text-2xl">✈️</span>
             <div>
               <p className="font-semibold text-[#2E2620]">Telegram</p>
-              <p className="text-[14px] text-[#7A7067]">@sokhaskin</p>
+              <p className="text-[14px] text-[#7A7067]">@weyoungskin</p>
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
             <span className="text-2xl">💬</span>
             <div>
               <p className="font-semibold text-[#2E2620]">Facebook Messenger</p>
-              <p className="text-[14px] text-[#7A7067]">Sokha Skin</p>
+              <p className="text-[14px] text-[#7A7067]">WeYoung Skin</p>
             </div>
           </div>
 

@@ -30,7 +30,7 @@ export default function AccountPage() {
             </div>
             <div>
               <h2 className="text-[18px] font-semibold text-[#2E2620]">{loggedInUser}</h2>
-              <p className="text-[13.5px] text-[#7A7067]">{email || 'member@sokha.skin'}</p>
+              <p className="text-[13.5px] text-[#7A7067]">{email || 'member@weyoung.skin'}</p>
             </div>
             <div className="pt-4 border-t border-[#E7DDD0]">
               <button

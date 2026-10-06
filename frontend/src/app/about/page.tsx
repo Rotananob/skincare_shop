@@ -11,13 +11,13 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
         
         <h1 className="font-display text-[32px] sm:text-[42px] font-semibold text-[#2E2620] tracking-tight">
-          {t('about.title') || 'អំពី Sokha Skin'}
+          {t('about.title') || 'អំពី WeYoung Skin'}
         </h1>
 
         <div className="relative aspect-[16/9] rounded-[4px] overflow-hidden border border-[#E7DDD0] bg-[#F1E9DC]">
           <img
             src="/images/93197771-a19c-4916-98db-316b75cf0682.png"
-            alt="About Sokha Skin"
+            alt="About WeYoung Skin"
             className="w-full h-full object-cover"
           />
         </div>
