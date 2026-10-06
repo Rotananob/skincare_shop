@@ -141,15 +141,17 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <Link
                 href="/shop"
-                className="bg-[#FFFDF9] text-[#2E2620] px-7 py-3 rounded-full text-[14px] font-semibold hover:bg-white transition-transform active:scale-95 inline-flex items-center gap-2 font-khmer shadow-sm"
+                className="bg-[#FFFDF9] !text-[#2E2620] px-7 py-3 rounded-full text-[14px] font-semibold hover:bg-white transition-transform active:scale-95 inline-flex items-center gap-2 font-khmer shadow-sm"
+                style={{ color: '#2E2620' }}
               >
-                {t('hero.cta')}
+                <span style={{ color: '#2E2620' }}>{t('hero.cta')}</span>
                 <ArrowRightIcon size={16} />
               </Link>
 
               <Link
                 href="/shop?concern=all"
-                className="text-[14px] font-medium text-white underline underline-offset-4 hover:text-[#FAF5EE]/80 transition-colors font-khmer"
+                className="text-[14px] font-medium !text-white underline underline-offset-4 hover:text-[#FAF5EE]/80 transition-colors font-khmer"
+                style={{ color: '#ffffff' }}
               >
                 {t('hero.cta2')}
               </Link>
@@ -327,19 +329,19 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-x-0 sm:divide-x divide-[#3D332B]">
             <div className="p-2">
               <p className="font-display text-[36px] sm:text-[44px] font-bold text-white">25</p>
-              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.delivery') || 'ខេត្ត/ក្រុង បម្រើសេវា'}</p>
+              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.provinces')}</p>
             </div>
             <div className="p-2">
               <p className="font-display text-[36px] sm:text-[44px] font-bold text-white">48h</p>
-              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.speed') || 'ដឹកជញ្ជូនលឿនបំផុត'}</p>
+              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.delivery')}</p>
             </div>
             <div className="p-2">
               <p className="font-display text-[36px] sm:text-[44px] font-bold text-white">100%</p>
-              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.authentic') || 'ផលិតផលពិតប្រាកដ'}</p>
+              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('trust.authentic')}</p>
             </div>
             <div className="p-2">
               <p className="font-display text-[36px] sm:text-[44px] font-bold text-white">10k+</p>
-              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.customers') || 'អតិថិជនសប្បាយចិត្ត'}</p>
+              <p className="text-[13px] text-[#FAF5EE]/75 mt-1 font-khmer">{t('stat.customers')}</p>
             </div>
           </div>
         </div>
@@ -434,7 +436,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="mb-10 text-center space-y-2">
           <h2 className="font-display text-[26px] sm:text-[34px] font-semibold text-[#2E2620] tracking-tight font-khmer">
-            {t('home.reviewsTitle') || 'អតិថិជននិយាយអ្វីអំពីយើង'}
+            {t('home.reviews')}
           </h2>
         </div>
 

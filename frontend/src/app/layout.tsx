@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import './original.css';
 import './globals.css';
 import { ShopProvider } from '@/context/ShopContext';
 import Navbar from '@/components/Navbar';

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700;800&family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&display=swap');
-
-@import "./original.css";
+@import "tailwindcss";
 
 /* Base Overrides for 100% pixel-perfect matching */
 :root {
@@ -36,6 +34,14 @@ h1, h2, h3, .font-display {
 
 .font-khmer {
   font-family: 'Kantumruy Pro', var(--font-body), sans-serif;
+}
+
+/* High-Contrast Button & Link text */
+.bg-\[\#2E2620\], [class*="bg-[#2E2620]"] {
+  color: #FAF5EE !important;
+}
+.bg-\[\#A9573B\], [class*="bg-[#A9573B]"] {
+  color: #FFFFFF !important;
 }
 
 /* iOS Safe Area Utilities */
