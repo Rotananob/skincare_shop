@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import MobileNav from '@/components/MobileNav';
 import CartDrawer from '@/components/CartDrawer';
 import MenuDrawer from '@/components/MenuDrawer';
+import SearchModal from '@/components/SearchModal';
+import Toast from '@/components/Toast';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
   themeColor: '#261E19',
 };
 
@@ -35,6 +38,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <MenuDrawer />
           <CartDrawer />
+          <SearchModal />
+          <Toast />
           <main className="min-h-screen">
             {children}
           </main>

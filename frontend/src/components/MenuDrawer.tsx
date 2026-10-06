@@ -9,9 +9,12 @@ export default function MenuDrawer() {
     isMenuOpen,
     setIsMenuOpen,
     setIsCartOpen,
+    setIsSearchOpen,
     cartCount,
     lang,
     setLang,
+    currency,
+    setCurrency,
     t,
   } = useShop();
 
@@ -30,18 +33,18 @@ export default function MenuDrawer() {
     <div className="fixed inset-0 z-50 flex">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/45 backdrop-blur-[2px]"
+        className="fixed inset-0 bg-black/45 backdrop-blur-[2px] animate-fade-in"
         onClick={() => setIsMenuOpen(false)}
       />
 
       {/* Drawer */}
-      <div className="relative w-full max-w-sm bg-[#FAF5EE] h-full shadow-2xl flex flex-col z-10">
+      <div className="relative w-full max-w-sm bg-[#FAF5EE] h-full shadow-2xl flex flex-col z-10 animate-slide-in-left">
         
         {/* Top Header matching Screenshot 15 */}
-        <div className="p-4 sm:p-5 border-b border-[#E7DDD0] flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-[#E7DDD0] flex items-center justify-between bg-[#FAF5EE]">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="p-1 text-[#2E2620] hover:text-[#A9573B]"
+            className="p-1 text-[#2E2620] hover:text-[#A9573B] transition-colors"
             aria-label="Close menu"
           >
             <XIcon size={22} />
@@ -59,19 +62,23 @@ export default function MenuDrawer() {
           </Link>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/shop"
-              onClick={() => setIsMenuOpen(false)}
-              className="p-1 text-[#2E2620]"
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsSearchOpen(true);
+              }}
+              className="p-1 text-[#2E2620] hover:text-[#A9573B] transition-colors"
+              aria-label="Search"
             >
               <SearchIcon size={20} />
-            </Link>
+            </button>
             <button
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsCartOpen(true);
               }}
-              className="p-1 text-[#2E2620] relative"
+              className="p-1 text-[#2E2620] hover:text-[#A9573B] transition-colors relative"
+              aria-label="Cart"
             >
               <ShoppingBagIcon size={20} />
               {cartCount > 0 && (
@@ -98,23 +105,33 @@ export default function MenuDrawer() {
           ))}
 
           {/* Language Switcher matching Screenshot 15 */}
-          <div className="py-5 flex items-center gap-3 text-[14px]">
+          <div className="py-5 flex items-center justify-between text-[14px]">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setLang('km')}
+                className={`font-khmer transition-colors ${
+                  lang === 'km' ? 'font-bold text-[#2E2620]' : 'text-[#8A8077] hover:text-[#2E2620]'
+                }`}
+              >
+                ខ្មែរ
+              </button>
+              <span className="text-[#D6CCC2]">|</span>
+              <button
+                onClick={() => setLang('en')}
+                className={`transition-colors ${
+                  lang === 'en' ? 'font-bold text-[#2E2620]' : 'text-[#8A8077] hover:text-[#2E2620]'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            {/* Currency toggle */}
             <button
-              onClick={() => setLang('km')}
-              className={`font-khmer transition-colors ${
-                lang === 'km' ? 'font-bold text-[#2E2620]' : 'text-[#8A8077] hover:text-[#2E2620]'
-              }`}
+              onClick={() => setCurrency(currency === 'USD' ? 'KHR' : 'USD')}
+              className="border border-[#E7DDD0] bg-[#FFFDF9] text-[#2E2620] font-semibold text-[12.5px] px-2.5 py-1 rounded-sm hover:border-[#A9573B] transition-colors"
             >
-              ខ្មែរ
-            </button>
-            <span className="text-[#D6CCC2]">|</span>
-            <button
-              onClick={() => setLang('en')}
-              className={`transition-colors ${
-                lang === 'en' ? 'font-bold text-[#2E2620]' : 'text-[#8A8077] hover:text-[#2E2620]'
-              }`}
-            >
-              EN
+              {currency === 'USD' ? 'USD $' : 'KHR ៛'}
             </button>
           </div>
         </div>

@@ -29,12 +29,12 @@ export default function CartDrawer() {
     <div className="fixed inset-0 z-50 flex justify-end">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/45 backdrop-blur-[2px] transition-opacity"
+        className="fixed inset-0 bg-black/45 backdrop-blur-[2px] animate-fade-in"
         onClick={() => setIsCartOpen(false)}
       />
 
       {/* Drawer */}
-      <div className="relative w-full max-w-md bg-[#FAF5EE] h-full shadow-2xl flex flex-col z-10 transition-transform">
+      <div className="relative w-full max-w-md bg-[#FAF5EE] h-full shadow-2xl flex flex-col z-10 animate-slide-in-right">
         
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-[#E7DDD0] flex items-center justify-between">

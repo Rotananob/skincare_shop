@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import translations from '@/data/translations.json';
 import productsData from '@/data/exact_products.json';
 
@@ -34,6 +34,14 @@ export interface CartItem {
   size?: string;
 }
 
+export interface ToastData {
+  id: number;
+  message: string;
+  subMessage?: string;
+  image?: string;
+  type?: 'cart' | 'wishlist' | 'info';
+}
+
 interface ShopContextType {
   products: Product[];
   cart: CartItem[];
@@ -42,11 +50,16 @@ interface ShopContextType {
   currency: 'USD' | 'KHR';
   isCartOpen: boolean;
   isMenuOpen: boolean;
+  isSearchOpen: boolean;
+  toast: ToastData | null;
   setLang: (lang: 'km' | 'en') => void;
   setCurrency: (c: 'USD' | 'KHR') => void;
   setIsCartOpen: (open: boolean) => void;
   setIsMenuOpen: (open: boolean) => void;
-  addToCart: (product: Product, qty?: number, size?: string) => void;
+  setIsSearchOpen: (open: boolean) => void;
+  showToast: (message: string, subMessage?: string, image?: string, type?: 'cart' | 'wishlist' | 'info') => void;
+  dismissToast: () => void;
+  addToCart: (product: Product, qty?: number, size?: string, openDrawer?: boolean) => void;
   removeFromCart: (productId: string) => void;
   updateQty: (productId: string, qty: number) => void;
   toggleWishlist: (productId: string) => void;
@@ -70,6 +83,8 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
   const [currency, setCurrency] = useState<'USD' | 'KHR'>('USD');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [toast, setToast] = useState<ToastData | null>(null);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -80,6 +95,8 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
       if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
       const savedLang = localStorage.getItem('sokha_lang');
       if (savedLang === 'km' || savedLang === 'en') setLang(savedLang);
+      const savedCurr = localStorage.getItem('sokha_currency');
+      if (savedCurr === 'USD' || savedCurr === 'KHR') setCurrency(savedCurr);
     } catch {}
   }, []);
 
@@ -103,20 +120,53 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
     } catch {}
   }, [lang]);
 
-  const addToCart = (product: Product, qty = 1, size?: string) => {
+  useEffect(() => {
+    try {
+      localStorage.setItem('sokha_currency', currency);
+    } catch {}
+  }, [currency]);
+
+  const showToast = useCallback(
+    (message: string, subMessage?: string, image?: string, type: 'cart' | 'wishlist' | 'info' = 'info') => {
+      const newToast = { id: Date.now(), message, subMessage, image, type };
+      setToast(newToast);
+      setTimeout(() => {
+        setToast((current) => (current?.id === newToast.id ? null : current));
+      }, 3500);
+    },
+    []
+  );
+
+  const dismissToast = useCallback(() => {
+    setToast(null);
+  }, []);
+
+  const addToCart = (product: Product, qty = 1, size?: string, openDrawer = false) => {
     const chosenSize = size || (product.sizes && product.sizes[0]) || '';
-    setCart(prev => {
-      const existing = prev.find(i => i.product.id === product.id && i.size === chosenSize);
+    setCart((prev) => {
+      const existing = prev.find((i) => i.product.id === product.id && i.size === chosenSize);
       if (existing) {
-        return prev.map(i => i.product.id === product.id && i.size === chosenSize ? { ...i, qty: i.qty + qty } : i);
+        return prev.map((i) =>
+          i.product.id === product.id && i.size === chosenSize ? { ...i, qty: i.qty + qty } : i
+        );
       }
       return [...prev, { product, qty, size: chosenSize }];
     });
-    setIsCartOpen(true);
+
+    showToast(
+      lang === 'km' ? 'បានបន្ថែមទៅកន្ត្រក!' : 'Added to cart!',
+      product.name[lang] || product.name.km,
+      product.image,
+      'cart'
+    );
+
+    if (openDrawer) {
+      setIsCartOpen(true);
+    }
   };
 
   const removeFromCart = (productId: string) => {
-    setCart(prev => prev.filter(i => i.product.id !== productId));
+    setCart((prev) => prev.filter((i) => i.product.id !== productId));
   };
 
   const updateQty = (productId: string, qty: number) => {
@@ -124,20 +174,38 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
       removeFromCart(productId);
       return;
     }
-    setCart(prev => prev.map(i => i.product.id === productId ? { ...i, qty } : i));
+    setCart((prev) => prev.map((i) => (i.product.id === productId ? { ...i, qty } : i)));
   };
 
   const toggleWishlist = (productId: string) => {
-    setWishlist(prev =>
-      prev.includes(productId) ? prev.filter(id => id !== productId) : [...prev, productId]
-    );
+    const product = products.find((p) => p.id === productId);
+    setWishlist((prev) => {
+      const exists = prev.includes(productId);
+      if (exists) {
+        showToast(
+          lang === 'km' ? 'បានដកចេញពីបញ្ជីចូលចិត្ត' : 'Removed from wishlist',
+          product?.name[lang],
+          product?.image,
+          'wishlist'
+        );
+        return prev.filter((id) => id !== productId);
+      } else {
+        showToast(
+          lang === 'km' ? 'បានរក្សាទុកក្នុងបញ្ជីចូលចិត្ត!' : 'Saved to wishlist!',
+          product?.name[lang],
+          product?.image,
+          'wishlist'
+        );
+        return [...prev, productId];
+      }
+    });
   };
 
   const isWishlisted = (productId: string) => wishlist.includes(productId);
 
   const formatPrice = (usd: number) => {
     if (currency === 'KHR') {
-      const khr = Math.round(usd * 4100 / 100) * 100;
+      const khr = Math.round((usd * 4100) / 100) * 100;
       return `${khr.toLocaleString(lang === 'km' ? 'km-KH' : 'en-US')} ៛`;
     }
     return `$${usd.toFixed(2)}`;
@@ -169,10 +237,15 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
         currency,
         isCartOpen,
         isMenuOpen,
+        isSearchOpen,
+        toast,
         setLang,
         setCurrency,
         setIsCartOpen,
         setIsMenuOpen,
+        setIsSearchOpen,
+        showToast,
+        dismissToast,
         addToCart,
         removeFromCart,
         updateQty,

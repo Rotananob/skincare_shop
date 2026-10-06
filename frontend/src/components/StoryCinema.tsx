@@ -1,10 +1,11 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useShop } from '@/context/ShopContext';
 
 export default function StoryCinema() {
-  const { lang, t } = useShop();
+  const { t } = useShop();
   const [currentStep, setCurrentStep] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const steps = [
     {
@@ -31,28 +32,49 @@ export default function StoryCinema() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentStep((prev) => (prev + 1) % steps.length);
-    }, 5000);
+    }, 5500);
     return () => clearInterval(timer);
   }, [steps.length]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 40) {
+      // swipe left -> next
+      setCurrentStep((prev) => (prev + 1) % steps.length);
+    } else if (diff < -40) {
+      // swipe right -> prev
+      setCurrentStep((prev) => (prev - 1 + steps.length) % steps.length);
+    }
+    touchStartX.current = null;
+  };
 
   const active = steps[currentStep];
 
   return (
-    <section className="relative w-full min-h-[580px] sm:min-h-[640px] overflow-hidden my-8 select-none">
-      {/* Background Image Carousel */}
+    <section
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      className="relative w-full min-h-[580px] sm:min-h-[640px] overflow-hidden my-8 select-none cursor-grab active:cursor-grabbing"
+    >
+      {/* Background Image Carousel with smooth cross-fade */}
       {steps.map((s, idx) => (
         <div
           key={s.num}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             idx === currentStep ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
           <img
             src={s.image}
             alt={s.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-10000 ease-out scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/45" />
         </div>
       ))}
 
@@ -71,11 +93,11 @@ export default function StoryCinema() {
 
         {/* Bottom Step Card matching screenshots */}
         <div className="max-w-xl text-white space-y-4 pb-4">
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 transition-all duration-300">
             <span className="text-[13px] font-bold text-[#A9573B] tracking-wider block">
               {active.num}
             </span>
-            <h3 className="text-[24px] sm:text-[28px] font-semibold text-white font-khmer">
+            <h3 className="text-[24px] sm:text-[28px] font-semibold text-white font-khmer leading-snug">
               {active.title}
             </h3>
             <p className="text-[14px] sm:text-[15px] text-[#FAF5EE]/90 leading-relaxed font-khmer max-w-lg">
@@ -95,11 +117,11 @@ export default function StoryCinema() {
                 <button
                   key={i}
                   onClick={() => setCurrentStep(i)}
-                  className="h-1 flex-1 rounded-full overflow-hidden bg-white/30 transition-all cursor-pointer"
+                  className="h-1.5 flex-1 rounded-full overflow-hidden bg-white/30 transition-all cursor-pointer p-0 border-0"
                   aria-label={`Go to step ${i + 1}`}
                 >
                   <div
-                    className={`h-full bg-white transition-all duration-300 ${
+                    className={`h-full bg-white transition-all duration-500 ${
                       i === currentStep ? 'w-full' : i < currentStep ? 'w-full' : 'w-0'
                     }`}
                   />

@@ -5,7 +5,7 @@ import { useShop } from '@/context/ShopContext';
 import { MenuIcon, SearchIcon, ShoppingBagIcon } from '@/components/Icons';
 
 export default function Navbar() {
-  const { cartCount, setIsCartOpen, setIsMenuOpen, t } = useShop();
+  const { cartCount, setIsCartOpen, setIsMenuOpen, setIsSearchOpen, t } = useShop();
 
   return (
     <>
@@ -58,13 +58,13 @@ export default function Navbar() {
 
           {/* Right: Search & Shopping Bag */}
           <div className="flex items-center gap-3">
-            <Link
-              href="/shop"
-              className="p-1.5 text-[#2E2620] hover:text-[#A9573B] transition-colors"
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className="p-1.5 text-[#2E2620] hover:text-[#A9573B] transition-colors cursor-pointer"
               aria-label="Search"
             >
               <SearchIcon size={20} />
-            </Link>
+            </button>
 
             <button
               onClick={() => setIsCartOpen(true)}
